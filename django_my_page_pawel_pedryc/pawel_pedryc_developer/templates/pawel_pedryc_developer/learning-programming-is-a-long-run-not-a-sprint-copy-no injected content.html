@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ essay_title }}</title>
+    <nav><a href="/pawel_pedryc_developer" id="main-logo">My page: Paweł Pedryc</a></nav>
+
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/meetup-detail.css' %}">
+
+</head>
+<body>
+    <article>
+        <img src="" alt="">
+
+        <section id="location">
+            <h2>Other infos</h2>
+            <address>This essay was made in <span>LOCATION</span> (ADDRESS).</address>
+        </section>
+
+        <section id="details">
+            <h2>What's this essay about?</h2>
+            <p>{{ essay_description }}</p>
+            <footer>
+                <p>Need more details? <a href="">Please contact me</a> (but don't spam ;))</p>
+            </footer>
+        </section>
+        <section id="registration">
+            <h2>Send me your request and job offers!</h2>
+            FORM
+        </section>
+    </article>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'pawel_pedryc_developer/base/base.html' %}
+{% load static %}
+
+{% block title %}You submit email with success!{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/registration-confirmation.css' %}">
+{% endblock %}
+
+{% block main_heading%}
+Thank you for your subission.
+{% endblock%}
+    
+{% block body %}
+
+<section id="confirmation">
+    <h2>You submit successfully!</h2>
+    <p>Thank you for your effort</p>
+    <p>If you have any questions please <a href="mailto:{{ organizer_email }}">contact me</a></p>
+</section>
+
+<section id="continue">
+    <p>Of course you can send your essays for more than one place.</p>
+    <p><a href="/pawel_pedryc_developer" class="btn">Explore more essays!</a></p>
+</section>
+
+{% endblock%}

@@ -1,0 +1,117 @@
+body
+{
+	background-color: #000000;
+	color: lightgray;
+	font-size: 28px;
+    font-family: 'Inconsolata', monospace;
+	font-weight: 700px;
+	/*block text from being selected: */
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* up:  ;block text from being selected: */
+
+}
+
+#container
+{
+	width: 900px;
+	margin-right: auto;	
+	margin-left: auto;
+}
+
+#board
+{
+	width: 900px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 48px;
+	min-height: 60px;
+
+}
+
+#gallows
+{
+	float: left;
+	width: 450px;
+	text-align: center;
+	min-height: 280px;
+}
+
+#alphabet
+{
+	float: left;
+	width: 450px;
+	text-align: center;
+	min-height: 280px;
+}
+
+.letter
+{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+	border: 3px solid gray;
+	float: left;
+	cursor: pointer;
+	border-radius: 15px;
+
+}
+
+.letter:hover
+{
+	background-color: #222222;
+	color: white;
+	border: 3px solid whitesmoke;
+}
+
+.reset
+{
+	color: green;
+	cursor: pointer;
+	font-size: 48px;
+}
+.reset:hover
+{
+	color: white;
+}
+
+
+#footer 
+{
+	font-size: 36px;
+	text-align: center;
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 40px;
+    background: #404040;
+}
+
+#media-video
+{
+	width: 200px;
+	height: 80px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#media-video:hover
+{
+	background-color: #3d3d5c;
+
+}
+
+#icon-music
+{
+
+
+}

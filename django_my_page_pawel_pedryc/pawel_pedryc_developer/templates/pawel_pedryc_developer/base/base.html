@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My developer page{% endblock %}</title>
+    
+    <!--load static file:-->
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
+    {% block site_css %} {% endblock %}
+</head>
+<body>
+    <header id="main-header">
+        <nav><a href="{% url 'developer-home' %}" id="main-logo">My page: Paweł Pedryc</a></nav>
+        <h1>{% block main_heading %}{% endblock %}</h1>
+        <p> {% block header_content %}{% endblock %}</p>
+    </header>
+
+    <main>
+    {% block body %}{% endblock %}
+    </main>
+    
+</body>
+</html>

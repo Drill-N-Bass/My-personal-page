@@ -1,0 +1,47 @@
+{% extends 'pawel_pedryc_developer/base/base.html' %}
+{% load static %}
+
+{% block title %}My developer's profile{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-meetups.css' %}">
+{% endblock %}
+
+{% block main_heading%}
+Tytuł strony o mnie
+{% endblock%}
+
+{% block header_content%}
+tu może dam jakiś cytat
+{% endblock%}
+    
+{% block body %}
+            <section>
+                <h2>Moje artykuły i eseje</h2> 
+                <ol>
+                    {% if show_text_content %}
+                        {% for essay_item in text_content %}
+
+                            {% comment %} settings.py line 143-147 allows to break the code as below
+                            More info about this:
+                            # django template tag on multiple line (Zach Snow answer):
+                            # https://stackoverflow.com/questions/49110044/django-template-tag-on-multiple-line
+                            {% endcomment %}
+                            {% include 'pawel_pedryc_developer/includes/essay_items.html'
+                            with
+                            title=essay_item.title
+                            description=essay_item.description 
+                            details=essay_item.details
+                            slug=essay_item.slug
+                            image=essay_item.image.url
+                            language=essay_item.language
+                            %}
+
+                        {% endfor %}
+                    {% else %}
+                        <h2>New content comming soon!</h2>
+                    {% endif %}
+                </ol>
+            </section>
+{% endblock %}
+        

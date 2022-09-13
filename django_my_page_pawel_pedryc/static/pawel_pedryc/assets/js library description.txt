@@ -1,0 +1,15 @@
+Bootsnav - Multi Purpose Header
+Bootsnav is a multi purpose header based with Bootstrap, you can build any header style with bootsnav only with a few minutes.
+
+=================================================================================================================================
+
+custom.js
+it's used for custom js. In this case we have custom.js made by ThemeSINE named Zombiz HTML Template
+
+ZomBiz is an amazing html5 template for any corporate, finance or other business agencies. Our designers designed this with eye-catching backgrounds and fonts which will make your visitors love this eye-catchy user interface. This outstanding responsive template coded in bootstrap3 and CSS3 by our developer. This super responsive template offers fantastic animations, modern design with full customizability so you will get full control to change and update as you want.
+The most important thing you will love to hear that we offer this extraordinary template in both single-page and multi-page.
+
+========================================================================================================================================
+
+owl carousel
+https://owlcarousel2.github.io/OwlCarousel2/
