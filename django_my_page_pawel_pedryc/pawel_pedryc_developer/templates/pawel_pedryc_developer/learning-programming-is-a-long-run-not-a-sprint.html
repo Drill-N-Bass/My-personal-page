@@ -1,0 +1,54 @@
+{% extends 'pawel_pedryc_developer/base/base.html' %}
+{% load static %}
+
+{% block title %}{{ essay_all.title }}{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/meetup-detail.css' %}">
+{% endblock %}
+
+{% block main_heading%}
+{{ essay_all.title }}
+{% endblock%}
+
+
+{% block body %}
+
+{% if essay_found %}
+
+<article>
+    <img id="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+
+    <section id="location">
+        <h2>Other infos</h2>
+        <p>This essay is related to <span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span>
+    </section>
+
+    <section id="details">
+        <h2>What's this essay about?</h2>
+        {% autoescape off %}
+        <p>{{ essay_all.details }}</p>
+        {% endautoescape %}
+        <footer>
+            <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
+        </footer>
+    </section>
+    <section id="registration">
+        <h2>Send me your request and job offers!</h2>
+        <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
+            {% csrf_token %}
+            <ul>
+                {{ form.as_ul }}
+            </ul>
+            <div id="registration-actions">
+                <button>Join me</button>
+            </div>
+        </form>
+    </section>
+</article>
+
+{% else %}
+<h2>No essay found for this slug, sorry! </h2>
+{% endif %}
+
+{% endblock%}

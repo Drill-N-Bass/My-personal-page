@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My developer's profile </title>
+    
+    <!--load static file:-->
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-meetups.css' %}">
+
+</head>
+<body>
+    <header id="main-header">
+        <nav><a href="{% url 'developer-home' %}" id="main-logo">My page: Paweł Pedryc</a></nav>
+        <h1>Tytuł strony o mnie</h1>
+        <p> tu może dam jakiś cytat</p>
+    </header>
+    <main>
+        <section>
+            <h2>Moje artykuły i eseje</h2> 
+            <ol>
+                {% if show_text_content %}
+                    {% for essay_item in text_content %}
+                    <li class="meetup-item">
+                        <article>
+                            <div class="meetup-summary">
+                                <div class="meetup-image">
+                                    <!-- <img class="meetup-image-size" src='C:/Users/b2b/Desktop/pikachu.png' alt=""> -->
+                                </div>
+                                <div class="meetup-details">
+                                    <h3>{{ essay_item.title}}</h3>
+                                    <p>{{ essay_item.description }}</p>
+                                </div>
+                            </div>
+                            <div class="meetup-actions">
+                                {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
+                                <a href="{% url 'essay-path' essay_item.slug %}" class="btn">More details</a>
+                            </div>
+                        </article>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <h2>New content comming soon!</h2>
+                {% endif %}
+            </ol>
+
+        </section>
+    </main>
+</body>
+</html>

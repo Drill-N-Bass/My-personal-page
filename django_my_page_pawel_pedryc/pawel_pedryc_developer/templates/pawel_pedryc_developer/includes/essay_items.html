@@ -1,0 +1,20 @@
+<li class="meetup-item">
+    <article>
+        <div class="meetup-summary">
+            <div class="meetup-image">
+                <img src="{{ image }}" alt="{{ title }}">
+            </div>
+            <div class="meetup-details">
+                <h3>{{ title}}</h3>
+                <p>{{ description }}</p>
+                <div class="meetup-small-box">
+                    <p><b>Knowledge set: </b>{{ language }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="meetup-actions">
+            {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
+            <a href="{% url 'essay-path' slug %}" class="btn">More details</a>
+        </div>
+    </article>
+</li>
