@@ -19,3 +19,5 @@ This confusion was the result of the transition from using the GIT Bash terminal
 Due to the fact that the `Apiarena` project was not implemented in a large team, and the entire aspect related to Django was only my participation, I could allow myself to take the first steps in building the` Apiarena` website a test site for the issues raised above.
 
 The next stages of work on my personal page and on the `Apiarena` project have already been carried out in accordance with the methodology of working with GIT repositories.
+
+Thanks to the successful migration, all changes in the `My-personal-page` repository only apply to this project. The same goes for the `Apiarena` repository.
