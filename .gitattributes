@@ -1,0 +1,19 @@
+# https://dev.to/deadlybyte/please-add-gitattributes-to-your-git-repository-1jld
+* text=auto
+# *.js    eol=lf
+# *.jsx   eol=lf
+# *.json  eol=lf
+
+# https://stackoverflow.com/questions/54946235/changing-repository-language-on-github
+# https://stackoverflow.com/questions/34713765/github-changes-repository-to-the-wrong-language
+* linguist-vendored
+*.JavaScript linguist-vendored=false
+
+*.css linguist-detectable=false
+*.pandas linguist-detectable=false
+*.java linguist-detectable=false
+*.python linguist-detectable=false 
+*.js linguist-detectable=false
+*.html linguist-detectable=false
+*.xml linguist-detectable=false
+*.Django linguist-detectable=true
