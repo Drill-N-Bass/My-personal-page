@@ -5,7 +5,7 @@ The page includes:
 - Videos with finished commercial projects
 - My cv
 
------------------------
+------------------------
 The Git related info:
 Since the creation of my website took a long time - which was related to deepening my knowledge of JS, Django, and creating a website for Apiarena - commits for early versions of this project are fragmented in several repositories. For this reason the "easter egg" associated with my site is built in the 'Gallows-Hangman-game' repository. However, the skeleton of an early version of my Django website is located as a project branch with the `Apiarena` repository (which is also a complete repository for the` Apiarena` website, another commercial project I have done).
 
