@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-
+#chomik
 def easter_egg_hangman_game(request, *args, **kwargs):
 	print("args, kwargs: ", args, kwargs) # checking args and kwargs in console
 	print("User's name that is log in now is: ", request.user) # checking username that is log in (in console)
