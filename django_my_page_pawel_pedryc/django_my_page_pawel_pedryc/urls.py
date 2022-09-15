@@ -29,13 +29,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 ###
 
+from django.views.generic.base import RedirectView # 3.58.00
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('', home_view, name='home'),
-    # path('home/', home_view, name='home'),
-    path('', include('hangman_game.urls')),
+    path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
+    path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
     path('', include('pawel_pedryc_developer.urls')),
+    path('', include('hangman_game.urls')),
+    path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # for pictures and files
 
 # at this point it doesn't work:
