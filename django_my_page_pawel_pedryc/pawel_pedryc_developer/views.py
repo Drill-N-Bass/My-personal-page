@@ -44,7 +44,7 @@ def my_essays(request, home_view_pawel_slug):
                 
         return render(
             request,
-            'pawel_pedryc_developer/learning-programming-is-a-long-run-not-a-sprint.html', 
+            'pawel_pedryc_developer/article-content.html', 
             {
                 'essay_found': True,
                 'essay_all': selected_essay,
@@ -55,7 +55,7 @@ def my_essays(request, home_view_pawel_slug):
         print('Exception error message:', exc) # Test
         return render(
             request,
-            'pawel_pedryc_developer/learning-programming-is-a-long-run-not-a-sprint.html', 
+            'pawel_pedryc_developer/article-content.html', 
             {
                 'essay_found': False
             })

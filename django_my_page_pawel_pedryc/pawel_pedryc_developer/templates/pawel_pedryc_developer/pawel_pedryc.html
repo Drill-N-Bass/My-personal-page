@@ -8,16 +8,18 @@
 {% endblock %}
 
 {% block main_heading%}
-Tytuł strony o mnie
+Python, Django, Docker, AWS, Tkinter, Pandas, mySQL and more...
 {% endblock%}
 
 {% block header_content%}
-tu może dam jakiś cytat
+"Python is the "most powerful language you can still read".
+
+- Paul Dubois"
 {% endblock%}
     
 {% block body %}
             <section>
-                <h2>Moje artykuły i eseje</h2> 
+                <h2>My essays and some of my projects:</h2> 
                 <ol>
                     {% if show_text_content %}
                         {% for essay_item in text_content %}

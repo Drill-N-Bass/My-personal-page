@@ -43,7 +43,9 @@ button:hover,
 }
 
 #main-header h1 {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.2;
+    line-height: 0.05;
 }
 
 #main-logo {
