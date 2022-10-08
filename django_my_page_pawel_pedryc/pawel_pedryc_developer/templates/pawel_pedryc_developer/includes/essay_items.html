@@ -1,4 +1,7 @@
-<li class="meetup-item">
+{% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
+{% load blog_extras %}
+
+<li class="Xmeetup-item">
     <article>
         <div class="meetup-summary">
             <div class="meetup-image">
@@ -6,7 +9,7 @@
             </div>
             <div class="meetup-details">
                 <h3>{{ title}}</h3>
-                <p>{{ description }}</p>
+                <p>{{ description|convert_markdown|safe }}</p>
                 <div class="meetup-small-box">
                     <p><b>Knowledge set: </b>{{ language }}</p>
                 </div>

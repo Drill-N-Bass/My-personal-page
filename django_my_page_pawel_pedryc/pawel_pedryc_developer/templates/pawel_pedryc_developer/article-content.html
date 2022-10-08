@@ -1,6 +1,9 @@
 {% extends 'pawel_pedryc_developer/base/base.html' %}
 {% load static %}
 
+{% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
+{% load blog_extras %}
+
 {% block title %}{{ essay_all.title }}{% endblock %}
 
 {% block site_css %}
@@ -27,7 +30,7 @@
     <section id="details">
         <h2>What's this essay about?</h2>
         {% autoescape off %}
-        <p>{{ essay_all.details }}</p>
+        <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %}
         <footer>
             <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
