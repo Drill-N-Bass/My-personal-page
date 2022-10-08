@@ -23,15 +23,22 @@
     <img id="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
 
     <section id="location">
-        <h2>Other infos</h2>
-        <p>This essay is related to <span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span>
-    </section>
+        <div id="content_type">
+            <h3>This content is related to:</h3>
+            <ul>
+                <li><span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span></li>
+            </ul>
+        </div>
 
-    <section id="details">
-        <h2>What's this essay about?</h2>
+        <div id='content_'
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %}
+        
+    </section>
+
+    <section id="details">
+        
         <footer>
             <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
         </footer>
