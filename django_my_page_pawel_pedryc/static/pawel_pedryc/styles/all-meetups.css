@@ -21,10 +21,12 @@ ol {
   font-size: small;
   margin: 1rem 0;
   background-color: #ccc3db;
-  padding: 0.3rem; 
+  padding: 0.6rem; 
   border-radius: 30px ;
   float: left;
   color: white;
+  padding-top: 25px;
+  
 }
 
 .meetup-summary {
