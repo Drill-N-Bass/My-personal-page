@@ -60,7 +60,23 @@ button:hover,
 }
 
 #square {
-  position:absolute; 
+   
+  height: 75px;
+  width: 312px;
+}
+
+.hg
+{
+	margin: 10px;
+	width: 52px;
+	height: 71px;
+	background-color: #b50000;
+	float: right;
+}
+
+.hg:hover
+{
+	background-color: #690307;
 }
 
 .li
@@ -68,7 +84,7 @@ button:hover,
 	margin: 10px;
 	width: 52px;
 	height: 71px;
-	background-color: #0e76a8;
+	background-color: #0a4c6b;
 	float: right;
 }
 
@@ -82,7 +98,7 @@ button:hover,
 	margin: 10px;
 	width: 52px;
 	height: 71px;
-	background-color: #b81cec;
+	background-color: #e38fff;
 	float: right;
 }
 
@@ -96,7 +112,7 @@ button:hover,
 	margin: 10px;
 	width: 52px;
 	height: 71px;
-	background-color: #3383d9;
+	background-color: #71b0f4;
 	float: right;
 }
 

@@ -11,7 +11,6 @@ import logging
 
 # Create your views here.
 
-
 def home_view_pawel(request):
     essay = EssayCls.objects.all()
 
