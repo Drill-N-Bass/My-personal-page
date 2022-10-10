@@ -11,7 +11,7 @@ ol {
 
 .meetup-item {
   margin: 1rem 0;
-  background-color: #d3d7ff;
+  background-color: #456e9a;
   padding: 2rem;
   color: white;
   border-radius: 4px;
@@ -69,9 +69,10 @@ ol {
   border-color: #cb82fb;
   color: #350490;
   padding: 0.75rem 2rem;
+  border-radius: 14px ;
 }
 
 .meetup-actions .btn:hover {
-  background-color: #ba82fb;
-  border-color: #ba82fb;
+  background-color: #a06bdc;
+  border-color: #a46fe1;
 }

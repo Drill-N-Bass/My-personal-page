@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/fontello/css/fontello.css' %}">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,22 @@
     </header>
 
     <main>
+        <div class="square">
+            <div class="li">
+                <a href="https://www.linkedin.com/in/pawe%C5%82-pedryc-a5bb4587/" target="_blank" class="sociallink"><i class="icon-linkedin"></i></a>
+            </div>
+            <div class="gh">
+                <a href="https://github.com/Drill-N-Bass" target="_blank" class="sociallink"><i class="icon-github-circled-1"></i></a>
+            </div>
+            <div class="so">
+                <a href="https://stackoverflow.com/users/15372196/pawe%c5%82-pedryc" target="_blank" class="sociallink"><i class="icon-stackoverflow"></i></a>
+            </div>
+            <div class="pypi">
+                <a href="https://pypi.org/project/get-gifNimage/" target="_blank" class="sociallink"><i class="icon-floppy"></i></a>			
+            </div>
+        </div>
     {% block body %}{% endblock %}
+    
     </main>
     
 </body>

@@ -58,3 +58,63 @@ button:hover,
     color: #350490;
     font-weight: bold;
 }
+
+#square {
+  position:absolute; 
+}
+
+.li
+{
+	margin: 10px;
+	width: 52px;
+	height: 71px;
+	background-color: #0e76a8;
+	float: right;
+}
+
+.li:hover
+{
+	background-color: #c83237;
+}
+
+.gh
+{
+	margin: 10px;
+	width: 52px;
+	height: 71px;
+	background-color: #b81cec;
+	float: right;
+}
+
+.gh:hover
+{
+	background-color: #9c07c9;
+}
+
+.so
+{
+	margin: 10px;
+	width: 52px;
+	height: 71px;
+	background-color: #3383d9;
+	float: right;
+}
+
+.so:hover
+{
+	background-color: #c84222;
+}
+
+.pypi
+{
+	margin: 10px;
+	width: 52px;
+	height: 71px;
+	background-color: #ffea2e;
+	float: right;
+}
+
+.pypi:hover
+{
+	background-color: #3fc600;
+}
