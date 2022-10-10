@@ -18,10 +18,11 @@ ol {
 }
 
 .meetup-small-box {
+  font-size: small;
   margin: 1rem 0;
-  background-color: #8951f0;
+  background-color: #ccc3db;
   padding: 0.3rem; 
-  border-radius: 30px;
+  border-radius: 30px ;
   float: left;
   color: white;
 }

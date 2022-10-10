@@ -10,10 +10,11 @@
             <div class="meetup-details">
                 <h3>{{ title}}</h3>
                 <p>{{ description|convert_markdown|safe }}</p>
-                <div class="meetup-small-box">
-                    <p><b>Knowledge set: </b>{{ language }}</p>
-                </div>
+                
             </div>
+        </div>
+        <div class="meetup-small-box">
+            <p><b>Knowledge set </b>{{ language }}</p>
         </div>
         <div class="meetup-actions">
             {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
