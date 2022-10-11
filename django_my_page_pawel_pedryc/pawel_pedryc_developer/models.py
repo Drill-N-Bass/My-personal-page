@@ -30,8 +30,15 @@ class EssayCls(models.Model):
     # language = models.CharField(max_length=200)
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL)
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.58.00
-
-
+    
+        
+#################
     ## Tweak title of the objects in admin page:
     # def __str__(self):
     #     return f'{self.title} - {self.slug}'
+
+
+
+
+
+

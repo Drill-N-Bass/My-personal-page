@@ -1,6 +1,7 @@
 {% extends 'pawel_pedryc_developer/base/base.html' %}
 {% load static %}
 
+
 {% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
 {% load blog_extras %}
 
@@ -30,11 +31,11 @@
             </ul>
         </div>
 
-        <div id='content_'
+       
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
-        {% endautoescape %}
-        
+        {% endautoescape %} 
+
     </section>
 
     <section id="details">

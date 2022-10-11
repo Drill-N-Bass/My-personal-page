@@ -72,3 +72,4 @@ def confirm_registration(request, home_view_pawel_slug):
     {
         'organizer_email': contact.organizer_email
     })
+

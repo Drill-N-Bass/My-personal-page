@@ -7,7 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #ccc3db;
+  background-color: #2f1f47;
   color: #3e3e41;
 }
 
@@ -57,6 +57,10 @@ button:hover,
     text-decoration: none;
     color: #350490;
     font-weight: bold;
+}
+
+#title_text {
+  color: #e1e1e1;
 }
 
 #square {

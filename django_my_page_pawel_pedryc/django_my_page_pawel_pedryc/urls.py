@@ -22,6 +22,8 @@ from hangman_game.views import easter_egg_hangman_game
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pawel_pedryc_developer.views import home_view_pawel # for pictures
 
+from pawel_pedryc_developer.views import my_essays # for videos
+
 ###
 # import static so Django can handle uploaded files and images: 
 from django.conf.urls.static import static
