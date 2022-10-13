@@ -12,7 +12,7 @@ import logging
 # Create your views here.
 
 def home_view_pawel(request):
-    essay = EssayCls.objects.all() # you can add `.order_by` after all()
+    essay = EssayCls.objects.all() # you can add `.order_by` after all(). Method `all()` gives you all objects from class
 
     # return HttpResponse('Test')
     return render(
@@ -28,7 +28,7 @@ def my_essays(request, home_view_pawel_slug):
     # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
 
     try:
-        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug)
+        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class
         if request.method == 'GET': # handling form submission 3.18.20
             user_feedback = UserFeedback() # handling form submission 3.18.20
             
