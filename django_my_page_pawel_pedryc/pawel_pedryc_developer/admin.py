@@ -5,7 +5,7 @@ from .models import EssayCls, ProgLang, SendMeMessage
 class EssayAdmin(admin.ModelAdmin):
     list_display         = ('title', 'date', 'slug', 'description', 'language')
     list_filter          = ('language', 'date')
-    prepopulated_fields  = {'slug': ('title',)}
+    prepopulated_fields  = {'slug': ('title',)} #2:41:00
 
     
 admin.site.register(EssayCls, EssayAdmin)
