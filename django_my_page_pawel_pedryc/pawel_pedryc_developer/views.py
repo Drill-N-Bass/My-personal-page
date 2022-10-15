@@ -1,3 +1,8 @@
+"""
+My views responsible for rendering all 
+templates related to pawel_pedryc_developer folder
+"""
+
 from django.shortcuts import render, redirect
 # from django.http import HttpResponse
 

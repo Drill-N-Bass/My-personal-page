@@ -29,7 +29,7 @@ class EssayCls(models.Model):
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL)
-    guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.58.00
+    guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
         
 #################
