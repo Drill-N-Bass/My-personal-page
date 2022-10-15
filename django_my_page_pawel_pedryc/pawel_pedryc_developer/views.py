@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 
 from .models import EssayCls, SendMeMessage
 
-from .forms import UserFeedback
+from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
 
 # Needed for display log with the error exeption function:
 # https://realpython.com/the-most-diabolical-python-antipattern/

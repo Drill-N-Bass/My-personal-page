@@ -11,11 +11,15 @@ body {
   color: #3e3e41;
 }
 
-h1,
+h1 {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #f7f7f7;
+}
+
 h2,
 h3 {
   font-family: 'Roboto Slab', sans-serif;
-  color: #222224;
+  color: #d31e1e;
 }
 
 button,
@@ -59,14 +63,11 @@ button:hover,
     font-weight: bold;
 }
 
-#title_text {
-  color: #e1e1e1;
-}
 
 #square {
-   
-  height: 75px;
-  width: 312px;
+  height: 1200px;
+  width: 1000px;
+  float: right;
 }
 
 .hg
