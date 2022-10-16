@@ -17,7 +17,7 @@ import logging
 # Create your views here.
 
 def home_view_pawel(request):
-    essay = EssayCls.objects.all() # you can add `.order_by` after all(). Method `all()` gives you all objects from class
+    essay = EssayCls.objects.all().order_by('date') # you can add `.order_by` after all(). Method `all()` gives you all objects from class
 
     # return HttpResponse('Test')
     return render(

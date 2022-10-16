@@ -43,7 +43,7 @@ button,
 
 button:hover,
 .btn:hover {
-  background-color: #230161;
+  background-color: #5a477e;
   border-color: #230161;
 }
 
@@ -77,12 +77,8 @@ button:hover,
   padding: 10px;
   height: 500px;
   width: 100px;
-  border: 1px solid #2f47e2;
+  border: 3px solid #b2bcff;
   border-radius: 15px;
-  
-}
-
-.square_section {
   
 }
 
