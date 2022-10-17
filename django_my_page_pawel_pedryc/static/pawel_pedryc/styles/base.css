@@ -48,13 +48,14 @@ button:hover,
 }
 
 #main-header {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
-    background-image:url(../logos/media/python_mushroom.jpeg);
-    max-width: 100%;
-    background-position: center;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  background-image:url(../logos/media/python_mushroom.jpeg);
+  max-width: 100%;
+  background-position: center;
 }
+
 
 #main-header h1 {
     font-size: 0.9rem;
