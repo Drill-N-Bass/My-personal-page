@@ -3,7 +3,7 @@ My views responsible for rendering all
 templates related to pawel_pedryc_developer folder
 """
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
 # from django.http import HttpResponse
 
 from .models import EssayCls, SendMeMessage # query our db 2:07:00
