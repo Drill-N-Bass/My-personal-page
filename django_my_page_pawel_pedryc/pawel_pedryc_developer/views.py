@@ -38,7 +38,12 @@ def my_essays(request, home_view_pawel_slug):
             user_feedback = UserFeedback() # handling form submission 3.18.20
             
         else:
-            user_feedback = UserFeedback(request.POST)
+            """
+            The incoming request from Django will have
+            a POST property which contains any submitted data
+            that might be attached to incoming POST request.
+            """
+            user_feedback = UserFeedback(request.POST) 
             if user_feedback.is_valid():
                 user_email = user_feedback.cleaned_data['email']
                 send_me_message, was_created = SendMeMessage.objects.get_or_create(email=user_email) # 3.44.00
