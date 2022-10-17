@@ -41,7 +41,7 @@ def my_essays(request, home_view_pawel_slug):
             """
             The incoming request from Django will have
             a POST property which contains any submitted data
-            that might be attached to incoming POST request.
+            that might be attached to incoming POST request. # 3:22:00
             """
             user_feedback = UserFeedback(request.POST) 
             if user_feedback.is_valid():
