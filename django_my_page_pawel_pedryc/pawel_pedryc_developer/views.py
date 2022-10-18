@@ -47,7 +47,10 @@ def my_essays(request, home_view_pawel_slug):
             if user_feedback.is_valid():
                 user_email = user_feedback.cleaned_data['email']
                 send_me_message, was_created = SendMeMessage.objects.get_or_create(email=user_email) # 3.44.00
-                # send_me_message = user_feedback.save() # 3.41.00
+                # send_me_message = user_feedback.save() # v1 problem: user can sign just once 3.41.00
+                # v2:
+                # user_email = user_feedback.cleaned_data['email'] # `email` key from SendMeMessage model 3.42.21
+                # send_me_message, _ = end_me_message.objects.get_or_create(email=user_email)
                 selected_essay.guest.add(send_me_message) # 3.26.00
                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
                 

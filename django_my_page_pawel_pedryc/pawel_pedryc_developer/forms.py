@@ -3,6 +3,8 @@ from django import forms
 
 """
 Old version with #
+Changed because I don't use `send_me_message = user_feedback.save()` in views.py
+That's why I swap argument in my class from `forms.ModelForm` to `forms.Form` in a new version 3:45:00
 """
 # from .models import SendMeMessage
 
@@ -14,8 +16,15 @@ if you want to have some fields from model that shouldn't be populated by user,
 then list here only fields that you want to have av for user in this `fields` property
 """
 #         fields = ['email']
-        
+
+# Below a new model (3:45:00):
+
 class UserFeedback(forms.Form): # 3.46.00
-    email = forms.EmailField(label='Your email')
+    """
+    `forms.EmailField` points out which html input field should be created
+    and how it should be validated. 
+    It's not related to `models.EmailField(unique=True)` in models.py. 3:46:20
+    """
+    email = forms.EmailField(label='Your email') # 'Your email' is html label form templates.
 
 
