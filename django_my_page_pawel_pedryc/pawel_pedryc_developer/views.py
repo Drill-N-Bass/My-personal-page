@@ -63,8 +63,6 @@ def my_essays(request, home_view_pawel_slug):
                 send_me_message_new, was_created = send_me_message.objects.get_or_create(email=user_email)
                 the flag `was_created` tells us whether a new entry was created or not.
                 `_` ignore value: `was_created`.
-
-            
                 """
                 # send_me_message_new, _ = send_me_message.objects.get_or_create(email=user_email)
                 # selected_essay.guest.add(send_me_message_new)
