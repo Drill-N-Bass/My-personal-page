@@ -4,6 +4,9 @@ from distutils.command import upload
 # from tkinter import DISABLED
 from django.db import models
 
+from embed_video.fields import EmbedVideoField
+
+
 # Create your models here.
 class ProgLang(models.Model):
     prog_lang_category = models.CharField(max_length=200)
@@ -38,6 +41,13 @@ class EssayCls(models.Model):
     #     return f'{self.title} - {self.slug}'
 
 
+class VideoItem(models.Model):
+    """
+    Embed videos (youtube, vimeo).
+    Documentation: https://django-embed-video.readthedocs.io/en/latest/examples.html
+    Tutorial: https://www.youtube.com/watch?v=-AOPAqxAFJk
+    """
+    video = EmbedVideoField()  # same like models.URLField()
 
 
 

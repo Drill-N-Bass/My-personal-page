@@ -6,7 +6,7 @@ templates related to pawel_pedryc_developer folder
 from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
 # from django.http import HttpResponse
 
-from .models import EssayCls, SendMeMessage # query our db 2:07:00
+from .models import EssayCls, SendMeMessage, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
 from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
 
@@ -18,14 +18,15 @@ import logging
 
 def home_view_pawel(request):
     essay = EssayCls.objects.all().order_by('date') # you can add `.order_by` after all(). Method `all()` gives you all objects from class
-
+    video_obj = VideoItem.objects.all()
     # return HttpResponse('Test')
     return render(
         request,
         'pawel_pedryc_developer/pawel_pedryc.html',
         {
         'text_content': essay,
-        'show_text_content': True
+        'show_text_content': True,
+        'video_obj': video_obj
         })
 
 
@@ -103,3 +104,9 @@ def confirm_registration(request, home_view_pawel_slug):
         'organizer_email': contact.organizer_email
     })
 
+# def video(request):
+#     video_obj = VideoItem.object.all()
+#     return render(request, 'pawel_pedryc_developer/article-content.html', 
+#     {
+#         'video_obj': video_obj
+#     })

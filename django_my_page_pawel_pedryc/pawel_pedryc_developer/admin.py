@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import EssayCls, ProgLang, SendMeMessage
+from .models import EssayCls, ProgLang, SendMeMessage, VideoItem
+from embed_video.admin import AdminVideoMixin
 
 ## Tweak title of the objects in admin page:
 class EssayAdmin(admin.ModelAdmin):
@@ -12,3 +13,8 @@ admin.site.register(EssayCls, EssayAdmin)
 admin.site.register(ProgLang)
 admin.site.register(SendMeMessage)
 
+
+class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
+    pass
+
+admin.site.register(VideoItem, MyModelAdmin)
