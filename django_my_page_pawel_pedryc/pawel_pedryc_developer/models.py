@@ -22,6 +22,15 @@ class SendMeMessage(models.Model):
     def __str__(self):
         return self.email
 
+
+class VideoItem(models.Model):
+    """
+    Embed videos (youtube, vimeo).
+    Documentation: https://django-embed-video.readthedocs.io/en/latest/examples.html
+    Tutorial: https://www.youtube.com/watch?v=-AOPAqxAFJk
+    """
+    video_item = EmbedVideoField()  # same like models.URLField()
+
 class EssayCls(models.Model):
     title = models.CharField(max_length=200)
     organizer_email = models.EmailField(null=True)
@@ -31,7 +40,8 @@ class EssayCls(models.Model):
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
-    language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL)
+    video = models.ForeignKey(VideoItem, null=True, on_delete=models.SET_NULL) # One-to-many relationship
+    language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
         
@@ -39,16 +49,3 @@ class EssayCls(models.Model):
     ## Tweak title of the objects in admin page:
     # def __str__(self):
     #     return f'{self.title} - {self.slug}'
-
-
-class VideoItem(models.Model):
-    """
-    Embed videos (youtube, vimeo).
-    Documentation: https://django-embed-video.readthedocs.io/en/latest/examples.html
-    Tutorial: https://www.youtube.com/watch?v=-AOPAqxAFJk
-    """
-    video = EmbedVideoField()  # same like models.URLField()
-
-
-
-
