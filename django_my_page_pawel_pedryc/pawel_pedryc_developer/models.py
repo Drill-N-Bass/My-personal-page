@@ -44,6 +44,7 @@ class EssayCls(models.Model):
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
+    
         
 #################
     ## Tweak title of the objects in admin page:

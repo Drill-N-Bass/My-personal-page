@@ -26,7 +26,6 @@ def home_view_pawel(request):
         {
         'text_content': essay,
         'show_text_content': True,
-        'video_obj': video_obj
         })
 
 

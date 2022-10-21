@@ -48,15 +48,10 @@ Python, Django, Docker, AWS, Tkinter, Pandas, mySQL and more...
                             slug=essay_item.slug
                             image=essay_item.image.url
                             language=essay_item.language
+                            video=essay_item.video
 
                             %}
                             
-                        {% endfor %}
-
-                        {% for video_item in video_obj %}
-
-                        {% video video_item.video 'small' %}
-
                         {% endfor %}
 
                     {% else %}
