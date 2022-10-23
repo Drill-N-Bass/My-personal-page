@@ -157,12 +157,12 @@ function checkIt(num)
 	//when win:
 	if(pass==pass1)
 	{
-		document.getElementById("alphabet").innerHTML = pass + '<br /><br />' + "is the correct phrase!" + '<br /><br /><span class="reset" onclick="location.reload()">Once again ?</span>';
+		document.getElementById("alphabet").innerHTML = pass + '<br /><br />' + "it is the correct phrase. You win!" + '<br /><br /><span class="reset" onclick="location.reload()">Once again ?</span>';
 	}
 	//loose game:
 	if(errorCount>=9)
 	{
-	document.getElementById("alphabet").innerHTML = "you loose!" + '<br /><br /><span class="reset" onclick="location.reload()">Once again ?</span>';
+	document.getElementById("alphabet").innerHTML = "you loose...swinging...swinging..." + '<br /><br /><span class="reset" onclick="location.reload()">Once again ?</span>';
 	}
 }
 

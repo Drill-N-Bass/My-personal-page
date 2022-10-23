@@ -1,5 +1,6 @@
 {% extends 'pawel_pedryc_developer/base/base.html' %}
 {% load static %}
+{% load embed_video_tags %}
 
 {% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
 {% load blog_extras %}
@@ -30,11 +31,21 @@
             </ul>
         </div>
 
-        <div id='content_'
+       
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %}
-        
+
+        {% comment %} https://www.youtube.com/watch?v=dGF1x14QNGA {% endcomment %}
+        <h1 class="mb-5">Videos</h1>
+
+        {% for item in essay_all %}
+
+            {% video item.url_video '426x240'%}
+            {{ item.title_video }}
+
+        {% endfor %}
+
     </section>
 
     <section id="details">
