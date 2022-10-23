@@ -7,6 +7,9 @@ from django.db import models
 from embed_video.fields import EmbedVideoField
 
 
+from embed_video.fields import EmbedVideoField
+
+
 # Create your models here.
 class ProgLang(models.Model):
     prog_lang_category = models.CharField(max_length=200)
@@ -60,3 +63,4 @@ class EssayCls(models.Model):
     ## Tweak title of the objects in admin page:
     # def __str__(self):
     #     return f'{self.title} - {self.slug}'
+

@@ -1,5 +1,6 @@
 {% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
 {% load blog_extras %}
+{% load embed_video_tags %}
 
 <li class="meetup-item">
     <article>
@@ -10,6 +11,8 @@
             <div class="meetup-details">
                 <h3>{{ title}}</h3>
                 <p>{{ description|convert_markdown|safe }}</p>
+                <br /><br />
+                <p>{{ video }}</p>
                 
             </div>
         </div>

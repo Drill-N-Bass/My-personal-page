@@ -3,12 +3,17 @@ My views responsible for rendering all
 templates related to pawel_pedryc_developer folder
 """
 
-from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
+"""
+My views responsible for rendering all 
+templates related to pawel_pedryc_developer folder
+"""
+
+from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00  # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
 # from django.http import HttpResponse
 
-from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMessage`: query our db 2:07:00
+from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
-from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
+from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00 # for instantiate our form for rendered templates 3:14:00
 
 # Needed for display log with the error exeption function:
 # https://realpython.com/the-most-diabolical-python-antipattern/
@@ -34,8 +39,8 @@ def home_view_pawel(request):
 def my_essays(request, home_view_pawel_slug):
     # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
 
-    try: # first exception model at 2:13:20
-        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class
+    try: # first exception model at 2:13:20 # first exception model at 2:13:20
+        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class # 2.11.50 Method `get()` gives you one object from class
         if request.method == 'GET': # handling form submission 3.18.20
             user_feedback = UserFeedback() # handling form submission 3.18.20
             
