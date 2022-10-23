@@ -34,17 +34,7 @@
        
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
-        {% endautoescape %}
-
-        {% comment %} https://www.youtube.com/watch?v=dGF1x14QNGA {% endcomment %}
-        <h1 class="mb-5">Videos</h1>
-
-        {% for item in essay_all %}
-
-            {% video item.url_video '426x240'%}
-            {{ item.title_video }}
-
-        {% endfor %}
+        {% endautoescape %} 
 
     </section>
 
