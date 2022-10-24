@@ -72,6 +72,16 @@ button:hover,
     font-weight: bold;
 }
 
+/* .main_section {
+height: 2000rem;
+width: 70rem;
+} */
+
+.ol_section {
+  height: 300rem;
+  width: 60rem;
+}
+
 .square {
   max-width: 120px;
   float: right;

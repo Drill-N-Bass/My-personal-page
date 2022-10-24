@@ -76,6 +76,7 @@ def my_essays(request, home_view_pawel_slug):
                 ## end v2
 
                 selected_essay.guest.add(send_me_message) # 3.26.00
+                
                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
                 
         return render(
