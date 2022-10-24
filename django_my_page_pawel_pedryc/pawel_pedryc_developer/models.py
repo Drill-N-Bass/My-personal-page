@@ -6,11 +6,8 @@ from django.db import models
 
 from embed_video.fields import EmbedVideoField
 
-
-from embed_video.fields import EmbedVideoField
-
-
 # Create your models here.
+
 class ProgLang(models.Model):
     prog_lang_category = models.CharField(max_length=200)
     prog_lang_name = models.CharField(max_length=200)
