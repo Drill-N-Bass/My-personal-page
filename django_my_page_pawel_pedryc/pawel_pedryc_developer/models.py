@@ -33,14 +33,14 @@ class VideoObject(models.Model):
     Tutorial: https://www.youtube.com/watch?v=-AOPAqxAFJk
     """
     video_item_url = EmbedVideoField()  # same like models.URLField()
-    added_date = models.DateTimeField(auto_now_add=True, null=True)
-    title_video = models.CharField(max_length=200)
+    # added_date = models.DateTimeField(auto_now_add=True, null=True)
+    # title_video = models.CharField(max_length=200)
 
-    def __str__(self):
-        return str(self.title_video)
+    # def __str__(self):
+    #     return str(self.title_video)
 
-    class Meta:
-        ordering = ['-added_date']
+    # class Meta:
+    #     ordering = ['-added_date']
 
 
 
@@ -53,7 +53,7 @@ class EssayCls(models.Model):
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
-    video = models.ForeignKey(VideoObject, null=True, on_delete=models.SET_NULL) # One-to-many relationship
+    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.CASCADE) # One-to-many relationship
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
