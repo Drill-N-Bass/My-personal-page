@@ -31,7 +31,7 @@ def home_view_pawel(request):
         {
         'text_content': essay,
         'show_text_content': True,
-        'video_content': video_obj,
+        'video_content': video_obj
 
         })
 
@@ -110,8 +110,15 @@ def confirm_registration(request, home_view_pawel_slug):
         'organizer_email': contact.organizer_email
     })
 
-# def video(request):
+# def video_main(request):
 #     video_obj = VideoObject.object.all()
+#     return render(request, 'pawel_pedryc_developer/pawel_pedryc.html', 
+#     {
+#         'video_obj': video_obj
+#     })
+
+# def video_article(request, pk):
+#     video_obj = VideoObject.object.get(pk=pk)
 #     return render(request, 'pawel_pedryc_developer/article-content.html', 
 #     {
 #         'video_obj': video_obj

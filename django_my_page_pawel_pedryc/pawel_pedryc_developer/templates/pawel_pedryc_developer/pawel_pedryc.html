@@ -8,6 +8,8 @@
 {% block site_css %}
 <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-meetups.css' %}">
 <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/fontello/css/fontello.css' %}">
+<!-- CSS only - bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 {% endblock %}
 
 {% block main_heading%}
@@ -48,7 +50,7 @@ Python, Django, Docker, AWS, Tkinter, Pandas, mySQL and more...
                             slug=essay_item.slug
                             image=essay_item.image.url
                             language=essay_item.language
-                            video=essay_item.video
+                            video_essay_url=essay_item.video
 
                             %}
                             

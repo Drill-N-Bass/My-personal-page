@@ -3,7 +3,6 @@ from distutils.command import upload
 # from faulthandler import disable
 # from tkinter import DISABLED
 from django.db import models
-
 from embed_video.fields import EmbedVideoField
 
 # Create your models here.
@@ -34,7 +33,7 @@ class VideoObject(models.Model):
     # title_video = models.CharField(max_length=200)
 
     # def __str__(self):
-    #     return str(self.title_video)
+    #     return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
 
     # class Meta:
     #     ordering = ['-added_date']
@@ -50,7 +49,7 @@ class EssayCls(models.Model):
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
-    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.CASCADE) # One-to-many relationship
+    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
