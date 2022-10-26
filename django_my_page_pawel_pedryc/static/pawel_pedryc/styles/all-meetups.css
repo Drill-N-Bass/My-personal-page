@@ -67,7 +67,7 @@ ol {
 }
 
 .meetup-actions .btn {
-  background-color: #3e3156;
+  background-color: #a06bdc;
   border-color: #cb82fb;
   color: #350490;
   padding: 0.75rem 2rem;
@@ -75,6 +75,6 @@ ol {
 }
 
 .meetup-actions .btn:hover {
-  background-color: #a06bdc;
+  background-color: #8869c2;
   border-color: #a46fe1;
 }
