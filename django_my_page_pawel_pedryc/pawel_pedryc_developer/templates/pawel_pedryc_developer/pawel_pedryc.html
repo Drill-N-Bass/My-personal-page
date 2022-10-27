@@ -8,8 +8,7 @@
 {% block site_css %}
 <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-meetups.css' %}">
 <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/fontello/css/fontello.css' %}">
-<!-- CSS only - bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
 {% endblock %}
 
 {% block main_heading%}
@@ -28,37 +27,65 @@ Python, Django, Docker, AWS, Tkinter, Pandas, mySQL and more...
                 <div>
                     <h3 class="h3 main_head">My essays and some of my projects:</h3> 
                 </div>
-                <ol class="ol_section">
-                    {% if show_text_content %}
-                        {% for essay_item in text_content %}
-                            
-                            {% comment %} settings.py line 143-147 allows to break the code as below
-                            More info about this:
-                            # django template tag on multiple line (Zach Snow answer):
-                            # https://stackoverflow.com/questions/49110044/django-template-tag-on-multiple-line
+                <div class="main_div_0">
+                    <div class="main_div_1">
+                        <ol class="ol_section">
+                            {% if show_text_content %}
+                                {% for essay_item in text_content %}
+                                    
+                                    {% comment %} settings.py line 143-147 allows to break the code as below
+                                    More info about this:
+                                    # django template tag on multiple line (Zach Snow answer):
+                                    # https://stackoverflow.com/questions/49110044/django-template-tag-on-multiple-line
 
-                            # about include used below: I will inject some html and dynamic data from another
-                            # file, so the code will looks cleaner. Also I will define shorter object names
-                            # for dynamic part used for interpolation. 1:43:00
-                            # this code for includes folder I can use in others html files - if I would need that. 
-                            {% endcomment %}
-                            {% include 'pawel_pedryc_developer/includes/essay_items.html'
-                            with
-                            title=essay_item.title
-                            description=essay_item.description 
-                            details=essay_item.details
-                            slug=essay_item.slug
-                            image=essay_item.image.url
-                            language=essay_item.language
-                            video_essay_url=essay_item.video
+                                    # about include used below: I will inject some html and dynamic data from another
+                                    # file, so the code will looks cleaner. Also I will define shorter object names
+                                    # for dynamic part used for interpolation. 1:43:00
+                                    # this code for includes folder I can use in others html files - if I would need that. 
+                                    {% endcomment %}
+                                    {% include 'pawel_pedryc_developer/includes/essay_items.html'
+                                    with
+                                    title=essay_item.title
+                                    description=essay_item.description 
+                                    details=essay_item.details
+                                    slug=essay_item.slug
+                                    image=essay_item.image.url
+                                    language=essay_item.language
+                                    video_essay_url=essay_item.video
 
-                            %}
-                            
-                        {% endfor %}
+                                    %}
+                                    
+                                {% endfor %}
 
-                    {% else %}
-                        <h2>New content comming soon!</h2>
-                    {% endif %}
-                </ol>
+                            {% else %}
+                                <h2>New content comming soon!</h2>
+                            {% endif %}
+                        </ol>
+                    </div>
+                    <div class="main_div_2">
+                        <div class="square">
+                            <div class="li">
+                                <a href="https://www.linkedin.com/in/pawe%C5%82-pedryc-a5bb4587/" target="_blank" class="sociallink"><i class="icon-linkedin"></i></a>
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div class="gh">
+                                <a href="https://github.com/Drill-N-Bass" target="_blank" class="sociallink"><i class="icon-github-circled-1"></i></a>
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div class="so">
+                                <a href="https://stackoverflow.com/users/15372196/pawe%c5%82-pedryc" target="_blank" class="sociallink"><i class="icon-stackoverflow"></i></a>
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div class="pypi">
+                                <a href="https://pypi.org/project/get-gifNimage/" target="_blank" class="sociallink"><i class="icon-floppy"></i></a>			
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div class="hg">
+                                <a href="{% url 'hangman_game' %}" target="_blank" class="sociallink"><i class="icon-emo-tongue"></i></a>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>  
+                </div>  
             </section>
 {% endblock %}

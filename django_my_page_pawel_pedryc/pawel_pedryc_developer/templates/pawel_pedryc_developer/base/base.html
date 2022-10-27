@@ -8,15 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My developer page{% endblock %}</title>
-
+    <!-- CSS only - bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!--Fontello fonts for buttons:-->
     <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/fontello/css/fontello.css' %}">
 
-    <!-- CSS only - bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
-    <!--load static file:-->
-    <!--font-awesome.min.css-->
     <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
     {% block site_css %} {% endblock %}
 </head>
@@ -28,28 +24,7 @@
     </header>
 
     <main>
-        <div class="square">
-            <div class="li">
-                <a href="https://www.linkedin.com/in/pawe%C5%82-pedryc-a5bb4587/" target="_blank" class="sociallink"><i class="icon-linkedin"></i></a>
-            </div>
-            <div style="clear:both;"></div>
-            <div class="gh">
-                <a href="https://github.com/Drill-N-Bass" target="_blank" class="sociallink"><i class="icon-github-circled-1"></i></a>
-            </div>
-            <div style="clear:both;"></div>
-            <div class="so">
-                <a href="https://stackoverflow.com/users/15372196/pawe%c5%82-pedryc" target="_blank" class="sociallink"><i class="icon-stackoverflow"></i></a>
-            </div>
-            <div style="clear:both;"></div>
-            <div class="pypi">
-                <a href="https://pypi.org/project/get-gifNimage/" target="_blank" class="sociallink"><i class="icon-floppy"></i></a>			
-            </div>
-            <div style="clear:both;"></div>
-            <div class="hg">
-                <a href="{% url 'hangman_game' %}" target="_blank" class="sociallink"><i class="icon-emo-tongue"></i></a>
-            </div>
-            <div style="clear:both;"></div>
-        </div>
+        
     {% block body %}{% endblock %}
     
     </main>

@@ -7,7 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #2f1f47;
+  background-color: #01012e;
   color: #3e3e41;
 }
 
@@ -54,6 +54,7 @@ button:hover,
   background-image:url(../logos/media/python_mushroom.jpeg);
   max-width: 100%;
   background-position: center;
+  border-bottom: 3px solid #b2bcff;
 }
 
 
@@ -77,27 +78,44 @@ height: 2000rem;
 width: 70rem;
 } */
 
+.main_div_0 {
+  height: 1000rem;
+  width: 100rem;
+}
+
+.main_div_1 {
+  float: left;
+}
+
+.main_div_2 {
+  float: left;
+  /* margin-left: 80rem; */
+  position: fixed;
+  right: 0px; bottom: 0px;
+}
+
 .ol_section {
   height: 300rem;
-  width: 60rem;
+  width: 50rem;
+  /* float: right; */
 }
 
 .square {
-  max-width: 120px;
-  float: right;
   padding: 10px;
-  height: 500px;
-  width: 100px;
+  height: 380px;
+  width: 65px;
   border: 3px solid #b2bcff;
   border-radius: 15px;
+  background-color: #3F7DA4;
   
 }
 
 .hg
 {
-	margin: 10px;
-	width: 52px;
-	height: 71px;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #b50000;
 	float: right;
 }
@@ -109,9 +127,10 @@ width: 70rem;
 
 .li
 {
-	margin: 10px;
-	width: 52px;
-	height: 71px;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #0a4c6b;
 	float: right;
 }
@@ -123,9 +142,10 @@ width: 70rem;
 
 .gh
 {
-	margin: 10px;
-	width: 52px;
-	height: 71px;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #e38fff;
 	float: right;
 }
@@ -137,9 +157,10 @@ width: 70rem;
 
 .so
 {
-	margin: 10px;
-	width: 52px;
-	height: 71px;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #71b0f4;
 	float: right;
 }
@@ -151,9 +172,10 @@ width: 70rem;
 
 .pypi
 {
-	margin: 10px;
-	width: 52px;
-	height: 71px;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #ffea2e;
 	float: right;
 }
