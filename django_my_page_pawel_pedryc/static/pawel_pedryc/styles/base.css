@@ -9,6 +9,7 @@ body {
   margin: 0;
   background-color: #01012e;
   color: #3e3e41;
+
 }
 
 h1,
@@ -79,8 +80,7 @@ width: 70rem;
 } */
 
 .main_div_0 {
-  height: 1000rem;
-  width: 100rem;
+  max-height: fit-content;
 }
 
 .main_div_1 {
@@ -89,7 +89,6 @@ width: 70rem;
 
 .main_div_2 {
   float: left;
-  /* margin-left: 80rem; */
   position: fixed;
   right: 0px; bottom: 0px;
 }
@@ -97,7 +96,6 @@ width: 70rem;
 .ol_section {
   height: 300rem;
   width: 50rem;
-  /* float: right; */
 }
 
 .square {
