@@ -44,3 +44,17 @@ urlpatterns = [
 
 # at this point it doesn't work:
 urlpatterns += staticfiles_urlpatterns() # for pictures 
+
+"""
+Debug function related to 'Django Debug Toolbar':
+
+Debugging tools for developer mode.
+Script below will add path decribed below to paths that was defined previously.
+
+Documentation: https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+Tutorial: https://www.youtube.com/watch?v=qWLk9S6mvAY
+"""
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += path('__debug__/', include(debug_toolbar.urls)),
