@@ -4,12 +4,15 @@
   box-sizing: border-box;
 }
 
+/* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
+html, 
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  padding: 0;
+  border: 0;
   background-color: #01012e;
   color: #3e3e41;
-
 }
 
 h1,
