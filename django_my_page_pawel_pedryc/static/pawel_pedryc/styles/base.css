@@ -186,3 +186,27 @@ width: 70rem;
 {
 	background-color: #3fc600;
 }
+
+.contact_envelop
+{
+  width: 95rem;
+  border: 3px solid #2d4661;
+  border-radius: 15px;
+	background-color: #456e9a;
+	float: left;
+}
+
+.contact_envelop_text
+{
+  font-size: 2rem;
+  text: #14140f;
+  text-align: center;
+}
+
+.contact_envelop_email_text
+{
+  padding: 3px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
+  background-color: #a2ccf9;
+}

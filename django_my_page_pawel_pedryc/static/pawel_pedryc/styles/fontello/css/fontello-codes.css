@@ -1,10 +1,7 @@
 
 .icon-github-circled-1:before { content: '\e800'; } /* '' */
 .icon-stackoverflow:before { content: '\e801'; } /* '' */
-.icon-floppy:before { content: '\e802'; } /* '' */
 .icon-emo-tongue:before { content: '\e807'; } /* '' */
-.icon-github-circled-alt2:before { content: '\f056'; } /* '' */
-.icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */
-.icon-linkedin-squared:before { content: '\f30c'; } /* '' */
-.icon-linkedin-circled:before { content: '\f319'; } /* '' */
+.icon-database:before { content: '\f1c0'; } /* '' */
