@@ -54,12 +54,12 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-github-circled-1:before { content: '\e800'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-stackoverflow:before { content: '\e801'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-floppy:before { content: '\e802'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-emo-tongue:before { content: '\e807'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-github-circled-alt2:before { content: '\f056'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-github-circled:before { content: '\f09b'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-linkedin:before { content: '\f0e1'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-linkedin-squared:before { content: '\f30c'; font-size: 25px; margin-top: 17px;} /* '' */
-.icon-linkedin-circled:before { content: '\f319'; font-size: 25px; margin-top: 17px;} /* '' */
+.icon-github-circled-1:before { content: '\e800'; font-size: 34px; margin-top: 12px; margin-left: 0.5px;} /* '' */
+.icon-stackoverflow:before { content: '\e801'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-floppy:before { content: '\e802'; font-size: 36px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-emo-tongue:before { content: '\e807'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-github-circled-alt2:before { content: '\f056'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-github-circled:before { content: '\f09b'; font-size: 30px; margin-top: 10px; margin-left: -16px;} /* '' */
+.icon-linkedin:before { content: '\f0e1'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-linkedin-squared:before { content: '\f30c'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-linkedin-circled:before { content: '\f319'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
