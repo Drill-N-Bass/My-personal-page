@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 """
 part added below `slug:` is a Django converter that
 enforces the dynamic value of the 'home_view_pawel_slug'
