@@ -35,14 +35,15 @@ from django.conf import settings
 from django.views.generic.base import RedirectView # 3.58.00
 
 
-urlpatterns = [
+urlpatterns = ([
     path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
     path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('pawel_pedryc\logos\media\favicon.ico'))),
     path('', include('pawel_pedryc_developer.urls')),
     path('', include('hangman_game.urls')),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # for pictures and files
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +
+    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)) # for pictures and files `settings.MEDIA_URL` part. Second for js
 
 # at this point it doesn't work:
 urlpatterns += staticfiles_urlpatterns() # for pictures 

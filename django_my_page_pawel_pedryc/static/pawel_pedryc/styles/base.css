@@ -210,3 +210,12 @@ width: 70rem;
   border-radius: 15px;
   background-color: #a2ccf9;
 }
+
+
+#animation 
+{ 
+    background-image: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+    background-repeat: no-repeat; 
+    height: 102px; 
+    width: 140px; 
+}
