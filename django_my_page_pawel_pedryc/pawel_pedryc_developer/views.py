@@ -10,6 +10,12 @@ templates related to pawel_pedryc_developer folder
 
 from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00  # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
 # from django.http import HttpResponse
+"""
+Detect mobile, tablet or Desktop on Django:
+https://stackoverflow.com/a/59274447/15372196
+https://github.com/selwin/django-user_agents
+"""
+from django_user_agents.utils import get_user_agent
 
 from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
@@ -24,16 +30,40 @@ import logging
 def home_view_pawel(request):
     essay = EssayCls.objects.all().order_by('date') # you can add `.order_by` after all(). Method `all()` gives you all objects from class
     video_obj = VideoObject.objects.all()
+    user_agent = get_user_agent(request)
     # return HttpResponse('Test')
-    return render(
+    if user_agent.is_mobile:
+        # my_template='mobile_template.html'
+        return render(
         request,
-        'pawel_pedryc_developer/pawel_pedryc.html',
+        'pawel_pedryc_developer/pawel_pedryc_test.html',
         {
         'text_content': essay,
         'show_text_content': True,
         'video_content': video_obj
 
         })
+    if user_agent.is_tablet:
+        # my_template='tablet_template.html'
+        return render(
+        request,
+        'pawel_pedryc_developer/pawel_pedryc_test.html',
+        {
+        'text_content': essay,
+        'show_text_content': True,
+        'video_content': video_obj
+
+        })
+    if user_agent.is_pc:
+        return render(
+            request,
+            'pawel_pedryc_developer/pawel_pedryc.html',
+            {
+            'text_content': essay,
+            'show_text_content': True,
+            'video_content': video_obj
+
+            })
 
 
 def my_essays(request, home_view_pawel_slug):

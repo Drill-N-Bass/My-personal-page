@@ -16,11 +16,12 @@
 
     <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
     <script src="{% static 'pawel_pedryc/js/animation.js' %}" type='text/javascript'></script>
-    {% block site_css %} {% endblock %}
+    {% block site_css %}{% endblock %}
 </head>
 <body>
-    {% comment %} <body onload="anim_logo();"> {% endcomment %}
-    <div id="animation"><h1>test</h1></div>
+{% comment %} <body onload="function()"> {% endcomment %}
+
+    <div><img id="animation"><p>test obrazka</p></div>
     {% comment %} <script>const div = document.getElementById("animation");</script> {% endcomment %}
 
     <header id="main-header">
