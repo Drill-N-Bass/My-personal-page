@@ -78,6 +78,22 @@ button:hover,
   border-bottom: 3px solid #b2bcff;
 }
 
+.main-header-dark{
+  width:400px; 
+  height:100px;
+  float: right;
+}
+
+#main-header-dark-img{
+  float: left;
+  width: 50%;
+  max-width: 50%;
+}
+
+#main-header-dark-btn{
+  float: left;
+}
+
 
 #main-header h1 {
     font-size: 0.9rem;
