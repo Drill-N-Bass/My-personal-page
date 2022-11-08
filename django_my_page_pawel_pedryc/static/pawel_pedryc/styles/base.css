@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+/* :root{
+  --main-bg-color: #01012e;
+  --main-txt-color: #11111e;
+} */
+
+:root{
+  --main-bg-color: #0202fa;
+  --main-txt-color: #ff0606;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --main-txt-color: #0202fa;
+    --main-bg-color: #ff0606;
+  }
+}
+
 /* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
 html, 
 body {
@@ -11,8 +28,8 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-color: #01012e;
-  color: #11111e;
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
 }
 
 h1,
