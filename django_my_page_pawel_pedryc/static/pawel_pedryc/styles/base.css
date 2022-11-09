@@ -10,16 +10,18 @@
 } */
 
 :root{
-  --main-bg-color: #0202fa;
-  --main-txt-color: #ff0606;
+  --main-bg-color: #e3e3ff;
+  --main-txt-color: #11111e;
+  --h3-main-txt-color: #121212;
+  --article-item-bg-color: #3F7DA4;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root{
     --main-txt-color: #0202fa;
     --main-bg-color: #ff0606;
   }
-}
+} */
 
 /* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
 html, 
@@ -46,8 +48,8 @@ h3 {
 
 .h3.main_head {
   font-family: 'Roboto Slab', sans-serif;
-  color: #a4a4a4;
-  opacity: 0.4;
+  color: var(--h3-main-txt-color);
+  opacity: 0.6;
 }
 
 button,
@@ -79,8 +81,8 @@ button:hover,
 }
 
 .main-header-dark{
-  width:400px; 
-  height:100px;
+  width: 350px; 
+  height: 100px;
   float: right;
 }
 
@@ -127,6 +129,12 @@ width: 70rem;
   float: left;
   position: fixed;
   right: 0px; bottom: 0px;
+}
+
+@media only screen and (max-width: 20px) {
+  .main_div_2 {
+      position: absolute;
+  }
 }
 
 .ol_section {
@@ -222,26 +230,28 @@ width: 70rem;
 
 .contact_envelop
 {
+  padding-top: 20px;
   width: 95rem;
   border: 3px solid #2d4661;
   border-radius: 15px;
-	background-color: #456e9a;
+	background-color: var(--article-item-bg-color);
 	float: left;
 }
 
 .contact_envelop_text
 {
-  font-size: 2rem;
-  text: #14140f;
+  font-size: 2.2rem;
+  text: var(--main-txt-color);
   text-align: center;
 }
 
 .contact_envelop_email_text
 {
+
   padding: 3px;
   border: 3px solid #b2bcff;
-  border-radius: 15px;
-  background-color: #a2ccf9;
+  border-radius: 17px;
+  background-color: var(--main-bg-color);
 }
 
 
