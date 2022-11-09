@@ -23,13 +23,20 @@
   --article-item-bg-color: #3F7DA4;
 }
 
-
-/* @media (prefers-color-scheme: dark) {
+/* kod poniżej działa: */
+/* @media (max-width: 1000px) {
   :root{
     --main-txt-color: #0202fa;
     --main-bg-color: #ff0606;
   }
 } */
+
+@media (prefers-color-scheme: light) {
+  :root{
+    --main-txt-color: #0202fa;
+    --main-bg-color: #ff0606;
+  }
+}
 
 /* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
 html, 
@@ -81,7 +88,7 @@ button:hover,
 #main-header {
   width: 100%;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
   background-image:url(../logos/media/python_mushroom.jpeg);
   max-width: 100%;
   background-position: center;
@@ -89,19 +96,28 @@ button:hover,
 }
 
 .main-header-dark{
-  width: 350px; 
-  height: 100px;
+  object-position: right top;
+  width: 300px; 
+  height: 150px;
   float: right;
+  margin-top: -45px;
+  margin-bottom: -100px;
 }
 
 #main-header-dark-img{
-  float: left;
+  /* float: left; */
   width: 50%;
   max-width: 50%;
+  margin-right: -150px;
 }
 
-#main-header-dark-btn{
-  float: left;
+.main-header-dark-btn{
+  background-color: #010d2e6e;
+  float: right;
+  border-radius: 8px;
+  border: 3px solid #35049080;
+  margin-right: 75px;
+  color: #cfc234d2;
 }
 
 

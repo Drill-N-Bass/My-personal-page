@@ -34,26 +34,30 @@
         <img id="animation">
         <p>test obrazka</p>
 
-        <div class="main-header-dark">
-            {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
-            {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
-            <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
-            <img id="main-header-dark-img" src="../../../static/pawel_pedryc/logos/media/click_me.png" alt="dark mode">
-            <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
-            
-        </div>
-        <div style="clear:both;"></div>
+        
     </div>
 
     
 
     <header id="main-header">
-        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>      
+        <div class="main-header-dark">
+            {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
+            {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
+            <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
+            <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
+            <div style="clear:both;"></div> 
+            <img id="main-header-dark-img" src="../../../static/pawel_pedryc/logos/media/click_me_arrow.png" alt="dark mode">
+            
+        </div>
+        <div style="clear:both;"></div> 
+
+        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
+         
         <h1>{% block main_heading %}{% endblock %}</h1>
         <p> {% block header_content %}{% endblock %}</p>
 
     </header>
-
+     
     <main>
         
     {% block body %}{% endblock %}
