@@ -16,6 +16,14 @@
   --article-item-bg-color: #3F7DA4;
 }
 
+.darkmode {
+  --main-bg-color: #000027;
+  --main-txt-color: #e8e8fe;
+  --h3-main-txt-color: #b9eff5;
+  --article-item-bg-color: #3F7DA4;
+}
+
+
 /* @media (prefers-color-scheme: dark) {
   :root{
     --main-txt-color: #0202fa;
