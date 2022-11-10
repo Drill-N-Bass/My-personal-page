@@ -10,17 +10,41 @@
 } */
 
 :root{
-  --main-bg-color: #e3e3ff;
-  --main-txt-color: #11111e;
-  --h3-main-txt-color: #121212;
+  --main-bg-color: #ededfd;
+  --main-txt-color: #f9f9fed6;
   --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #19191adf;
+
+  --dark-btn-background:#010d2e6e;
+  --dark-btn-border: #35049080;
+  --dark-btn-color-text: #cfc234d2;
+  --dark-btn-background-hoover: #010511;
+  --dark-btn-border-hoover: #fff71bca;
+  --dark-btn-color-text-hoover: #ffffff;
+
+  --knowledge-set-text: #161617d6;
+  --meetup-small-box-bg: #ccc3db92;
+  --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+
 }
 
 .darkmode {
   --main-bg-color: #000027;
-  --main-txt-color: #e8e8fe;
-  --h3-main-txt-color: #b9eff5;
+  --main-txt-color: #daffda;
   --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #ddddeddf;
+  
+  --dark-btn-background:#010d2ed9;
+  --dark-btn-border: #350490bd;
+  --dark-btn-color-text: #21fe16bb;
+  --dark-btn-background-hoover: #460465;
+  --dark-btn-border-hoover: #fff71be6;
+  --dark-btn-color-text-hoover: #c5bfbf;
+
+  --knowledge-set-text: #499f10;
+  --meetup-small-box-bg: #314030ae;
+
+  --animation-test: url(https://i.ibb.co/WfyzLpJ/charging.png);
 }
 
 /* kod poniżej działa: */
@@ -30,13 +54,6 @@
     --main-bg-color: #ff0606;
   }
 } */
-
-@media (prefers-color-scheme: light) {
-  :root{
-    --main-txt-color: #0202fa;
-    --main-bg-color: #ff0606;
-  }
-}
 
 /* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
 html, 
@@ -52,19 +69,24 @@ body {
 h1,
 h2 {
   font-family: 'Roboto Slab', sans-serif;
-  color: #fff8f8c2;
+  color: var(--main-txt-color);
 }
 
 
-h3 {
+h3,
+p {
   font-family: 'Roboto Slab', sans-serif;
-  color: #e6d9d9;
+  color: var(--main-txt-color-h3);
 }
 
 .h3.main_head {
   font-family: 'Roboto Slab', sans-serif;
-  color: var(--h3-main-txt-color);
+  color: var(--main-txt-color-h3);
   opacity: 0.6;
+}
+
+#knowledge-set-text {
+  color: var(--knowledge-set-text);
 }
 
 button,
@@ -112,14 +134,29 @@ button:hover,
 }
 
 .main-header-dark-btn{
-  background-color: #010d2e6e;
+  background-color: var(--dark-btn-background);
   float: right;
   border-radius: 8px;
-  border: 3px solid #35049080;
+  border: 3px solid var(--dark-btn-border);
   margin-right: 75px;
-  color: #cfc234d2;
+  color: var(--dark-btn-color-text);
 }
 
+.main-header-dark-btn:hover{
+  background-color: var(--dark-btn-background-hoover);
+  float: right;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  margin-right: 75px;
+  color: var(--dark-btn-color-text-hoover);
+  -webkit-transition:    color, border 0.2s line;
+  -moz-transition:       color, border 0.2s ease-out;
+  -ms-transition:        color, border 0.2s ease-out;
+  -o-transition:         color, border 0.2s ease-out;
+  transition:            color, border 2s ease-out;
+  transition-timing-function:  1s ease-out;
+  transition-duration:         1s ease-out;
+}
 
 #main-header h1 {
     font-size: 0.9rem;
@@ -281,8 +318,9 @@ width: 70rem;
 
 #animation 
 { 
-    background-image: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+    background-image: var(--animation-test);
     background-repeat: no-repeat; 
     height: 102px; 
     width: 140px; 
 }
+

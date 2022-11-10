@@ -21,7 +21,7 @@ ol {
 .meetup-small-box {
   font-size: small;
   margin: 1rem 0;
-  background-color: #ccc3db;
+  background-color: var(--meetup-small-box-bg);
   padding: 0.6rem; 
   border-radius: 30px ;
   float: left;
