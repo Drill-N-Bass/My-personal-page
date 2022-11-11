@@ -5,9 +5,12 @@ let frame = 0;
 setInterval(function()
     {
         const frameOffset = (++frame % frames) * -frameHeight;
+        $("#animation").fadeIn(50000);
         div.style.backgroundPosition = "0px " + frameOffset + "px";
     }, 100
 );
+
+
 
 
 
