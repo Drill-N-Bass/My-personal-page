@@ -25,6 +25,7 @@
   --knowledge-set-text: #161617d6;
   --meetup-small-box-bg: #ccc3db92;
   --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+  --animation-slider: url(../logos/media/python_mushroom.jpeg);
 
 }
 
@@ -322,5 +323,16 @@ width: 70rem;
     background-repeat: no-repeat; 
     height: 102px; 
     width: 140px; 
+}
+
+#animation-slider
+{
+  /* background-image: var(--animation-slider); */
+  width: 100%;
+  text-align: center;
+  /* padding: 3rem 0; */
+  max-width: 100%;
+  background-position: center;
+  /* border-bottom: 3px solid #b2bcff; */
 }
 
