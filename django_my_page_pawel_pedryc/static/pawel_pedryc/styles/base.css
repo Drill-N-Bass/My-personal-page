@@ -108,6 +108,7 @@ button:hover,
   border-color: #230161;
 }
 
+
 #main-header {
   width: 100%;
   text-align: center;
@@ -118,9 +119,14 @@ button:hover,
   background-position: center;
   border-bottom: 3px solid #b2bcff;
 
+  background-repeat: no-repeat;
+	transition: background-image 1.2s;
 }
 
+
 #main-header:hover {
+ 
+
   width: 100%;
   text-align: center;
   padding: 3rem 0;
@@ -129,8 +135,9 @@ button:hover,
   max-width: 100%;
   background-position: center;
   border-bottom: 3px solid #b2bcff;  
-
 }
+
+
 
 
 .main-header-dark{
