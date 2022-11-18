@@ -29,17 +29,6 @@
     {% block site_css %}{% endblock %}
 </head>
 <body>
-{% comment %} <body onload="function()"> {% endcomment %}
-
-    <div>
-        {% comment %} https://stackoverflow.com/questions/9486961/animated-image-with-javascript {% endcomment %}
-        <img id="animation">
-        <p>test obrazka</p>
-        <div id="animation-slider"></div>
-        
-    </div>
-
-    
 
     <header id="main-header">
         <div class="main-header-dark">
@@ -74,14 +63,15 @@
             <i class="icon-mail-alt"></i> 
             <a href="mailto:{{ organizer_email }}" class="contact_envelop_email_text">pawel.pedryc@gmail.com</a>
         </div>    
-    </footer
-    
-    <!-- logo animation JS -->
-    <script type='text/javascript' src="{% static 'pawel_pedryc/js/animation.js' %}" ></script>
+    </footer>
+        
     <!-- dark mode for whole page JS-->
     <script type='text/javascript' src="{% static 'pawel_pedryc/js/darkmode.js' %}"></script>    
-    <!-- Animated main banner made with JS-->
+    {% comment %} <!-- Animated main banner made with JS: sadly this version filcker-->
     <script type='text/javascript' src="{% static 'pawel_pedryc/js/animation_slider.js' %}"></script> 
+    <!-- Suggested approach from STO-->
+    <script type='text/javascript' src="{% static 'pawel_pedryc/js/animation.js' %}" ></script> {% endcomment %}
+    
 
 </body>
 </html>
