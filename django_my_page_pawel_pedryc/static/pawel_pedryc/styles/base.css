@@ -118,15 +118,12 @@ button:hover,
   max-width: 100%;
   background-position: center;
   border-bottom: 3px solid #b2bcff;
-
   background-repeat: no-repeat;
 	transition: background-image 1.2s;
 }
 
 
 #main-header:hover {
- 
-
   width: 100%;
   text-align: center;
   padding: 3rem 0;
@@ -136,9 +133,6 @@ button:hover,
   background-position: center;
   border-bottom: 3px solid #b2bcff;  
 }
-
-
-
 
 .main-header-dark{
   object-position: right top;
@@ -359,8 +353,9 @@ width: 70rem;
   display: block;
 } */
 
-/* #animation-slider
+/* #animation-slider-static
 {
+  background-image:url(../logos/media/python_mushroom.jpeg);
   width: 100%;
   text-align: center;
   padding: 3rem 0;
@@ -370,3 +365,32 @@ width: 70rem;
   background-position: 0px;
 } */
 
+/* #animation-slider
+{
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+  max-width: 100%;
+  background-position: center;
+  border-bottom: 3px solid #b2bcff;
+  background-position: 0px;
+  animation: cssAnimation 0s 22s forwards;
+  visibility: hidden;
+
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+} */
+
+
+/* #animation-slider::after
+{
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+  max-width: 100%;
+  background-position: center;
+  border-bottom: 3px solid #b2bcff;
+  background-position: 0px;
+} */
