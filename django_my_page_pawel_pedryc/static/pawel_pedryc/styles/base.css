@@ -73,6 +73,23 @@ h2 {
   color: var(--main-txt-color);
 }
 
+#h3-article-main-div{
+  height: 7em;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+#h3-article-div-tittle{
+  margin-top: 100px;
+  text-align: center;
+  margin: auto;
+  width: 20rem;
+  border: 5px solid #2d4661;
+  border-radius: 80% 70% / 10% 30%;
+	background-color: var(--article-item-bg-color);
+  font-size: small;
+}
 
 h3,
 p {
@@ -194,6 +211,7 @@ button:hover,
 height: 2000rem;
 width: 70rem;
 } */
+
 
 .main_div_0 {
   max-height: fit-content;
