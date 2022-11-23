@@ -1,32 +1,32 @@
 article {
-  max-width: 60rem;
-  margin: 5rem auto;
-  border-radius: 6px;
+  max-width: 960px;
+  margin: 80px auto;
+  border-radius: .375rem;
   background-color: #456e9a;
-  border: 4px solid #350490;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.25);
+  border: .25rem solid #350490;
+  box-shadow: .0625rem .125rem .5rem rgba(0, 0, 0, 0.25);
   position: relative;
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
 }
 
 #main-image {
-  width: 10rem;
-  height: 10rem;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   position: absolute;
-  top: -5rem;
-  left: calc(50% - 5rem);
+  top: -80px;
+  left: calc(50% - 80px);
   border-radius: 50%;
-  border: 4px solid #350490;
+  border: .25rem solid #350490;
 }
 
 section:first-of-type {
-  margin-top: 6rem;
+  margin-top: 96px;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 32px;
 }
 
 address span {
@@ -34,25 +34,25 @@ address span {
 }
 
 #content_type {
-  font-size: 1rem;
+  font-size: 16px;
   opacity: 0.8;
-  line-height: 1rem;
+  line-height: 16px;
   text-align: left;
-  border: 4px solid rgb(0, 101, 0);
-  border-radius: 5px 10px 5px 10px;
+  border: .25rem solid rgb(0, 101, 0);
+  border-radius: .3125rem .625rem .3125rem .625rem;
   width:fit-content;
-  padding: 1rem;
+  padding: 16px;
   
 }
 
 #details h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 #details > p {
   color: #665386;
-  padding: 1rem;
-  border-radius: 4px;
+  padding: 16px;
+  border-radius: .25rem;
   max-width: 80%;
   margin: auto;
 }
@@ -76,25 +76,25 @@ address span {
 #registration label {
   font-weight: bold;
   color: #46424d;
-  margin-right: 1rem;
+  margin-right: 16px;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 #registration input {
   font: inherit;
   width: 40%;
   background-color: #ebeaee;
-  border: 1px solid #4b4753;
-  border-radius: 4px;
-  padding: 0.25rem;
+  border: .0625rem solid #4b4753;
+  border-radius: .25rem;
+  padding: 4px;
 }
 
 #registration-actions {
-  margin-top: 1.5rem;
+  margin-top: 24px;
 }
 
 #registration .errorlist {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   color: #880824;
 }

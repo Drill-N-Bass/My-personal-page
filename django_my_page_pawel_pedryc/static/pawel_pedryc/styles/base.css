@@ -10,7 +10,7 @@
 } */
 
 :root{
-  --main-bg-color: #ededfd;
+  --main-bg-color: #fdeeed;
   --main-txt-color: #f9f9fed6;
   --article-item-bg-color: #3F7DA4;
   --main-txt-color-h3: #19191adf;
@@ -49,7 +49,7 @@
 }
 
 /* kod poniżej działa: */
-/* @media (max-width: 1000px) {
+/* @media (max-width: 62.5rem) {
   :root{
     --main-txt-color: #0202fa;
     --main-bg-color: #ff0606;
@@ -81,11 +81,11 @@ h2 {
 }
 
 #h3-article-div-tittle{
-  margin-top: 100px;
+  margin-top: 6.25rem;
   text-align: center;
   margin: auto;
-  width: 20rem;
-  border: 5px solid #2d4661;
+  width: 320px;
+  border: .3125rem solid #2d4661;
   border-radius: 80% 70% / 10% 30%;
 	background-color: var(--article-item-bg-color);
   font-size: small;
@@ -111,11 +111,11 @@ button,
 .btn {
   cursor: pointer;
   font: inherit;
-  padding: 0.5rem 1.5rem;
+  padding: 8px 24px;
   background-color: #350490;
-  border: 1px solid #350490;
+  border: .0625rem solid #350490;
   color: white;
-  border-radius: 4px;
+  border-radius: .25rem;
   text-decoration: none;
 }
 
@@ -129,12 +129,12 @@ button:hover,
 #main-header {
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   /* background-image:url(../logos/media/python_mushroom.jpeg); */
   background-image:url(../logos/media/animated.png);
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;
+  border-bottom: .1875rem solid #b2bcff;
   background-repeat: no-repeat;
 	transition: background-image 1.2s;
 }
@@ -143,45 +143,45 @@ button:hover,
 #main-header:hover {
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   background-image:url(../logos/media/python_mushroom.jpeg);
   /* background-image:url(../logos/media/animated.png); */
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;  
+  border-bottom: .1875rem solid #b2bcff;  
 }
 
 .main-header-dark{
   object-position: right top;
-  width: 300px; 
-  height: 150px;
+  width: 18.75rem; 
+  height: 9.375rem;
   float: right;
-  margin-top: -45px;
-  margin-bottom: -100px;
+  margin-top: -2.8125rem;
+  margin-bottom: -6.25rem;
 }
 
 #main-header-dark-img{
   /* float: left; */
   width: 50%;
   max-width: 50%;
-  margin-right: -150px;
+  margin-right: -9.375rem;
 }
 
 .main-header-dark-btn{
   background-color: var(--dark-btn-background);
   float: right;
-  border-radius: 8px;
-  border: 3px solid var(--dark-btn-border);
-  margin-right: 75px;
+  border-radius: .5rem;
+  border: .1875rem solid var(--dark-btn-border);
+  margin-right: 4.6875rem;
   color: var(--dark-btn-color-text);
 }
 
 .main-header-dark-btn:hover{
   background-color: var(--dark-btn-background-hoover);
   float: right;
-  border-radius: 8px;
-  border: 3px solid var(--dark-btn-border-hoover);
-  margin-right: 75px;
+  border-radius: .5rem;
+  border: .1875rem solid var(--dark-btn-border-hoover);
+  margin-right: 4.6875rem;
   color: var(--dark-btn-color-text-hoover);
   -webkit-transition:    color, border 0.2s line;
   -moz-transition:       color, border 0.2s ease-out;
@@ -193,14 +193,14 @@ button:hover,
 }
 
 #main-header h1 {
-    font-size: 0.9rem;
+    font-size: 14.4px;
     opacity: 0.8;
     line-height: 0.05;
     }
 
 #main-logo {
-    font-size: 3rem;
-    letter-spacing: 1px;
+    font-size: 48px;
+    letter-spacing: .0625rem;
     font-family: 'Roboto Slab', sans-serif;
     text-decoration: none;
     color: #350490;
@@ -208,14 +208,17 @@ button:hover,
 }
 
 /* .main_section {
-height: 2000rem;
-width: 70rem;
+height: 32000px;
+width: 1120px;
 } */
 
 
 .main_div_0 {
   max-height: fit-content;
 }
+
+
+
 
 .main_div_1 {
   float: left;
@@ -224,39 +227,39 @@ width: 70rem;
 .main_div_2 {
   float: left;
   position: fixed;
-  right: 0px; bottom: 0px;
+  right: 0rem; bottom: 0rem;
 }
 
-/* This snippet will change behaviour of maind_div_2 when screen is less that 1100px */
-/* @media screen and (max-width: 1100px) {
+/* This snippet will change behaviour of maind_div_2 when screen is less that 68.75rem */
+/* @media screen and (max-width: 68.75rem) {
   .main_div_2 {
     display: none;
   }
 } */
 
 .ol_section {
-  height: 300rem;
-  width: 50rem;
+  height: 4800px;
+  width: 800px;
 }
 
 .square {
-  padding: 10px;
-  height: 380px;
-  width: 65px;
-  border: 3px solid #b2bcff;
-  border-radius: 15px;
+  padding: .625rem;
+  height: 23.75rem;
+  width: 4.0625rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: .9375rem;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .square {
-  padding: 10px;
-  height: 190px;
-  width: 32.5px;
-  border: 3px solid #b2bcff;
-  border-radius: 15px;
+  padding: .625rem;
+  height: 11.875rem;
+  width: 2.0313rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: .9375rem;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   }
@@ -264,10 +267,10 @@ width: 70rem;
 
 .hg
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #b50000;
 	float: right;
 }
@@ -277,12 +280,12 @@ width: 70rem;
 	background-color: #690307;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .hg {
-  margin-top: 2.5px;
-  margin-right: -4px;
-  width: 17.5px;
-  height: 26.5px;
+  margin-top: .1563rem;
+  margin-right: -0.25rem;
+  width: 1.0938rem;
+  height: 1.6563rem;
   background-color: #b50000;
   float: right;
   }
@@ -290,10 +293,10 @@ width: 70rem;
 
 .li
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #0a4c6b;
 	float: right;
 }
@@ -303,12 +306,12 @@ width: 70rem;
 	background-color: #c83237;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .li {
-  margin-top: 2.5px;
-  margin-right: -4px;
-  width: 17.5px;
-  height: 26.5px;
+  margin-top: .1563rem;
+  margin-right: -0.25rem;
+  width: 1.0938rem;
+  height: 1.6563rem;
   background-color: #0a4c6b;
 	float: right;
   }
@@ -317,10 +320,10 @@ width: 70rem;
 
 .gh
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #e38fff;
 	float: right;
 }
@@ -330,12 +333,12 @@ width: 70rem;
 	background-color: #9c07c9;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .gh {
-  margin-top: 2.5px;
-  margin-right: -4px;
-  width: 17.5px;
-  height: 26.5px;
+  margin-top: .1563rem;
+  margin-right: -0.25rem;
+  width: 1.0938rem;
+  height: 1.6563rem;
   background-color: #e38fff;
   float: right;
   }
@@ -343,10 +346,10 @@ width: 70rem;
 
 .so
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #71b0f4;
 	float: right;
 }
@@ -356,12 +359,12 @@ width: 70rem;
 	background-color: #c84222;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .so {
-  margin-top: 2.5px;
-  margin-right: -4px;
-  width: 17.5px;
-  height: 26.5px;
+  margin-top: .1563rem;
+  margin-right: -0.25rem;
+  width: 1.0938rem;
+  height: 1.6563rem;
   background-color: #71b0f4;
   float: right;
   }
@@ -369,10 +372,10 @@ width: 70rem;
 
 .pypi
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #ffea2e;
 	float: right;
 }
@@ -382,30 +385,36 @@ width: 70rem;
 	background-color: #3fc600;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .pypi {
-  margin-top: 2.5px;
-  margin-right: -4px;
-  width: 17.5px;
-  height: 26.5px;
+  margin-top: .1563rem;
+  margin-right: -0.25rem;
+  width: 1.0938rem;
+  height: 1.6563rem;
   background-color: #ffea2e;
   float: right;
   }
 }
 
+#footer-bg
+{
+
+  background-color: #000027;
+}
+
 .contact_envelop
 {
-  padding-top: 20px;
-  width: 95rem;
-  border: 3px solid #2d4661;
-  border-radius: 15px;
+  padding-top: 1.25rem;
+  width: 1520px;
+  border: .1875rem solid #2d4661;
+  border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
 	float: left;
 }
 
 .contact_envelop_text
 {
-  font-size: 2.2rem;
+  font-size: 35.2px;
   text: var(--main-txt-color);
   text-align: center;
 }
@@ -413,9 +422,9 @@ width: 70rem;
 .contact_envelop_email_text
 {
 
-  padding: 3px;
-  border: 3px solid #b2bcff;
-  border-radius: 17px;
+  padding: .1875rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: 1.0625rem;
   background-color: var(--main-bg-color);
 }
 
@@ -424,13 +433,15 @@ width: 70rem;
 { 
     background-image: var(--animation-test);
     background-repeat: no-repeat; 
-    height: 102px; 
-    width: 140px; 
+    height: 6.375rem; 
+    width: 8.75rem; 
 }
 
 #animation-slider img ~ img {
   display: none;
 }
+
+
 
 /* #animation-slider img {
   display: none;
@@ -445,22 +456,22 @@ width: 70rem;
   background-image:url(../logos/media/python_mushroom.jpeg);
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;
-  background-position: 0px;
+  border-bottom: .1875rem solid #b2bcff;
+  background-position: 0rem;
 } */
 
 /* #animation-slider
 {
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;
-  background-position: 0px;
+  border-bottom: .1875rem solid #b2bcff;
+  background-position: 0rem;
   animation: cssAnimation 0s 22s forwards;
   visibility: hidden;
 
@@ -475,9 +486,9 @@ width: 70rem;
 {
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;
-  background-position: 0px;
+  border-bottom: .1875rem solid #b2bcff;
+  background-position: 0rem;
 } */
