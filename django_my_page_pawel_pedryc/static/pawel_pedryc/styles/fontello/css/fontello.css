@@ -60,3 +60,24 @@
 .icon-mail-alt:before { content: '\f0e0'; font-size: 35px; margin-top: 7px; margin-left: -1px; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
 .icon-database:before { content: '\f1c0'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+
+
+@media screen and (max-width: 1100px) {
+  .icon-github-circled-1:before {content: '\e800'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+
+@media screen and (max-width: 1100px) {
+  .icon-stackoverflow:before {content: '\e801'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+@media screen and (max-width: 1100px) {
+  .icon-emo-tongue:before {content: '\e807'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+@media screen and (max-width: 1100px) {
+  .icon-mail-alt:before {content: '\f0e0'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+@media screen and (max-width: 1100px) {
+  .icon-linkedin:before {content: '\f0e1'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+@media screen and (max-width: 1100px) {
+  .icon-database:before {content: '\f1c0'; font-size: 17.5px; margin-top: 5px; margin-left: 0px;} /* '' */
+}

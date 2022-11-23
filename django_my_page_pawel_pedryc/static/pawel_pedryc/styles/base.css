@@ -227,11 +227,12 @@ width: 70rem;
   right: 0px; bottom: 0px;
 }
 
-@media only screen and (max-width: 20px) {
+/* This snippet will change behaviour of maind_div_2 when screen is less that 1100px */
+/* @media screen and (max-width: 1100px) {
   .main_div_2 {
-      position: absolute;
+    display: none;
   }
-}
+} */
 
 .ol_section {
   height: 300rem;
@@ -249,6 +250,18 @@ width: 70rem;
   
 }
 
+@media screen and (max-width: 1100px) {
+  .square {
+  padding: 10px;
+  height: 190px;
+  width: 32.5px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
+  /* background-color: #3F7DA4; */
+  background-color: #3f7da433;
+  }
+}
+
 .hg
 {
   margin-top: 5px;
@@ -262,6 +275,17 @@ width: 70rem;
 .hg:hover
 {
 	background-color: #690307;
+}
+
+@media screen and (max-width: 1100px) {
+  .hg {
+  margin-top: 2.5px;
+  margin-right: -4px;
+  width: 17.5px;
+  height: 26.5px;
+  background-color: #b50000;
+  float: right;
+  }
 }
 
 .li
@@ -279,6 +303,18 @@ width: 70rem;
 	background-color: #c83237;
 }
 
+@media screen and (max-width: 1100px) {
+  .li {
+  margin-top: 2.5px;
+  margin-right: -4px;
+  width: 17.5px;
+  height: 26.5px;
+  background-color: #0a4c6b;
+	float: right;
+  }
+}
+
+
 .gh
 {
   margin-top: 5px;
@@ -292,6 +328,17 @@ width: 70rem;
 .gh:hover
 {
 	background-color: #9c07c9;
+}
+
+@media screen and (max-width: 1100px) {
+  .gh {
+  margin-top: 2.5px;
+  margin-right: -4px;
+  width: 17.5px;
+  height: 26.5px;
+  background-color: #e38fff;
+  float: right;
+  }
 }
 
 .so
@@ -309,6 +356,17 @@ width: 70rem;
 	background-color: #c84222;
 }
 
+@media screen and (max-width: 1100px) {
+  .so {
+  margin-top: 2.5px;
+  margin-right: -4px;
+  width: 17.5px;
+  height: 26.5px;
+  background-color: #71b0f4;
+  float: right;
+  }
+}
+
 .pypi
 {
   margin-top: 5px;
@@ -322,6 +380,17 @@ width: 70rem;
 .pypi:hover
 {
 	background-color: #3fc600;
+}
+
+@media screen and (max-width: 1100px) {
+  .pypi {
+  margin-top: 2.5px;
+  margin-right: -4px;
+  width: 17.5px;
+  height: 26.5px;
+  background-color: #ffea2e;
+  float: right;
+  }
 }
 
 .contact_envelop
