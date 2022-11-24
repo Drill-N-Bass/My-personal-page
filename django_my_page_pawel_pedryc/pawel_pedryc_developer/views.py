@@ -36,7 +36,7 @@ def home_view_pawel(request):
         # my_template='mobile_template.html'
         return render(
         request,
-        'pawel_pedryc_developer/pawel_pedryc_test.html',
+        'pawel_pedryc_developer/pawel_pedryc_mobile.html',
         {
         'text_content': essay,
         'show_text_content': True,
@@ -47,7 +47,7 @@ def home_view_pawel(request):
         # my_template='tablet_template.html'
         return render(
         request,
-        'pawel_pedryc_developer/pawel_pedryc_test.html',
+        'pawel_pedryc_developer/pawel_pedryc_tablet.html',
         {
         'text_content': essay,
         'show_text_content': True,
