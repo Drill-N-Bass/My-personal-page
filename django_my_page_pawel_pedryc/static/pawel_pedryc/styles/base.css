@@ -10,7 +10,7 @@
 } */
 
 :root{
-  --main-bg-color: #fdeeed;
+  --main-bg-color: #FDFDFD;
   --main-txt-color: #f9f9fed6;
   --article-item-bg-color: #3F7DA4;
   --main-txt-color-h3: #19191adf;
@@ -26,6 +26,8 @@
   --meetup-small-box-bg: #ccc3db92;
   --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
   --animation-slider: url(../logos/media/python_mushroom.jpeg);
+  --dark-btn-arrow: url(../../../static/pawel_pedryc/logos/media/click_me_arrow.png);
+  --dark-btn-arrow-big-resolution: url(../../../static/pawel_pedryc/logos/media/click_me_arrow_big_resolution.png);
 
 }
 
@@ -49,7 +51,7 @@
 }
 
 /* kod poniżej działa: */
-/* @media (max-width: 62.5rem) {
+/* @media (max-width: 1000px) {
   :root{
     --main-txt-color: #0202fa;
     --main-bg-color: #ff0606;
@@ -81,11 +83,11 @@ h2 {
 }
 
 #h3-article-div-tittle{
-  margin-top: 6.25rem;
+  margin-top: 100px;
   text-align: center;
   margin: auto;
-  width: 320px;
-  border: .3125rem solid #2d4661;
+  width: 20rem;
+  border: 5px solid #2d4661;
   border-radius: 80% 70% / 10% 30%;
 	background-color: var(--article-item-bg-color);
   font-size: small;
@@ -111,11 +113,11 @@ button,
 .btn {
   cursor: pointer;
   font: inherit;
-  padding: 8px 24px;
+  padding: .5rem 1.5rem;
   background-color: #350490;
-  border: .0625rem solid #350490;
+  border: 1px solid #350490;
   color: white;
-  border-radius: .25rem;
+  border-radius: 4px;
   text-decoration: none;
 }
 
@@ -129,12 +131,12 @@ button:hover,
 #main-header {
   width: 100%;
   text-align: center;
-  padding: 48px 0;
+  padding: 3rem 0;
   /* background-image:url(../logos/media/python_mushroom.jpeg); */
   background-image:url(../logos/media/animated.png);
   max-width: 100%;
   background-position: center;
-  border-bottom: .1875rem solid #b2bcff;
+  border-bottom: 3px solid #b2bcff;
   background-repeat: no-repeat;
 	transition: background-image 1.2s;
 }
@@ -143,45 +145,77 @@ button:hover,
 #main-header:hover {
   width: 100%;
   text-align: center;
-  padding: 48px 0;
-  background-image:url(../logos/media/python_mushroom.jpeg);
+  padding: 3rem 0;
+  background-image: url(../logos/media/python_mushroom.jpeg);
   /* background-image:url(../logos/media/animated.png); */
   max-width: 100%;
   background-position: center;
-  border-bottom: .1875rem solid #b2bcff;  
+  border-bottom: 3px solid #b2bcff;  
 }
 
 .main-header-dark{
   object-position: right top;
-  width: 18.75rem; 
-  height: 9.375rem;
+  width: 300px; 
+  height: 150px;
   float: right;
-  margin-top: -2.8125rem;
-  margin-bottom: -6.25rem;
+  margin-top: -45px;
+  margin-bottom: -100px;
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-dark{
+    object-position: right top;
+    width: 300px; 
+    height: 150px;
+    float: left;
+    margin-top: -45px;
+    margin-bottom: -100px;
+  }
 }
 
 #main-header-dark-img{
-  /* float: left; */
   width: 50%;
   max-width: 50%;
-  margin-right: -9.375rem;
+  margin-right: -150px;
+  background-image: url(--dark-btn-arrow);
+}
+
+@media screen and (max-width: 1400px) {
+  #main-header-dark-img{
+    float: left;
+    width: 50%;
+    max-width: 50%;
+    margin-left: 50px;
+    background-image: url(--dark-btn-arrow-big-resolution);
+  }
 }
 
 .main-header-dark-btn{
   background-color: var(--dark-btn-background);
   float: right;
-  border-radius: .5rem;
-  border: .1875rem solid var(--dark-btn-border);
-  margin-right: 4.6875rem;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border);
+  margin-right: 75px;
   color: var(--dark-btn-color-text);
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-dark-btn{
+    background-color: var(--dark-btn-background);
+    float: left;
+    border-radius: 8px;
+    border: 3px solid var(--dark-btn-border);
+    margin-right: 75px;
+    color: var(--dark-btn-color-text);
+  }
 }
 
 .main-header-dark-btn:hover{
   background-color: var(--dark-btn-background-hoover);
-  float: right;
-  border-radius: .5rem;
-  border: .1875rem solid var(--dark-btn-border-hoover);
-  margin-right: 4.6875rem;
+  /* float: right; */
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  margin-right: 75px;
   color: var(--dark-btn-color-text-hoover);
   -webkit-transition:    color, border 0.2s line;
   -moz-transition:       color, border 0.2s ease-out;
@@ -193,14 +227,14 @@ button:hover,
 }
 
 #main-header h1 {
-    font-size: 14.4px;
+    font-size: .9rem;
     opacity: 0.8;
     line-height: 0.05;
     }
 
 #main-logo {
-    font-size: 48px;
-    letter-spacing: .0625rem;
+    font-size: 3rem;
+    letter-spacing: 1px;
     font-family: 'Roboto Slab', sans-serif;
     text-decoration: none;
     color: #350490;
@@ -208,8 +242,8 @@ button:hover,
 }
 
 /* .main_section {
-height: 32000px;
-width: 1120px;
+height: 2000rem;
+width: 70rem;
 } */
 
 
@@ -227,50 +261,51 @@ width: 1120px;
 .main_div_2 {
   float: left;
   position: fixed;
-  right: 0rem; bottom: 0rem;
+  right: 0px; bottom: 0px;
 }
 
-/* This snippet will change behaviour of maind_div_2 when screen is less that 68.75rem */
-/* @media screen and (max-width: 68.75rem) {
+/* This snippet will change behaviour of maind_div_2 when screen is less that 1100px */
+/* @media screen and (max-width: 1100px) {
   .main_div_2 {
     display: none;
   }
 } */
 
 .ol_section {
-  height: 4800px;
-  width: 800px;
+  height: 300rem;
+  width: 50rem;
 }
 
 .square {
-  padding: .625rem;
-  height: 23.75rem;
-  width: 4.0625rem;
-  border: .1875rem solid #b2bcff;
-  border-radius: .9375rem;
+  padding: 10px;
+  height: 380px;
+  width: 65px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   
 }
 
-@media screen and (max-width: 68.75rem) {
+@media screen and (max-width: 1100px){
   .square {
-  padding: .625rem;
-  height: 11.875rem;
-  width: 2.0313rem;
-  border: .1875rem solid #b2bcff;
-  border-radius: .9375rem;
+  padding: 10px;
+  height: 190px;
+  width: 16.25px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   }
 }
 
+
 .hg
 {
-  margin-top: .3125rem;
-  margin-right: .125rem;
-	width: 2.1875rem;
-	height: 3.3125rem;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #b50000;
 	float: right;
 }
@@ -280,12 +315,13 @@ width: 1120px;
 	background-color: #690307;
 }
 
-@media screen and (max-width: 68.75rem) {
+
+@media screen and (max-width: 1100px) {
   .hg {
-  margin-top: .1563rem;
-  margin-right: -0.25rem;
-  width: 1.0938rem;
-  height: 1.6563rem;
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
   background-color: #b50000;
   float: right;
   }
@@ -293,10 +329,10 @@ width: 1120px;
 
 .li
 {
-  margin-top: .3125rem;
-  margin-right: .125rem;
-	width: 2.1875rem;
-	height: 3.3125rem;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #0a4c6b;
 	float: right;
 }
@@ -306,24 +342,24 @@ width: 1120px;
 	background-color: #c83237;
 }
 
-@media screen and (max-width: 68.75rem) {
+
+@media screen and (max-width: 1100px) {
   .li {
-  margin-top: .1563rem;
-  margin-right: -0.25rem;
-  width: 1.0938rem;
-  height: 1.6563rem;
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
   background-color: #0a4c6b;
 	float: right;
   }
 }
 
-
 .gh
 {
-  margin-top: .3125rem;
-  margin-right: .125rem;
-	width: 2.1875rem;
-	height: 3.3125rem;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #e38fff;
 	float: right;
 }
@@ -333,12 +369,13 @@ width: 1120px;
 	background-color: #9c07c9;
 }
 
-@media screen and (max-width: 68.75rem) {
+
+@media screen and (max-width: 1100px) {
   .gh {
-  margin-top: .1563rem;
-  margin-right: -0.25rem;
-  width: 1.0938rem;
-  height: 1.6563rem;
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
   background-color: #e38fff;
   float: right;
   }
@@ -346,10 +383,10 @@ width: 1120px;
 
 .so
 {
-  margin-top: .3125rem;
-  margin-right: .125rem;
-	width: 2.1875rem;
-	height: 3.3125rem;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #71b0f4;
 	float: right;
 }
@@ -359,12 +396,13 @@ width: 1120px;
 	background-color: #c84222;
 }
 
-@media screen and (max-width: 68.75rem) {
+
+@media screen and (max-width: 1100px) {
   .so {
-  margin-top: .1563rem;
-  margin-right: -0.25rem;
-  width: 1.0938rem;
-  height: 1.6563rem;
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
   background-color: #71b0f4;
   float: right;
   }
@@ -372,10 +410,10 @@ width: 1120px;
 
 .pypi
 {
-  margin-top: .3125rem;
-  margin-right: .125rem;
-	width: 2.1875rem;
-	height: 3.3125rem;
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
 	background-color: #ffea2e;
 	float: right;
 }
@@ -385,12 +423,12 @@ width: 1120px;
 	background-color: #3fc600;
 }
 
-@media screen and (max-width: 68.75rem) {
+@media screen and (max-width: 1100px) {
   .pypi {
-  margin-top: .1563rem;
-  margin-right: -0.25rem;
-  width: 1.0938rem;
-  height: 1.6563rem;
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
   background-color: #ffea2e;
   float: right;
   }
@@ -404,17 +442,17 @@ width: 1120px;
 
 .contact_envelop
 {
-  padding-top: 1.25rem;
-  width: 1520px;
-  border: .1875rem solid #2d4661;
-  border-radius: .9375rem;
+  padding-top: 20px;
+  width: 95rem;
+  border: 3px solid #2d4661;
+  border-radius: 15px;
 	background-color: var(--article-item-bg-color);
 	float: left;
 }
 
 .contact_envelop_text
 {
-  font-size: 35.2px;
+  font-size: 2.2rem;
   text: var(--main-txt-color);
   text-align: center;
 }
@@ -422,9 +460,9 @@ width: 1120px;
 .contact_envelop_email_text
 {
 
-  padding: .1875rem;
-  border: .1875rem solid #b2bcff;
-  border-radius: 1.0625rem;
+  padding: 3px;
+  border: 3px solid #b2bcff;
+  border-radius: 17px;
   background-color: var(--main-bg-color);
 }
 
@@ -433,8 +471,8 @@ width: 1120px;
 { 
     background-image: var(--animation-test);
     background-repeat: no-repeat; 
-    height: 6.375rem; 
-    width: 8.75rem; 
+    height: 102px; 
+    width: 140px; 
 }
 
 #animation-slider img ~ img {
@@ -456,22 +494,22 @@ width: 1120px;
   background-image:url(../logos/media/python_mushroom.jpeg);
   width: 100%;
   text-align: center;
-  padding: 48px 0;
+  padding: 3rem 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: .1875rem solid #b2bcff;
-  background-position: 0rem;
+  border-bottom: 3px solid #b2bcff;
+  background-position: 0px;
 } */
 
 /* #animation-slider
 {
   width: 100%;
   text-align: center;
-  padding: 48px 0;
+  padding: 3rem 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: .1875rem solid #b2bcff;
-  background-position: 0rem;
+  border-bottom: 3px solid #b2bcff;
+  background-position: 0px;
   animation: cssAnimation 0s 22s forwards;
   visibility: hidden;
 
@@ -486,9 +524,9 @@ width: 1120px;
 {
   width: 100%;
   text-align: center;
-  padding: 48px 0;
+  padding: 3rem 0;
   max-width: 100%;
   background-position: center;
-  border-bottom: .1875rem solid #b2bcff;
-  background-position: 0rem;
+  border-bottom: 3px solid #b2bcff;
+  background-position: 0px;
 } */
