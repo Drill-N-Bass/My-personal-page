@@ -9,7 +9,7 @@ ol {
   padding: 0;
 }
 
-.meetup-item {
+.contact-item {
   margin: 16px 0;
   /* background-color: #456e9a; */
   background-color: var(--article-item-bg-color);
@@ -18,10 +18,10 @@ ol {
   border-radius: .25rem;
 }
 
-.meetup-small-box {
+.contact-small-box {
   font-size: small;
   margin: 16px 0;
-  background-color: var(--meetup-small-box-bg);
+  background-color: var(--contact-small-box-bg);
   padding: 9.6px; 
   border-radius: 1.875rem ;
   float: left;
@@ -30,44 +30,44 @@ ol {
   
 }
 
-.meetup-summary {
+.contact-summary {
   display: flex;
   align-items: flex-start;
 }
 
-.meetup-image {
+.contact-image {
   margin-right: 32px;
 }
 
-/* .meetup-image-size {
+/* .contact-image-size {
   width: 7.5rem;
   height: 7.5rem;
 } */
 
-.meetup-image img {
+.contact-image img {
   width: 128px;
   height: 128px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.meetup-details h3 {
+.contact-details h3 {
   color: inherit;
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 32px;
 }
 
-.meetup-details address {
+.contact-details address {
   font-style: italic;
 }
 
-.meetup-actions {
+.contact-actions {
   margin-top: 24px;
   text-align: right;
 }
 
-.meetup-actions .btn {
+.contact-actions .btn {
   background-color: #a06bdc;
   border-color: #cb82fb;
   color: #350490;
@@ -75,7 +75,7 @@ ol {
   border-radius: .875rem ;
 }
 
-.meetup-actions .btn:hover {
+.contact-actions .btn:hover {
   background-color: #8869c2;
   border-color: #a46fe1;
 }

@@ -10,8 +10,8 @@
     
     <!--load static file:-->
     <!--font-awesome.min.css-->
-    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base.css' %}">
-    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-meetups.css' %}">
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base_pc_tablet.css' %}">
+    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/all-contacts.css' %}">
 
 </head>
 <body>
@@ -26,18 +26,18 @@
             <ol>
                 {% if show_text_content %}
                     {% for essay_item in text_content %}
-                    <li class="meetup-item">
+                    <li class="contact-item">
                         <article>
-                            <div class="meetup-summary">
-                                <div class="meetup-image">
-                                    <!-- <img class="meetup-image-size" src='C:/Users/b2b/Desktop/pikachu.png' alt=""> -->
+                            <div class="contact-summary">
+                                <div class="contact-image">
+                                    <!-- <img class="contact-image-size" src='C:/Users/b2b/Desktop/pikachu.png' alt=""> -->
                                 </div>
-                                <div class="meetup-details">
+                                <div class="contact-details">
                                     <h3>{{ essay_item.title}}</h3>
                                     <p>{{ essay_item.description }}</p>
                                 </div>
                             </div>
-                            <div class="meetup-actions">
+                            <div class="contact-actions">
                                 {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
                                 <a href="{% url 'essay-path' essay_item.slug %}" class="btn">More details</a>
                             </div>

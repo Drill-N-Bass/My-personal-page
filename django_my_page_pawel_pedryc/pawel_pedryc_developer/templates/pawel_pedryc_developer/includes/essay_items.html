@@ -2,13 +2,13 @@
 {% load blog_extras %}
 {% load embed_video_tags %}
 
-<li class="meetup-item">
+<li class="contact-item">
     <article>
-        <div class="meetup-summary">
-            <div class="meetup-image">
+        <div class="contact-summary">
+            <div class="contact-image">
                 <img src="{{ image }}" alt="{{ title }}">
             </div>
-            <div class="meetup-details">
+            <div class="contact-details">
                 <h3>{{ title}}</h3>
                 <p>{{ description|convert_markdown|safe }}</p>
                 <br /><br />
@@ -16,10 +16,10 @@
                 <p>{% video video_essay_url %}</p>
             </div>
         </div>
-        <div class="meetup-small-box">
+        <div class="contact-small-box">
             <p id="knowledge-set-text"><b>Knowledge set </b>{{ language }}</p>
         </div>
-        <div class="meetup-actions">
+        <div class="contact-actions">
             {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
             <a href="{% url 'essay-path' slug %}" class="btn">More details</a>
         </div>

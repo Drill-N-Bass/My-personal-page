@@ -23,7 +23,7 @@
   --dark-btn-color-text-hoover: #ffffff;
 
   --knowledge-set-text: #161617d6;
-  --meetup-small-box-bg: #ccc3db92;
+  --contact-small-box-bg: #ccc3db92;
   --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
   --animation-slider: url(../logos/media/python_mushroom.jpeg);
   --dark-btn-arrow: url(../logos/media/click_me_arrow.png);
@@ -45,7 +45,7 @@
   --dark-btn-color-text-hoover: #c5bfbf;
 
   --knowledge-set-text: #499f10;
-  --meetup-small-box-bg: #314030ae;
+  --contact-small-box-bg: #314030ae;
 
   --animation-test: url(https://i.ibb.co/WfyzLpJ/charging.png);
 }

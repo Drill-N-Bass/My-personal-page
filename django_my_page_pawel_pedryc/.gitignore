@@ -145,4 +145,4 @@ GitHub.sublime-settings
 .history
 
 # Django Template base files #
-src/pawel_pedryc_developer/templates/pawel_pedryc_developer/base/base.html
+src/pawel_pedryc_developer/templates/pawel_pedryc_developer/base/base_pc_tablet.html

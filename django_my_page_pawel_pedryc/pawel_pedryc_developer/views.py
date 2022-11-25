@@ -32,8 +32,19 @@ def home_view_pawel(request):
     video_obj = VideoObject.objects.all()
     user_agent = get_user_agent(request)
     # return HttpResponse('Test')
-    if user_agent.is_mobile:
+    if user_agent.is_pc:
         # my_template='mobile_template.html'
+        return render(
+        request,
+        'pawel_pedryc_developer/pawel_pedryc.html',
+        {
+        'text_content': essay,
+        'show_text_content': True,
+        'video_content': video_obj
+
+        })
+    elif user_agent.is_mobile:
+        # my_template='tablet_template.html'
         return render(
         request,
         'pawel_pedryc_developer/pawel_pedryc_mobile.html',
@@ -43,21 +54,10 @@ def home_view_pawel(request):
         'video_content': video_obj
 
         })
-    if user_agent.is_tablet:
-        # my_template='tablet_template.html'
-        return render(
-        request,
-        'pawel_pedryc_developer/pawel_pedryc_tablet.html',
-        {
-        'text_content': essay,
-        'show_text_content': True,
-        'video_content': video_obj
-
-        })
-    if user_agent.is_pc:
+    elif user_agent.is_tablet:
         return render(
             request,
-            'pawel_pedryc_developer/pawel_pedryc.html',
+            'pawel_pedryc_developer/pawel_pedryc_tablet.html',
             {
             'text_content': essay,
             'show_text_content': True,
@@ -68,7 +68,8 @@ def home_view_pawel(request):
 
 def my_essays(request, home_view_pawel_slug):
     # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
-
+    user_agent = get_user_agent(request)
+    
     try: # first exception model at 2:13:20 # first exception model at 2:13:20
         selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class # 2.11.50 Method `get()` gives you one object from class
         if request.method == 'GET': # handling form submission 3.18.20
@@ -108,38 +109,96 @@ def my_essays(request, home_view_pawel_slug):
                 selected_essay.guest.add(send_me_message) # 3.26.00
                 
                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
-                
-        return render(
-            request,
-            'pawel_pedryc_developer/article-content.html', 
-            {
-                'essay_found': True,
-                'essay_all': selected_essay,
-                'form': user_feedback
-            })
+        
+        if user_agent.is_pc:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback
+                })
+
+        if user_agent.is_mobile:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_mobile.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback
+                })
+        
+        if user_agent.is_tablet:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback
+                })
 
     except Exception as exc:
         print('Exception error message:', exc) # Test
-        return render(
-            request,
-            'pawel_pedryc_developer/article-content.html', 
-            {
-                'essay_found': False
-            })
-            # 'essay_title': selected_essay.title,
-            # 'essay_description': selected_essay.description,
-            # 'essay_prog_language': selected_essay.language
+
+        if user_agent.is_pc:
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': False
+                })
+                # 'essay_title': selected_essay.title,
+                # 'essay_description': selected_essay.description,
+                # 'essay_prog_language': selected_essay.language
+
+        elif user_agent.is_mobile:
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_mobile.html', 
+                {
+                    'essay_found': False
+                })
+
+        elif user_agent.is_tablet:
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': False
+                })
 
 
 def confirm_registration(request, home_view_pawel_slug):
     contact = EssayCls.objects.get(slug=home_view_pawel_slug)
-    # return render(request, 'pawel_pedryc_developer/registration-success.html')
-    return render(
-        request,
-        'pawel_pedryc_developer/registration-success.html',
-    {
-        'organizer_email': contact.organizer_email
-    })
+    user_agent = get_user_agent(request)
+    # return render(request, 'pawel_pedryc_developer/registration-success_pc_tablet.html')
+
+    if user_agent.is_pc:
+        return render(
+            request,
+            'pawel_pedryc_developer/registration-success_pc_tablet.html',
+        {
+            'organizer_email': contact.organizer_email
+        })
+
+    elif user_agent.is_mobile:
+        return render(
+            request,
+            'pawel_pedryc_developer/registration-success_mobile.html',
+        {
+            'organizer_email': contact.organizer_email
+        })
+
+    elif user_agent.is_tablet:
+        return render(
+            request,
+            'pawel_pedryc_developer/registration-success_pc_tablet.html',
+        {
+            'organizer_email': contact.organizer_email
+        })
 
 # def video_main(request):
 #     video_obj = VideoObject.object.all()
@@ -150,7 +209,7 @@ def confirm_registration(request, home_view_pawel_slug):
 
 # def video_article(request, pk):
 #     video_obj = VideoObject.object.get(pk=pk)
-#     return render(request, 'pawel_pedryc_developer/article-content.html', 
+#     return render(request, 'pawel_pedryc_developer/article-content_pc_tablet.html', 
 #     {
 #         'video_obj': video_obj
 #     })
