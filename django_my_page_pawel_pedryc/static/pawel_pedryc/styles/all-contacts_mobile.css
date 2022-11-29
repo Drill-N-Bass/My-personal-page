@@ -20,9 +20,11 @@ ol {
 
 .contact-small-box {
   font-size: small;
-  margin: 16px 0;
+  text-align: center;
+  margin: 16px -30px;
+  width: 50%;
   background-color: var(--contact-small-box-bg);
-  padding: 9.6px; 
+  padding: 2.6px; 
   border-radius: 1.875rem ;
   float: left;
   color: white;

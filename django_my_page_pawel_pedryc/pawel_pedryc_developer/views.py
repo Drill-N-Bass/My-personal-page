@@ -36,7 +36,7 @@ def home_view_pawel(request):
         # my_template='mobile_template.html'
         return render(
         request,
-        'pawel_pedryc_developer/pawel_pedryc.html',
+        'pawel_pedryc_developer/pawel_pedryc-pc.html',
         {
         'text_content': essay,
         'show_text_content': True,
@@ -202,7 +202,7 @@ def confirm_registration(request, home_view_pawel_slug):
 
 # def video_main(request):
 #     video_obj = VideoObject.object.all()
-#     return render(request, 'pawel_pedryc_developer/pawel_pedryc.html', 
+#     return render(request, 'pawel_pedryc_developer/pawel_pedryc-pc.html', 
 #     {
 #         'video_obj': video_obj
 #     })
