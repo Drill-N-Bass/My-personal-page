@@ -21,8 +21,9 @@ ol {
 .contact-small-box {
   font-size: small;
   text-align: center;
-  margin: 16px -30px;
-  width: 50%;
+  margin: 24px -30px;
+  width: 40%;
+  height: 90%;
   background-color: var(--contact-small-box-bg);
   padding: 2.6px; 
   border-radius: 1.875rem ;
