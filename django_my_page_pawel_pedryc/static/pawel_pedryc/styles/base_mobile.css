@@ -76,9 +76,6 @@ body {
   }
 } 
 
-
-
-
 h1,
 h2 {
   font-family: 'Roboto Slab', sans-serif;
@@ -166,6 +163,21 @@ button:hover,
   border-bottom: 3px solid #b2bcff;  
 } */
 
+
+#animated-logo-mobile-anim-static-div {
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  object-position: center;
+  background-position: center;
+  margin-top: -50px;
+}
+
+#logo-anim-static {
+  width: 50%;
+  
+}
+
 .main-header-dark{
   object-position: right top;
   width: 300px; 
@@ -186,10 +198,7 @@ button:hover,
   }
 }
 
-#animated-logo-mobile-anim-static {
-  float: left;
-  
-}
+
 
 #main-header-dark-img{
   width: 100%;
