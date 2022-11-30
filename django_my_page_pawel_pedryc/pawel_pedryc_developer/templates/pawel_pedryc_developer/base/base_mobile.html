@@ -33,6 +33,23 @@
 
     {% comment %} <div id="animation-slider"></div> {% endcomment %}
     <header id="main-header">
+        
+
+        <div id="animated-logo-mobile-anim-static">
+
+        </div>
+
+        <div style="clear:both;"></div> 
+
+        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
+         
+        <h1>{% block main_heading %}{% endblock %}</h1>
+        <p> {% block header_content %}{% endblock %}</p>
+
+        
+    </header>
+     
+    <main>
         <div class="main-header-dark">
             {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
             {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
@@ -44,19 +61,8 @@
             <div id="main-header-dark-img">
                 <img class="click_me_arrow_left-mobile" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left-mobile.png" alt="dark mode">
             </div>
-
         </div>
-        <div style="clear:both;"></div> 
-
-        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
-         
-        <h1>{% block main_heading %}{% endblock %}</h1>
-        <p> {% block header_content %}{% endblock %}</p>
-
-    </header>
-     
-    <main>
-        <h1>Base_mobile.html Działa Base_mobile.html Działa Base_mobile.html Działa Base_mobile.html Działa Base_mobile.html Działa Base_mobile.html Działa</h1>
+        <br/>
         
     {% block body %}{% endblock %}
     
@@ -71,7 +77,8 @@
                 <div class="contact_envelop_text">
                     <p style="font-size: 0.9rem;">2022 © Pawel Pedryc - Portfolio. Full stack developer</p>
                     <i class="icon-mail-alt"></i> 
-                    <a href="mailto:{{ organizer_email }}" class="contact_envelop_email_text" style="font-size: 0.9rem;">pawel.pedryc@gmail.com</a>
+                    
+                    <a href="mailto:{{ organizer_email }}" class="contact_envelop_email_text" style="font-size: 1.5rem;">pawel.pedryc@gmail.com</a>
                 </div> 
             </div>   
         </div>

@@ -17,7 +17,7 @@
 
   --dark-btn-background:#010d2e6e;
   --dark-btn-border: #35049080;
-  --dark-btn-color-text: #cfc234d2;
+  --dark-btn-color-text: #efcbff;
   --dark-btn-background-hoover: #010511;
   --dark-btn-border-hoover: #fff71bca;
   --dark-btn-color-text-hoover: #ffffff;
@@ -141,11 +141,13 @@ button:hover,
 
 
 #main-header {
+  box-sizing: border-box;
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding-bottom: 0rem;
+  padding-top: 3rem;
   /* background-image:url(../logos/media/python_mushroom.jpeg); */
-  background-image:url(../logos/media/animated.png);
+  background-image:url(../logos/media/blank_python_mushroom-mobile.jpeg);
   max-width: 100%;
   background-position: center;
   border-bottom: 3px solid #b2bcff;
@@ -154,16 +156,15 @@ button:hover,
 }
 
 
-#main-header:hover {
+/* #main-header:hover {
   width: 100%;
   text-align: center;
   padding: 3rem 0;
   background-image: url(../logos/media/python_mushroom.jpeg);
-  /* background-image:url(../logos/media/animated.png); */
   max-width: 100%;
   background-position: center;
   border-bottom: 3px solid #b2bcff;  
-}
+} */
 
 .main-header-dark{
   object-position: right top;
@@ -185,6 +186,11 @@ button:hover,
   }
 }
 
+#animated-logo-mobile-anim-static {
+  float: left;
+  
+}
+
 #main-header-dark-img{
   width: 100%;
   max-width: 50%;
@@ -204,7 +210,8 @@ button:hover,
 
 .click_me_arrow_left-mobile {
   width: 50%; 
-  margin-left: -380px;
+  margin-left: -230px;
+  margin-top: -15px;
  
 }
 
@@ -215,6 +222,8 @@ button:hover,
   border: 3px solid var(--dark-btn-border);
   margin-right: 75px;
   color: var(--dark-btn-color-text);
+  margin-top: 45px;
+  font-size: x-small ;
 }
 
 @media screen and (max-width: 1400px) {
@@ -251,7 +260,7 @@ button:hover,
     }
 
 #main-logo {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 1px;
     font-family: 'Roboto Slab', sans-serif;
     text-decoration: none;

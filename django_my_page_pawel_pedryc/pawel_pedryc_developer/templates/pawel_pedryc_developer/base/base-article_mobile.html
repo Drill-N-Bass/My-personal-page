@@ -29,24 +29,8 @@
     {% block site_css %}{% endblock %}
 </head>
 <body>
-    <h1> base-article_mobile.html działa!!! base-article_mobile.html działa!!! base-article_mobile.html działa!!! base-article_mobile.html działa!!! </h1>
-
     {% comment %} <div id="animation-slider"></div> {% endcomment %}
     <header id="main-header">
-        <div class="main-header-dark">
-            {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
-            {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
-            <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
-            <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
-            {% comment %} <div style="clear:both;"></div>  {% endcomment %}
-            <div id="main-header-dark-img">
-                <img class="click_me_arrow_left-mobile" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left-mobile.png" alt="dark mode">
-            </div>
-            
-
-        </div>
-        <div style="clear:both;"></div> 
-
         <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
         <p> {% block header_content %}{% endblock %}</p>
         <p></p>
@@ -55,15 +39,28 @@
     </header>
      
     <main>
-        
-    <br />
-    <div id="h3-article-main-div">
-        <div id="h3-article-div-tittle">
-            <h4>{% block main_heading %}{% endblock %}</h4>
-        </div>
-    </div>
+        <div class="main-header-dark">
+            {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
+            {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
+            <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
+            <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
+            
+            {% comment %} <div style="clear:both;"></div>  {% endcomment %}
 
-    {% block body %}{% endblock %}
+            <div id="main-header-dark-img">
+                <img class="click_me_arrow_left-mobile" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left-mobile.png" alt="dark mode">
+            </div>
+        </div>
+        <br/>
+        
+        <br />
+        <div id="h3-article-main-div">
+            <div id="h3-article-div-tittle">
+                <h4>{% block main_heading %}{% endblock %}</h4>
+            </div>
+        </div>
+
+        {% block body %}{% endblock %}
     
     </main>
 
