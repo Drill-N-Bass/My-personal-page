@@ -51,32 +51,36 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Uncomment for 3D effect */
-  /* text-shadow: .0625rem .0625rem .0625rem rgba(127, 127, 127, 0.3); */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-github-circled-1:before { content: '\e800'; font-size: 2.125rem; margin-top: .75rem; margin-left: .0313rem;} /* '' */
-.icon-stackoverflow:before { content: '\e801'; font-size: 2.1875rem; margin-top: .4375rem; margin-left: -0.0625rem;} /* '' */
-.icon-emo-tongue:before { content: '\e807'; font-size: 2.1875rem; margin-top: .4375rem; margin-left: -0.0625rem;} /* '' */
-.icon-mail-alt:before { content: '\f0e0'; font-size: 2.1875rem; margin-top: .4375rem; margin-left: -0.0625rem; } /* '' */
-.icon-linkedin:before { content: '\f0e1'; font-size: 2.1875rem; margin-top: .4375rem; margin-left: -0.0625rem;} /* '' */
-.icon-database:before { content: '\f1c0'; font-size: 2.1875rem; margin-top: .4375rem; margin-left: -0.0625rem;} /* '' */
+.icon-github-circled-1:before { content: '\e800'; font-size: 34px; margin-top: 12px; margin-left: .5008px;} /* '' */
+.icon-stackoverflow:before { content: '\e801'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-emo-tongue:before { content: '\e807'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-mail-alt:before { content: '\f0e0'; font-size: 35px; margin-top: 7px; margin-left: -1px; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
+.icon-database:before { content: '\f1c0'; font-size: 35px; margin-top: 7px; margin-left: -1px;} /* '' */
 
-@media screen and (max-width: 68.75rem) {
-  .icon-github-circled-1:before {content: '\e800'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-github-circled-1:before {content: '\e800'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
 
-@media screen and (max-width: 68.75rem) {
-  .icon-stackoverflow:before {content: '\e801'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-stackoverflow:before {content: '\e801'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 68.75rem) {
-  .icon-emo-tongue:before {content: '\e807'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-emo-tongue:before {content: '\e807'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 68.75rem) {
-  .icon-mail-alt:before {content: '\f0e0'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-mail-alt:before {content: '\f0e0'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 68.75rem) {
-  .icon-linkedin:before {content: '\f0e1'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-linkedin:before {content: '\f0e1'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 68.75rem) {
-  .icon-database:before {content: '\f1c0'; font-size: 1rem; margin-top: .3125rem; margin-left: 0rem;} /* '' */
+@media screen and (max-width: 1100px) {
+  .icon-database:before {content: '\f1c0'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
+}
+
+@media screen and (max-width:600px) {
+  .icon-mail-alt:before {content: '\f0e0'; font-size: 140px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
