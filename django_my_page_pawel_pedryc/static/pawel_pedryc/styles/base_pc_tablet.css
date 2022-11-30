@@ -53,6 +53,7 @@
 /* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
 html, 
 body {
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
@@ -256,7 +257,7 @@ button:hover,
 } */
 
 .ol_section {
-  height: 4800px;
+  height: 100%;
   width: 800px;
 }
 
@@ -420,7 +421,6 @@ button:hover,
 
 #footer-bg
 {
-
   background-color: #000027;
 }
 
