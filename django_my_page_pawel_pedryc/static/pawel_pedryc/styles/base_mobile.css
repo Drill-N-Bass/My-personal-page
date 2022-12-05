@@ -528,6 +528,21 @@ button:hover,
 	float: left;
 }
 
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  .contact_envelop
+  {
+  padding-top: .625rem;
+  box-sizing: border-box;
+  width: 90%;
+  height: 110px;
+  border: .1875rem solid #007bff;
+  border-radius: .9375rem;
+	background-color: var(--article-item-bg-color);
+	float: left;
+  }
+}
+
 @media screen and (max-width: 37.5rem) {
   .contact_envelop
   {
