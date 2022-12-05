@@ -6,8 +6,16 @@
     <article>
         <div class="contact-summary">
             <div class="contact-image">
-                <img src="{{ image }}" alt="{{ title }}">
+                <div>
+                    <img src="{{ image }}" alt="{{ title }}">
+                </div>
+
+                <div class="contact-small-box">
+                    <p id="knowledge-set-text"><b>Knowledge set </b>{{ language }}</p>
+                </div>
+
             </div>
+            
             <div class="contact-details">
                 <h3><a href="{% url 'essay-path' slug %}" style="text-decoration: none; color: #35049080;">{{ title}}</a></h3>
                 <p>{{ description|convert_markdown|safe }}</p>
@@ -16,9 +24,9 @@
                 <p>{% video video_essay_url %}</p>
             </div>
         </div>
-        <div class="contact-small-box">
+        {% comment %} <div class="contact-small-box">
             <p id="knowledge-set-text"><b>Knowledge set </b>{{ language }}</p>
-        </div>
+        </div> {% endcomment %}
         <div class="contact-actions">
             {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
             <a href="{% url 'essay-path' slug %}" class="btn">More details</a>

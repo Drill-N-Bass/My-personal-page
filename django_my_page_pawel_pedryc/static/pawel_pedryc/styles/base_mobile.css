@@ -61,7 +61,7 @@ body {
   color: var(--main-txt-color);
 }
 /* Horizontal screen: */
-@media screen and (min-width: 31.25rem) {
+@media screen and (min-width: 320px) {
   html, 
   body {
   font-family: 'Roboto', sans-serif;
@@ -87,11 +87,11 @@ h2 {
 
 #h3-article-div-tittle{
   box-sizing: border-box;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   text-align: center;
   margin: auto;
-  width: 20rem;
-  border: 5px solid #2d4661;
+  width: 320px;
+  border: .3125rem solid #2d4661;
   border-radius: 80% 70% / 10% 30%;
 	background-color: var(--article-item-bg-color);
   font-size: small;
@@ -118,11 +118,11 @@ button,
 .btn {
   cursor: pointer;
   font: inherit;
-  padding: .5rem 1.5rem;
+  padding: 8px 24px;
   background-color: #350490;
-  border: 1px solid #350490;
+  border: .0625rem solid #350490;
   color: white;
-  border-radius: 4px;
+  border-radius: .25rem;
   text-decoration: none;
 }
 
@@ -137,13 +137,13 @@ button:hover,
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  padding-bottom: 0rem;
-  padding-top: 3rem;
+  padding-bottom: 0px;
+  padding-top: 48px;
   /* background-image:url(../logos/media/python_mushroom.jpeg); */
   background-image:url(../logos/media/blank_python_mushroom-mobile.jpeg);
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;
+  border-bottom: .1875rem solid #b2bcff;
   background-repeat: no-repeat;
 	transition: background-image 1.2s;
 }
@@ -152,32 +152,32 @@ button:hover,
 /* #main-header:hover {
   width: 100%;
   text-align: center;
-  padding: 3rem 0;
+  padding: 48px 0;
   background-image: url(../logos/media/python_mushroom.jpeg);
   max-width: 100%;
   background-position: center;
-  border-bottom: 3px solid #b2bcff;  
+  border-bottom: .1875rem solid #b2bcff;  
 } */
 
 
 #animated-logo-mobile-anim-static-div {
   width: 100%;
-  height: 120px;
+  height: 7.5rem;
   box-sizing: border-box;
   object-position: center;
   background-position: center;
-  margin-top: -50px;
+  margin-top: -3.125rem;
 }
 
 /* Horizontal screen: */
-@media screen and (min-width: 31.25rem) {
+@media screen and (min-width: 500px) {
   #animated-logo-mobile-anim-static-div {
     width: 100%;
-    height: 145px;
+    height: 9.0625rem;
     box-sizing: border-box;
     object-position: center;
     background-position: center;
-    margin-top: -72px;
+    margin-top: -4.5rem;
   }
 }
 
@@ -186,7 +186,7 @@ button:hover,
 }
 
 /* Horizontal screen: */
-@media screen and (min-width: 31.25rem) {
+@media screen and (min-width: 500px) {
   #logo-anim-static {
     width: 30%;
   }
@@ -194,21 +194,33 @@ button:hover,
 
 .main-header-dark{
   object-position: right top;
-  width: 300px; 
-  height: 150px;
+  width: 18.75rem; 
+  height: 9.375rem;
   float: right;
-  margin-top: -45px;
-  margin-bottom: -100px;
+  margin-top: -2.8125rem;
+  margin-bottom: -6.25rem;
+}
+
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  .main-header-dark{
+    object-position: right bottom;
+    width: 18.75rem; 
+    height: 9.375rem;
+    float: left;
+    margin-top: -2.8125rem;
+    margin-bottom: -6.25rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .main-header-dark{
     object-position: right top;
-    width: 300px; 
-    height: 150px;
+    width: 18.75rem; 
+    height: 9.375rem;
     float: left;
-    margin-top: -45px;
-    margin-bottom: -100px;
+    margin-top: -2.8125rem;
+    margin-bottom: -6.25rem;
   }
 }
 
@@ -217,45 +229,60 @@ button:hover,
 #main-header-dark-img{
   width: 100%;
   max-width: 50%;
-  margin-right: -150px;
+  margin-right: -9.375rem;
   /* background-image: url(--dark-btn-arrow);   NOT WORKING IDK why */
 }
 
-@media screen and (max-width: 600px) {
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
   #main-header-dark-img{
-    float: left;
-    width: 50%;
+    width: 100%;
     max-width: 50%;
-    margin-left: 50px;
-    /* background-image: url(--dark-btn-arrow-big-resolution);  NOT WORKING IDK why */
+    margin-right: -6.25rem;
+    /* background-image: url(--dark-btn-arrow);   NOT WORKING IDK why */
   }
 }
 
 .click_me_arrow_left-mobile {
-  width: 50%; 
-  margin-left: -230px;
-  margin-top: -15px;
+  width: 40%; 
+  margin-left: -0.625rem;
+  margin-top: -7.8125rem;
  
 }
 
 .main-header-dark-btn{
   background-color: var(--dark-btn-background);
   float: right;
-  border-radius: 8px;
-  border: 3px solid var(--dark-btn-border);
-  margin-right: 75px;
+  border-radius: .5rem;
+  border: .1875rem solid var(--dark-btn-border);
+  margin-right: 4.6875rem;
   color: var(--dark-btn-color-text);
-  margin-top: 45px;
+  margin-top: 2.8125rem;
   font-size: x-small ;
 }
 
-@media screen and (max-width: 1400px) {
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  .main-header-dark-btn{
+    background-color: var(--dark-btn-background);
+    float: right;
+    border-radius: .5rem;
+    border: .1875rem solid var(--dark-btn-border);
+    margin-right: 4.6875rem;
+    color: var(--dark-btn-color-text);
+    margin-top: 2.8125rem;
+    font-size: x-small ;
+  }
+}  
+
+
+@media screen and (max-width: 87.5rem) {
   .main-header-dark-btn{
     background-color: var(--dark-btn-background);
     float: left;
-    border-radius: 8px;
-    border: 3px solid var(--dark-btn-border);
-    margin-right: 75px;
+    border-radius: .5rem;
+    border: .1875rem solid var(--dark-btn-border);
+    margin-right: 4.6875rem;
     color: var(--dark-btn-color-text);
   }
 }
@@ -263,9 +290,9 @@ button:hover,
 .main-header-dark-btn:hover{
   background-color: var(--dark-btn-background-hoover);
   /* float: right; */
-  border-radius: 8px;
-  border: 3px solid var(--dark-btn-border-hoover);
-  margin-right: 75px;
+  border-radius: .5rem;
+  border: .1875rem solid var(--dark-btn-border-hoover);
+  margin-right: 4.6875rem;
   color: var(--dark-btn-color-text-hoover);
   -webkit-transition:    color, border 0.2s line;
   -moz-transition:       color, border 0.2s ease-out;
@@ -277,14 +304,14 @@ button:hover,
 }
 
 #main-header h1 {
-    font-size: .9rem;
+    font-size: 14.4px;
     opacity: 0.8;
     line-height: 0.05;
     }
 
 #main-logo {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+    font-size: 40px;
+    letter-spacing: .0625rem;
     font-family: 'Roboto Slab', sans-serif;
     text-decoration: none;
     color: #350490;
@@ -297,17 +324,17 @@ button:hover,
 }
 
 .main_div_1 {
-  float: left;
+  /* float: left; caused: overflow*/
 }
 
 .main_div_2 {
   float: left;
   position: fixed;
-  right: 0px; bottom: 0px;
+  right: 0rem; bottom: 0rem;
 }
 
-/* This snippet will change behaviour of maind_div_2 when screen is less that 1100px */
-/* @media screen and (max-width: 1100px) {
+/* This snippet will change behaviour of maind_div_2 when screen is less that 68.75rem */
+/* @media screen and (max-width: 68.75rem) {
   .main_div_2 {
     display: none;
   }
@@ -319,7 +346,7 @@ button:hover,
   width: 100%;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 600px) {
   .ol_section {
     height: 100%;
     box-sizing: border-box;
@@ -328,23 +355,23 @@ button:hover,
 }
 
 .square {
-  padding: 10px;
-  height: 380px;
-  width: 65px;
-  border: 3px solid #b2bcff;
-  border-radius: 15px;
+  padding: .625rem;
+  height: 23.75rem;
+  width: 4.0625rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: .9375rem;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 68.75rem){
   .square {
-  padding: 10px;
-  height: 190px;
-  width: 16.2496px;
-  border: 3px solid #b2bcff;
-  border-radius: 15px;
+  padding: .625rem;
+  height: 11.875rem;
+  width: 1.0156rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: .9375rem;
   /* background-color: #3F7DA4; */
   background-color: #3f7da433;
   }
@@ -353,10 +380,10 @@ button:hover,
 
 .hg
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #b50000;
 	float: right;
 }
@@ -367,12 +394,12 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .hg {
-  margin-top: 2.5008px;
-  margin-right: -8px;
-  width: 15px;
-  height: 26.5008px;
+  margin-top: .1563rem;
+  margin-right: -0.5rem;
+  width: .9375rem;
+  height: 1.6563rem;
   background-color: #b50000;
   float: right;
   }
@@ -380,10 +407,10 @@ button:hover,
 
 .li
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #0a4c6b;
 	float: right;
 }
@@ -394,12 +421,12 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .li {
-  margin-top: 2.5008px;
-  margin-right: -8px;
-  width: 15px;
-  height: 26.5008px;
+  margin-top: .1563rem;
+  margin-right: -0.5rem;
+  width: .9375rem;
+  height: 1.6563rem;
   background-color: #0a4c6b;
 	float: right;
   }
@@ -407,10 +434,10 @@ button:hover,
 
 .gh
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #e38fff;
 	float: right;
 }
@@ -421,12 +448,12 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .gh {
-  margin-top: 2.5008px;
-  margin-right: -8px;
-  width: 15px;
-  height: 26.5008px;
+  margin-top: .1563rem;
+  margin-right: -0.5rem;
+  width: .9375rem;
+  height: 1.6563rem;
   background-color: #e38fff;
   float: right;
   }
@@ -434,10 +461,10 @@ button:hover,
 
 .so
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #71b0f4;
 	float: right;
 }
@@ -448,12 +475,12 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .so {
-  margin-top: 2.5008px;
-  margin-right: -8px;
-  width: 15px;
-  height: 26.5008px;
+  margin-top: .1563rem;
+  margin-right: -0.5rem;
+  width: .9375rem;
+  height: 1.6563rem;
   background-color: #71b0f4;
   float: right;
   }
@@ -461,10 +488,10 @@ button:hover,
 
 .pypi
 {
-  margin-top: 5px;
-  margin-right: 2px;
-	width: 35px;
-	height: 53px;
+  margin-top: .3125rem;
+  margin-right: .125rem;
+	width: 2.1875rem;
+	height: 3.3125rem;
 	background-color: #ffea2e;
 	float: right;
 }
@@ -474,12 +501,12 @@ button:hover,
 	background-color: #3fc600;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 68.75rem) {
   .pypi {
-  margin-top: 2.5008px;
-  margin-right: -8px;
-  width: 15px;
-  height: 26.5008px;
+  margin-top: .1563rem;
+  margin-right: -0.5rem;
+  width: .9375rem;
+  height: 1.6563rem;
   background-color: #ffea2e;
   float: right;
   }
@@ -493,23 +520,23 @@ button:hover,
 
 .contact_envelop
 {
-  padding-top: 20px;
-  width: 95rem;
-  border: 3px solid #007bff;
-  border-radius: 15px;
+  padding-top: 1.25rem;
+  width: 1520px;
+  border: .1875rem solid #007bff;
+  border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
 	float: left;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .contact_envelop
   {
-  padding-top: 10px;
+  padding-top: .625rem;
   box-sizing: border-box;
-  width: 23rem;
-  height: 8rem;
-  border: 3px solid #007bff;
-  border-radius: 15px;
+  width: 368px;
+  height: 128px;
+  border: .1875rem solid #007bff;
+  border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
 	float: left;
   }
@@ -517,7 +544,7 @@ button:hover,
 
 .contact_envelop_text
 {
-  font-size: 2.2rem;
+  font-size: 35.2px;
   text: var(--main-txt-color);
   text-align: center;
 }
@@ -525,9 +552,9 @@ button:hover,
 .contact_envelop_email_text
 {
 
-  padding: 3px;
-  border: 3px solid #b2bcff;
-  border-radius: 17px;
+  padding: .1875rem;
+  border: .1875rem solid #b2bcff;
+  border-radius: 1.0625rem;
   background-color: var(--main-bg-color);
 }
 
@@ -536,8 +563,8 @@ button:hover,
 { 
     background-image: var(--animation-test);
     background-repeat: no-repeat; 
-    height: 102px; 
-    width: 140px; 
+    height: 6.375rem; 
+    width: 8.75rem; 
 }
 
 #animation-slider img ~ img {

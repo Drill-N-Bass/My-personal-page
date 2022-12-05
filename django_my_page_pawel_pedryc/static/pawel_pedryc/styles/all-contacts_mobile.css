@@ -19,18 +19,50 @@ ol {
 }
 
 .contact-small-box {
+
   font-size: small;
-  text-align: center;
-  margin: 24px -30px;
-  width: 40%;
-  height: 90%;
-  background-color: var(--contact-small-box-bg);
-  padding: 2.6px; 
-  border-radius: 1.875rem ;
+  margin: 1rem 0;
+  background-color: #ccc3db;
+  padding: 0.6rem; 
+  border-radius: 30px ;
   float: left;
   color: white;
-  padding-top: 1.5625rem;
-  
+  padding-top: 25px;
+
+}
+
+
+/* Horizontal screen: */
+@media screen and (min-width: 31.25rem) {
+  .contact-small-box {
+    object-position: bottom;
+    font-size: 40%;
+    text-align: center;
+    margin: 10px 10px;
+    width: 80%;
+    height: 40%;
+    background-color: var(--contact-small-box-bg);
+    padding: 1.6px; 
+    border-radius: 1.875rem ;
+    color: white;
+    padding-top: 17px;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .contact-small-box {
+    object-position: bottom;
+    font-size: 40%;
+    text-align: center;
+    margin: 10px 10px;
+    width: 80%;
+    height: 40%;
+    background-color: var(--contact-small-box-bg);
+    padding: 1.6px; 
+    border-radius: 1.875rem ;
+    color: white;
+    padding-top: 17px;
+    }
 }
 
 .contact-summary {
