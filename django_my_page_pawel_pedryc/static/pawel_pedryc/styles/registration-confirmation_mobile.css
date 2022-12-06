@@ -2,6 +2,37 @@ main {
   text-align: center;
 }
 
+#thx-submission {
+  height: 40%;
+  width: 60%;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  margin-left: 5.5rem;
+  border: 0.2rem solid #6633c4;
+  border-radius: 0.4rem 2.2rem;
+  background-color: #3f7da4c2;
+  
+}
+
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  #thx-submission {
+    height: 40%;
+    width: 60%;
+    text-align: center;
+    padding: 0.7rem 0.5rem;
+    margin-left: 10.5rem;
+    border: 0.2rem solid #6633c4;
+    border-radius: 0.4rem 2.2rem;
+    background-color: #3f7da4c2;
+  }
+}
+
+#thx-submission-text{
+  color: #C9D1E4;
+  font-weight: bold;
+}
+
 #confirmation {
   max-width: 800px;
   margin: 48px auto;
@@ -35,3 +66,5 @@ main {
   font-size: 24px;
   padding: 16px 32px;
 }
+
+
