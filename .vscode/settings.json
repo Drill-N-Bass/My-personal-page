@@ -1,5 +1,12 @@
 {
-
     "python.languageServer": "Pylance",
-    
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "emmet.excludeLanguages": { "django-html": "html"}
 }
+
+
