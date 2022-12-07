@@ -10,15 +10,27 @@ article {
   text-align: center;
 }
 
-#main-image {
+.contact-image-zoomer-base-article{
   width: 160px;
   height: 160px;
-  object-fit: cover;
   position: absolute;
   top: -80px;
   left: calc(50% - 80px);
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
   border: .25rem solid #350490;
+  transition: 1s; 
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+}
+
+.main-image:hover{
+  transform: scale(1.4);
 }
 
 section:first-of-type {

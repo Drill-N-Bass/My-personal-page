@@ -27,7 +27,10 @@
 {% if essay_found %}
 
 <article>
-    <img id="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+
+    <div class="contact-image-zoomer-base-article">
+        <img class="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+    </div>
 
     <section id="location">
         <div id="content_type">

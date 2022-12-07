@@ -79,11 +79,23 @@ ol {
   height: 7.5rem;
 } */
 
-.contact-image img {
+.contact-image-zoomer-base{
   width: 128px;
   height: 128px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition: 1s;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+}
+
+.contact-image img:hover{
+  transform: scale(1.1);
 }
 
 .contact-details h3 {
