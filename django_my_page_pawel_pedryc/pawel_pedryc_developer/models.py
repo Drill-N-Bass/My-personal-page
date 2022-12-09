@@ -44,7 +44,7 @@ class EssayCls(models.Model):
     title = models.CharField(max_length=200)
     organizer_email = models.EmailField(null=True)
     date = models.DateField(null=True)
-    slug  = models.SlugField(unique=True) 
+    slug  = models.SlugField(unique=True, db_index=True) # db_index=True Improuve performance since it's part of my html path S6:91 2:30 
     description = models.TextField()
     details = models.TextField()
     image = models.ImageField(upload_to='images')
