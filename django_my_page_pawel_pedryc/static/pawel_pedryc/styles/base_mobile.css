@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+/* OOCSS first:*/
 
 * {
   box-sizing: border-box;
@@ -323,9 +324,9 @@ button:hover,
   max-height: fit-content;
 }
 
-.main_div_1 {
-  /* float: left; caused: overflow*/
-}
+/* .main_div_1 {
+  float: left; caused: overflow
+} */
 
 .main_div_2 {
   float: left;
@@ -560,7 +561,7 @@ button:hover,
 .contact_envelop_text
 {
   font-size: 35.2px;
-  text: var(--main-txt-color);
+  color: var(--main-txt-color);
   text-align: center;
 }
 
