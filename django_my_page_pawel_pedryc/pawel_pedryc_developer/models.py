@@ -53,6 +53,16 @@ class EssayCls(models.Model):
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     
+    class Meta:
+        """
+        Because I want to configure behaviour about my model 
+        I, therefore, can't do that with properties added in my main class 
+        which defines fields in my model, used in the Admin panel. 
+        That's why I decided to use a nested `Meta` class here 
+        to register a special setting which will affect how this model is used by Django. 
+        In this particular case, I want to change the name of my model to be more readable. 
+        """
+        verbose_name = "My Essay" # s8:110 3:00
     
         
 #################
