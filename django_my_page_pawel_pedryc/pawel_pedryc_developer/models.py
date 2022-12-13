@@ -4,8 +4,18 @@ from distutils.command import upload
 # from tkinter import DISABLED
 from django.db import models
 from embed_video.fields import EmbedVideoField
+from django.core.validators import MinLengthValidator
 
 # Create your models here.
+
+class Tag(models.Model):
+    caption = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.caption
+
+    class Meta:
+        ordering = ['caption']
 
 class ProgLang(models.Model):
     prog_lang_category = models.CharField(max_length=200)
@@ -45,13 +55,14 @@ class EssayCls(models.Model):
     organizer_email = models.EmailField(null=True)
     date = models.DateField(null=True)
     slug  = models.SlugField(unique=True, db_index=True) # db_index=True Improuve performance since it's part of my html path S6:91 2:30 
-    description = models.TextField()
+    description = models.TextField(MinLengthValidator(10)) #s9:119 7:00
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
-    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.SET_NULL) # One-to-many relationship
+    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.SET_NULL, related_name="video_obj") # One-to-many relationship
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
+    tags = models.ManyToManyField(Tag)
     
     class Meta:
         """
