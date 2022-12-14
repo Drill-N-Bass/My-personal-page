@@ -4,8 +4,8 @@ from embed_video.admin import AdminVideoMixin
 
 ## Tweak title of the objects in admin page:
 class EssayAdmin(admin.ModelAdmin):
-    list_display         = ('title', 'date', 'description', 'language', 'slug')
-    list_filter          = ('language', 'date')
+    list_display         = ('title', 'date', 'description', 'language', 'slug',) # Keep in mind it's tuple
+    list_filter          = ('language', 'date', 'tags',) # Keep in mind it's tuple
     prepopulated_fields  = {'slug': ('title',)} #2:41:00
 
     
