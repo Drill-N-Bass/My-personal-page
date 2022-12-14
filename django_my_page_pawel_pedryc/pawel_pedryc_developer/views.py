@@ -28,7 +28,17 @@ import logging
 # Create your views here.
 
 def home_view_pawel(request):
-    essay = EssayCls.objects.all().order_by('date') # you can add `.order_by` after all(). Method `all()` gives you all objects from class
+
+    """
+    I can add `.order_by` after all(). Method `all()` gives you all objects from class.
+
+    I will slice my query to just the 3 newest posts ie. `[:3]`.
+    It won't downgrade performance because it's part of a query,
+    in other words: it's not done later after the query all Db. S9:125 4:30
+    Using `[-3:]` is not allowed in SQL queries, but I can manipulate slices with
+    `order_by` (ascending/descending order).
+    """
+    essay = EssayCls.objects.all().order_by('-date')[:3]
     video_obj = VideoObject.objects.all()
     user_agent = get_user_agent(request)
     # return HttpResponse('Test')
