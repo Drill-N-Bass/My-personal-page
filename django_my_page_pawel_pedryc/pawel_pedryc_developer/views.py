@@ -127,7 +127,8 @@ def my_essays(request, home_view_pawel_slug):
                 {
                     'essay_found': True,
                     'essay_all': selected_essay,
-                    'form': user_feedback
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all() #s9:128 6:00
                 })
 
         if user_agent.is_mobile:        
@@ -137,7 +138,8 @@ def my_essays(request, home_view_pawel_slug):
                 {
                     'essay_found': True,
                     'essay_all': selected_essay,
-                    'form': user_feedback
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all() #s9:128 6:00
                 })
         
         if user_agent.is_tablet:        
@@ -147,7 +149,8 @@ def my_essays(request, home_view_pawel_slug):
                 {
                     'essay_found': True,
                     'essay_all': selected_essay,
-                    'form': user_feedback
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all() #s9:128 6:00
                 })
 
     except Exception as exc:

@@ -60,6 +60,17 @@ address span {
   
 }
 
+#content_type_h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#h4_post_tags {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #574545;
+}
+
 #details h2 {
   margin-bottom: 8px;
 }

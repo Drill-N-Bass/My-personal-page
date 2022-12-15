@@ -81,9 +81,11 @@ h2 {
 
 #h3-article-main-div{
   box-sizing: border-box;
-  height: 7em;
+  height: 5em;
   text-align: center;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 #h3-article-div-tittle{

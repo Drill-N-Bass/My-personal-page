@@ -16,7 +16,7 @@
 {% endblock%}
 
 {% block header_content%}
-<br /><br /><br />
+
 {% endblock%}
 
 
@@ -27,17 +27,29 @@
 {% if essay_found %}
 
 <article>
-
-    <div class="contact-image-zoomer-base-article">
-        <img class="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+    
+    <div id="main-image_box">
+        <div class="contact-image-zoomer-base-article">
+            <img class="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+        </div>
     </div>
 
-    <section id="location">
-        <div id="content_type">
-            <h3>This content is related to:</h3>
-            <ul>
-                <li><span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span></li>
-            </ul>
+    <section>
+        <div id="art_prev_box">
+            <div id="content_type">
+                <h3>This content is related to:</h3>
+                <ul>
+                    <li><span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span></li>
+                </ul>
+                
+                <h3 id="content_type_h3">Tags:</h3>
+                    <div id="h4_post_tags">
+                        {% for tag in post_tags %}
+                            <span>{{ tag.caption }}</span>
+                            </br>
+                        {% endfor %}
+                    </div> 
+            </div>
         </div>
 
        
