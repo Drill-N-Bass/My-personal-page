@@ -81,7 +81,7 @@ h2 {
 
 #h3-article-main-div{
   box-sizing: border-box;
-  height: 5em;
+  height: 4.4em;
   text-align: center;
   margin: auto;
   position: relative;
@@ -151,6 +151,20 @@ button:hover,
 	transition: background-image 1.2s;
 }
 
+#main-header-article {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 18px;
+  /* background-image:url(../logos/media/python_mushroom.jpeg); */
+  background-image:url(../logos/media/blank_python_mushroom-mobile.jpeg);
+  max-width: 100%;
+  background-position: center;
+  border-bottom: .1875rem solid #b2bcff;
+  background-repeat: no-repeat;
+	transition: background-image 1.2s;
+}
 
 /* #main-header:hover {
   width: 100%;
@@ -161,6 +175,15 @@ button:hover,
   background-position: center;
   border-bottom: .1875rem solid #b2bcff;  
 } */
+
+#main-logo {
+  font-size: 40px;
+  letter-spacing: .0625rem;
+  font-family: 'Roboto Slab', sans-serif;
+  text-decoration: none;
+  color: #350490;
+  font-weight: bold;
+}
 
 
 #animated-logo-mobile-anim-static-div {
@@ -310,17 +333,7 @@ button:hover,
     font-size: 14.4px;
     opacity: 0.8;
     line-height: 0.05;
-    }
-
-#main-logo {
-    font-size: 40px;
-    letter-spacing: .0625rem;
-    font-family: 'Roboto Slab', sans-serif;
-    text-decoration: none;
-    color: #350490;
-    font-weight: bold;
 }
-
 
 .main_div_0 {
   max-height: fit-content;
