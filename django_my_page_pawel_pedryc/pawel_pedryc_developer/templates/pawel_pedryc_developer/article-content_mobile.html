@@ -43,12 +43,11 @@
                 </ul>
                 
                 <h3 id="content_type_h3">Tags:</h3>
-                    <div id="h4_post_tags">
-                        {% for tag in post_tags %}
-                            <span>{{ tag.caption }}</span>
-                            </br>
-                        {% endfor %}
-                    </div> 
+                    <div>
+                    {% for tag in post_tags %}
+                        <span id="h4_post_tags">{{ tag.caption }} </span>
+                    {% endfor %}
+                </div> 
             </div>
         </div>
 

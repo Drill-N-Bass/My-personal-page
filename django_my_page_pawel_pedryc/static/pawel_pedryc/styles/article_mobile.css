@@ -107,9 +107,11 @@ address span {
 }
 
 #h4_post_tags {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: 500;
-  color: #574545;
+  background-color: #352b2b;
+  padding: 0.2rem 0.4rem;
+  border-radius: .9375rem;
 }
 
 
