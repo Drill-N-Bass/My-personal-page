@@ -34,7 +34,11 @@ from django.conf import settings
 
 from django.views.generic.base import RedirectView # 3.58.00
 
-
+"""
+all `static` in `urlpatterns` has to be here (in main project `urls.py`),
+not in app's urls.py. Bcause it's main entry point for all requests where
+I need to enable this static serving
+"""
 urlpatterns = ([
     path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
     path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
