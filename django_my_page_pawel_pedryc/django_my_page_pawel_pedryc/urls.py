@@ -26,7 +26,7 @@ from pawel_pedryc_developer.views import home_view_pawel # for pictures
 from pawel_pedryc_developer.views import my_essays # for videos
 
 ###
-# import static so Django can handle uploaded files and images: 
+# import static so Django can handle uploaded files and images (without that it won't allow): 
 from django.conf.urls.static import static
 # acces to settings objects like `MEDIA_ROOT`, `MEDIA_URL`:
 from django.conf import settings
@@ -39,6 +39,7 @@ all `static` in `urlpatterns` has to be here (in main project `urls.py`),
 not in app's urls.py. Bcause it's main entry point for all requests where
 I need to enable this static serving
 """
+
 urlpatterns = ([
     path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
     path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
