@@ -1,6 +1,8 @@
 from socket import fromshare
 from django import forms
 
+from .models import Comment
+
 """
 Old version with #
 Changed because I don't use `send_me_message = user_feedback.save()` in views.py
@@ -28,3 +30,12 @@ class UserFeedback(forms.Form): # 3.46.00
     email = forms.EmailField(label='Your email') # 'Your email' is html label form templates.
 
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        exclude = ["Post"]
+        labels = {
+            "user_name": "Your name",
+            "user_emai": "Your email",
+            "text": "Your Comment"
+        }

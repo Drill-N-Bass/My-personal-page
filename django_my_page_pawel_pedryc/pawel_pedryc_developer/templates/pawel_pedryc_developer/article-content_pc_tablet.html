@@ -61,7 +61,15 @@
         </footer>
     </section>
     <section id="registration">
-        <h2>Send me your request and job offers!</h2>
+
+        <div>
+            <form>
+                {{ comment_form }}
+                <button>Save Comment</button>
+            </form>
+        </div>
+
+        <h2>Sign up to the newsletter here:</h2>
         <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
             {% csrf_token %}
             {% comment %} #alternative we can write: <ul>

@@ -21,6 +21,8 @@ from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMess
 
 from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00 # for instantiate our form for rendered templates 3:14:00
 
+from .forms import CommentForm # for comments in each article
+
 # Needed for display log with the error exeption function:
 # https://realpython.com/the-most-diabolical-python-antipattern/
 import logging
@@ -128,7 +130,8 @@ def my_essays(request, home_view_pawel_slug):
                     'essay_found': True,
                     'essay_all': selected_essay,
                     'form': user_feedback,
-                    'post_tags': selected_essay.tags.all() #s9:128 6:00
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
                 })
 
         if user_agent.is_mobile:        
@@ -139,7 +142,8 @@ def my_essays(request, home_view_pawel_slug):
                     'essay_found': True,
                     'essay_all': selected_essay,
                     'form': user_feedback,
-                    'post_tags': selected_essay.tags.all() #s9:128 6:00
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
                 })
         
         if user_agent.is_tablet:        
@@ -150,7 +154,8 @@ def my_essays(request, home_view_pawel_slug):
                     'essay_found': True,
                     'essay_all': selected_essay,
                     'form': user_feedback,
-                    'post_tags': selected_essay.tags.all() #s9:128 6:00
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
                 })
 
     except Exception as exc:
