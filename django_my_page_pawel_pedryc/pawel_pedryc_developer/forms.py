@@ -33,7 +33,7 @@ class UserFeedback(forms.Form): # 3.46.00
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ["Post"]
+        exclude = ["post"]
         labels = {
             "user_name": "Your name",
             "user_emai": "Your email",

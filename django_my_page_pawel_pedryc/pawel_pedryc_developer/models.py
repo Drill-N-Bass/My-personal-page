@@ -49,7 +49,6 @@ class VideoObject(models.Model):
     #     ordering = ['-added_date']
 
 
-
 class EssayCls(models.Model):
     title = models.CharField(max_length=200)
     organizer_email = models.EmailField(null=True)
