@@ -85,6 +85,37 @@ address span {
   margin: auto;
 }
 
+#comment-form{
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 50rem;
+  border: .50rem solid #35049027;
+  border-radius: .75rem;
+  background-color: #55779b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+  margin-bottom: 1rem;
+  background-color: #e1e1e1;
+}
+
+.form-control label {
+  font-weight: bold;
+  background-color: #e1e1e1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control input,
+.form-control textarea {
+  display: block;
+  width: 100%;
+  background-color: rgb(211, 211, 211);
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: .375rem;
+}
 
 
 .newsletter_box {
