@@ -36,6 +36,6 @@ class CommentForm(forms.ModelForm):
         exclude = ["post"]
         labels = {
             "user_name": "Your name",
-            "user_emai": "Your email",
+            "user_email": "Your email",
             "text": "Your Comment"
         }
