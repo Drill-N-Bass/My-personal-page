@@ -58,27 +58,43 @@
         
     </section>
 
+    <section>
+        <div>
+            <form>
+                {% csrf_token %}
+                {{ comment_form }}
+                <button>Save Comment</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="registration">
+        <div class="newsletter_box">
+            <h4>Sign up to the newsletter here:</h4>
+            <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
+                {% csrf_token %}
+                {% comment %} #alternative we can write: <ul>
+                    {{ form.as_ul }}
+                </ul> {% endcomment %}
+                <p>
+                    {{ form.as_p }}
+                </p>
+                <div id="registration-actions">
+                    <button>Join me</button>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+    
     <section id="details">
         
         <footer>
+            <br /><br />
             <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
         </footer>
     </section>
-    <section id="registration">
-        <h2>Sign up to the newsletter here:</h2>
-        <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
-            {% csrf_token %}
-            {% comment %} #alternative we can write: <ul>
-                {{ form.as_ul }}
-            </ul> {% endcomment %}
-            <p>
-                {{ form.as_p }}
-            </p>
-            <div id="registration-actions">
-                <button>Join me</button>
-            </div>
-        </form>
-    </section>
+    
     <div>
     {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
     </div>
