@@ -60,9 +60,18 @@
 
     <section>
         <div>
-            <form>
+            <form id="comment-form">
+
                 {% csrf_token %}
-                {{ comment_form }}
+
+                {% for form_field in comment_form %}
+                <div class="form-control">
+                    {{ form_field.label_tag }}
+                    {{ form_field }}
+                    {{ form_field.errors }}
+                {% comment %} {{ comment_form }} {% endcomment %}
+                </div>
+                {% endfor %}
                 <button>Save Comment</button>
             </form>
         </div>
@@ -94,7 +103,7 @@
             <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
         </footer>
     </section>
-    
+
     <div>
     {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
     </div>

@@ -137,6 +137,80 @@ address span {
   font-weight: bold;
 }
 
+#comment-form{
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 50rem;
+  border: .50rem solid #35049027;
+  border-radius: .75rem;
+  background-color: #55779b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+  margin-bottom: 1rem;
+  background-color: #e1e1e1;
+}
+
+/* vertical screen: */
+@media screen and (max-width: 499px) {
+  .form-control label {
+    height: 1.5rem;
+    font-weight: bold;
+    background-color: #e1e1e1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+}
+
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  .form-control label {
+    height: 0.5rem;
+    font-weight: bold;
+    background-color: #e1e1e1;
+    margin-bottom: 0.9rem;
+    display: block;
+  }
+}
+
+
+
+/* vertical screen: */
+@media screen and (max-width: 499px) {
+  .form-control input,
+  .form-control textarea {
+  display: block;
+  height: 2rem;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(211, 211, 211);
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: .375rem;
+  }
+}
+
+/* Horizontal screen: */
+@media screen and (min-width: 500px) {
+  .form-control input,
+  .form-control textarea {
+  display: block;
+  height: 2rem;
+  width: 40%;
+  margin: auto;
+  background-color: rgb(211, 211, 211);
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: .375rem;
+  }
+}
+
+.form-control textarea:last-of-type {
+  height: 8rem;
+  width: 100%;
+}
+
 /* vertical screen: */
 @media screen and (max-width: 499px) {
   .newsletter_box {
