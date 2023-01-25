@@ -129,8 +129,13 @@ address span {
   margin: auto;
 }
 
+#form-comment-tittle {
+  margin-top: 0px;
+}
+
 #comment-form{
   margin: 3rem auto;
+  margin-top: -8px;
   width: 90%;
   max-width: 50rem;
   border: 0.50rem solid #35049027;
@@ -144,9 +149,9 @@ address span {
   font: inherit;
   background-color: #350490;
   color: whitesmoke;
-  border: 1px;
+  border: .0625rem;
   padding: 0.5rem 1.5rem;
-  border-radius: 6px;
+  border-radius: .375rem;
   cursor: pointer;
 }
 
@@ -179,9 +184,10 @@ address span {
   font: inherit;
   padding: 0.25rem;
   border-radius: .375rem;
+  border: .1125rem solid rgb(9, 11, 92);
 }
 
-.form-control textarea:last-of-type {
+.form-control textarea:last-of-type {1
   height: 8rem;
   width: 100%;
 }

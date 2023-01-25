@@ -137,8 +137,13 @@ address span {
   font-weight: bold;
 }
 
+#form-comment-tittle {
+  margin-top: 0px;
+}
+
 #comment-form{
   margin: 3rem auto;
+  margin-top: -8px;
   width: 100%;
   max-width: 50rem;
   border: .50rem solid #35049027;
@@ -152,9 +157,9 @@ address span {
   font: inherit;
   background-color: #350490;
   color: whitesmoke;
-  border: 1px;
+  border: .0625rem;
   padding: 0.5rem 1.5rem;
-  border-radius: 6px;
+  border-radius: .375rem;
   cursor: pointer;
 }
 
@@ -203,6 +208,7 @@ address span {
   font: inherit;
   padding: 0.25rem;
   border-radius: .375rem;
+  border: .0938rem solid rgb(9, 11, 92);
   }
 }
 
@@ -218,6 +224,7 @@ address span {
   font: inherit;
   padding: 0.25rem;
   border-radius: .375rem;
+  border: .0938rem solid rgb(9, 11, 92);
   }
 }
 
