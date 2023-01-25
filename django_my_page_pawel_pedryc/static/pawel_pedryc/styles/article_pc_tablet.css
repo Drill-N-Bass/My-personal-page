@@ -1,3 +1,49 @@
+:root{
+  --main-bg-color: #FDFDFD;
+  --main-txt-color: #f9f9fed6;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #19191adf;
+
+  --dark-btn-background:#010d2e6e;
+  --dark-btn-border: #35049080;
+  --dark-btn-color-text: #cfc234d2;
+  --dark-btn-background-hoover: #010511;
+  --dark-btn-border-hoover: #fff71bca;
+  --dark-btn-color-text-hoover: #ffffff;
+
+  --knowledge-set-text: #161617d6;
+  --contact-small-box-bg: #ccc3db92;
+  --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+  --animation-slider: url(../logos/media/python_mushroom.jpeg);
+  --dark-btn-arrow: url(../logos/media/click_me_arrow.png);
+  /* --dark-btn-arrow-big-resolution: url(../../../static/pawel_pedryc/logos/media/click_me_arrow_left.png); */
+  --comment-label-color: rgb(211, 211, 211);
+  --comment-text-field-color: rgb(211, 211, 211);
+
+}
+
+.darkmode {
+  --main-bg-color: #000027;
+  --main-txt-color: #daffda;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #ddddeddf;
+  
+  --dark-btn-background:#010d2ed9;
+  --dark-btn-border: #350490bd;
+  --dark-btn-color-text: #21fe16bb;
+  --dark-btn-background-hoover: #460465;
+  --dark-btn-border-hoover: #fff71be6;
+  --dark-btn-color-text-hoover: #c5bfbf;
+
+  --knowledge-set-text: #499f10;
+  --contact-small-box-bg: #314030ae;
+
+  --animation-test: url(https://i.ibb.co/WfyzLpJ/charging.png);
+
+  --comment-label-color: rgb(126, 126, 126);
+  --comment-text-field-color: rgba(201, 200, 200, 0.518);
+}
+
 article {
   max-width: 960px;
   margin: 80px auto;
@@ -87,21 +133,38 @@ address span {
   margin: 3rem auto;
   width: 90%;
   max-width: 50rem;
-  border: .50rem solid #35049027;
+  border: 0.50rem solid #35049027;
   border-radius: .75rem;
   background-color: #55779b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+#comment-form button {
+  font: inherit;
+  background-color: #350490;
+  color: whitesmoke;
+  border: 1px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#comment-form button:hover,
+#comment-form button:active {
+  background-color: #5f4590;
+  border-color: #5f4590;
 }
 
 .form-control {
   margin-bottom: 1rem;
-  background-color: #e1e1e1;
+  background-color: var(--comment-label-color);
 }
 
 .form-control label {
   height: 1.5rem;
   font-weight: bold;
-  background-color: #e1e1e1;
+  background-color: var(--comment-label-color);
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -112,7 +175,7 @@ address span {
   height: 2rem;
   width: 30%;
   margin: auto;
-  background-color: rgb(211, 211, 211);
+  background-color: var(--comment-text-field-color);
   font: inherit;
   padding: 0.25rem;
   border-radius: .375rem;
@@ -132,6 +195,10 @@ address span {
   box-shadow: .0625rem .125rem .5rem rgba(0, 0, 0, 0.25);
   position: relative;
 }
+
+.id_email_form {
+  color: var(--comment-text-field-color);
+} /* doesn't work - some issue with Django's form */
 
 #registration ul {
   list-style: none;

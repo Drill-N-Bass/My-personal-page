@@ -76,7 +76,7 @@
     <section id="registration">
         <div class="newsletter_box">
             <h4>Sign up to the newsletter here:</h4>
-            <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
+            <form class="id_email_form" action="{% url 'essay-path' essay_all.slug %}" method="POST">
                 {% csrf_token %}
                 {% comment %} #alternative we can write: <ul>
                     {{ form.as_ul }}

@@ -145,6 +145,23 @@ address span {
   border-radius: .75rem;
   background-color: #55779b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+
+#comment-form button {
+  font: inherit;
+  background-color: #350490;
+  color: whitesmoke;
+  border: 1px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#comment-form button:hover,
+#comment-form button:active {
+  background-color: #5f4590;
+  border-color: #5f4590;
 }
 
 .form-control {
@@ -173,8 +190,6 @@ address span {
     display: block;
   }
 }
-
-
 
 /* vertical screen: */
 @media screen and (max-width: 499px) {
