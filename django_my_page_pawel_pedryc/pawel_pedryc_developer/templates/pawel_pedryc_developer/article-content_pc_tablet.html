@@ -54,11 +54,11 @@
         
     </section>
 
-    <section>
+    <section id="comment-form">
         <div>
             <h2 id="form-comment-tittle">Your Comment</h2>
 
-            <form id="comment-form">
+            <form >
                 {% csrf_token %}
                 {% for form_field in comment_form %}
 

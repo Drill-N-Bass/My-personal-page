@@ -58,11 +58,11 @@
         
     </section>
 
-    <section>
+    <section id="comment-form">
         <div>
-            <h3 id="form-comment-tittle">Your Comment</h3>
+            <h2 id="form-comment-tittle">Your Comment</h2>
 
-            <form id="comment-form">
+            <form >
                 {% csrf_token %}
                 {% for form_field in comment_form %}
 
@@ -78,7 +78,7 @@
             </form>
         </div>
     </section>
-
+    
     <section id="registration">
         <div class="newsletter_box">
             <h4>Sign up to the newsletter here:</h4>

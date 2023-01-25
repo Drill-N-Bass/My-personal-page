@@ -187,7 +187,7 @@ address span {
   border: .1125rem solid rgb(9, 11, 92);
 }
 
-.form-control textarea:last-of-type {1
+.form-control textarea:last-of-type {
   height: 8rem;
   width: 100%;
 }
