@@ -85,19 +85,56 @@ class MyEssaysView(View):
         print("home_view_pawel_slug:", home_view_pawel_slug)
         user_agent = get_user_agent(request)
         selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug)
+        user_feedback = UserFeedback() # handling form submission 3.18.20
         
-        if request.method == 'GET': # handling form submission 3.18.20
-            user_feedback = UserFeedback() # handling form submission 3.18.20
+        if user_agent.is_pc:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
+                })
 
-        context = {
-            'essay_found': True,
-            'essay_all': selected_essay,
-            'post_tags': selected_essay.tags.all(),
-            'form': user_feedback,
-            "comment_form": CommentForm(),
-            # "user_feedback": UserFeedback() # jeśli mail nie działa to spróbuj to odhaszować
-        }
-        return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
+        if user_agent.is_mobile:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_mobile.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
+                })
+        
+        if user_agent.is_tablet:        
+            return render(
+                request,
+                'pawel_pedryc_developer/article-content_pc_tablet.html', 
+                {
+                    'essay_found': True,
+                    'essay_all': selected_essay,
+                    'form': user_feedback,
+                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
+                    'comment_form': CommentForm()
+                })
+
+
+        elif request.method == 'GET': # handling form submission 3.18.20
+
+            context = {
+                'essay_found': True,
+                'essay_all': selected_essay,
+                'post_tags': selected_essay.tags.all(),
+                'form': user_feedback,
+                "comment_form": CommentForm(),
+                # "user_feedback": UserFeedback() # jeśli mail nie działa to spróbuj to odhaszować
+            }
+            return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
 
     def post(self, request, home_view_pawel_slug):
         
