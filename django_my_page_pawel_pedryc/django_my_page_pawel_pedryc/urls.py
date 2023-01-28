@@ -23,7 +23,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.staticfiles.storage import staticfiles_storage # for `favicon` -> https://simpleit.rocks/python/django/django-favicon-adding/
 from pawel_pedryc_developer.views import home_view_pawel # for pictures
 
-from pawel_pedryc_developer.views import my_essays # for videos
+from pawel_pedryc_developer.views import MyEssaysView
+# from pawel_pedryc_developer.views import my_essays
 
 ###
 # import static so Django can handle uploaded files and images (without that it won't allow): 

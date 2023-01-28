@@ -54,7 +54,7 @@ class EssayCls(models.Model):
     organizer_email = models.EmailField(null=True)
     date = models.DateField(null=True)
     slug  = models.SlugField(unique=True, db_index=True) # db_index=True Improuve performance since it's part of my html path S6:91 2:30 
-    description = models.TextField(MinLengthValidator(10)) #s9:119 7:00
+    description = models.TextField(validators = [MinLengthValidator(10)]) #s9:119 7:00
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
@@ -90,4 +90,3 @@ class Comment(models.Model):
                             on_delete=models.CASCADE, 
                             related_name="comments"
                             )
-

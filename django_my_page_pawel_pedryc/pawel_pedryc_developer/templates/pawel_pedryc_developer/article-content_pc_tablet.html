@@ -58,7 +58,7 @@
         <div>
             <h2 id="form-comment-tittle">Your Comment</h2>
 
-            <form >
+            <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
                 {% csrf_token %}
                 {% for form_field in comment_form %}
 

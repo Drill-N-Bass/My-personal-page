@@ -16,10 +16,13 @@ https://stackoverflow.com/a/59274447/15372196
 https://github.com/selwin/django-user_agents
 """
 from django_user_agents.utils import get_user_agent
+from django.views import View
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
-from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00 # for instantiate our form for rendered templates 3:14:00
+from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
 
 from .forms import CommentForm # for comments in each article
 
@@ -77,13 +80,12 @@ def home_view_pawel(request):
 
             })
 
-
-def my_essays(request, home_view_pawel_slug):
-    # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
-    user_agent = get_user_agent(request)
-    
-    try: # first exception model at 2:13:20 # first exception model at 2:13:20
-        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class # 2.11.50 Method `get()` gives you one object from class
+class MyEssaysView(View):
+    def get(self, request, home_view_pawel_slug):
+        print("home_view_pawel_slug:", home_view_pawel_slug)
+        user_agent = get_user_agent(request)
+        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug)
+        
         if request.method == 'GET': # handling form submission 3.18.20
             user_feedback = UserFeedback() # handling form submission 3.18.20
             
@@ -94,7 +96,7 @@ def my_essays(request, home_view_pawel_slug):
             that might be attached to incoming POST request. # 3:22:00
             """
             user_feedback = UserFeedback(request.POST) 
-            if user_feedback.is_valid():
+            if user_feedback.is_valid():  # to być może jest źle(cała sekcja, aż do return)  <===========   <===========   <===========   <===========   <===========   <===========
                 user_email = user_feedback.cleaned_data['email']
                 send_me_message, was_created = SendMeMessage.objects.get_or_create(email=user_email) # 3.44.00
                 ## v1:
@@ -106,7 +108,7 @@ def my_essays(request, home_view_pawel_slug):
                 I will do so, because if I use `send_me_message` model from models.py instead of this form
                 then I won't have control over how it's created. Doing the line of code below,
                 I have control over how it's created and I can check
-                whether I have added before an email before I try to create a new one in db. 
+                whether I have added an email before I try to create a new one in db. 
                 If I don't have an email in db I can create a new instance in db with the line:
                 `send_me_message_new, _ = send_me_message.objects.get_or_create(email=user_email)`.
                 I can write, also 
@@ -121,72 +123,41 @@ def my_essays(request, home_view_pawel_slug):
                 selected_essay.guest.add(send_me_message) # 3.26.00
                 
                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
+
+        context = {
+            'essay_found': True,
+            'essay_all': selected_essay,
+            'post_tags': selected_essay.tags.all(),
+            'form': user_feedback,
+            "comment_form": CommentForm(),
+            # "user_feedback": UserFeedback() # jeśli mail nie działa to spróbuj to odhaszować
+        }
+        return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
+
+    def post(self, request, home_view_pawel_slug):
         
-        if user_agent.is_pc:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
-
-        if user_agent.is_mobile:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_mobile.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
+        user_feedback = UserFeedback(request.POST)
+        comment_form = CommentForm(request.POST)
+        post = EssayCls.objects.get(slug=home_view_pawel_slug)
         
-        if user_agent.is_tablet:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
+        # zrób od tego miejsca ##########################################################################  <===========   <===========   <===========   <===========   <===========   <===========
+        if comment_form.is_valid():
+          comment = comment_form.save(commit=False)
+          comment.post = post
+          comment.save()
 
-    except Exception as exc:
-        print('Exception error message:', exc) # Test
+          return HttpResponseRedirect(reverse("essay-path", args=[slug]))  # jak nie działa to albo wpisz slug albo home_view_pawel_slug 
 
-        if user_agent.is_pc:
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': False
-                })
-                # 'essay_title': selected_essay.title,
-                # 'essay_description': selected_essay.description,
-                # 'essay_prog_language': selected_essay.language
+        context = {
+          "post": post,
+          "post_tags": post.tags.all(),
+          "comment_form": comment_form
+        }
+        return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
 
-        elif user_agent.is_mobile:
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_mobile.html', 
-                {
-                    'essay_found': False
-                })
 
-        elif user_agent.is_tablet:
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': False
-                })
+
+
 
 
 def confirm_registration(request, home_view_pawel_slug):
@@ -218,6 +189,9 @@ def confirm_registration(request, home_view_pawel_slug):
             'organizer_email': contact.organizer_email
         })
 
+
+###     For videos - in progress   ###
+
 # def video_main(request):
 #     video_obj = VideoObject.object.all()
 #     return render(request, 'pawel_pedryc_developer/pawel_pedryc-pc.html', 
@@ -231,3 +205,118 @@ def confirm_registration(request, home_view_pawel_slug):
 #     {
 #         'video_obj': video_obj
 #     })
+
+
+###   An old version of essay article - now as `MyEssaysView`   ###
+
+
+# def my_essays(request, home_view_pawel_slug):
+#     # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
+#     user_agent = get_user_agent(request)
+    
+#     try: # first exception model at 2:13:20 # first exception model at 2:13:20
+#         selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class
+#         if request.method == 'GET': # handling form submission 3.18.20
+#             user_feedback = UserFeedback() # handling form submission 3.18.20
+            
+#         else:
+#             """
+#             The incoming request from Django will have
+#             a POST property which contains any submitted data
+#             that might be attached to incoming POST request. # 3:22:00
+#             """
+#             user_feedback = UserFeedback(request.POST) 
+#             if user_feedback.is_valid():
+#                 user_email = user_feedback.cleaned_data['email']
+#                 send_me_message, was_created = SendMeMessage.objects.get_or_create(email=user_email) # 3.44.00
+#                 ## v1:
+#                 # send_me_message = user_feedback.save() # v1 problem: user can sign just once 3.41.00
+#                 # v2:
+#                 # user_email = user_feedback.cleaned_data['email'] # `email` key from SendMeMessage model 3.42.21
+#                 """
+#                 Having `user_email` object I can create a `send_me_message` by myself
+#                 I will do so, because if I use `send_me_message` model from models.py instead of this form
+#                 then I won't have control over how it's created. Doing the line of code below,
+#                 I have control over how it's created and I can check
+#                 whether I have added an email before I try to create a new one in db. 
+#                 If I don't have an email in db I can create a new instance in db with the line:
+#                 `send_me_message_new, _ = send_me_message.objects.get_or_create(email=user_email)`.
+#                 I can write, also 
+#                 send_me_message_new, was_created = send_me_message.objects.get_or_create(email=user_email)
+#                 the flag `was_created` tells us whether a new entry was created or not.
+#                 `_` ignore value: `was_created`.
+#                 """
+#                 # send_me_message_new, _ = send_me_message.objects.get_or_create(email=user_email)
+#                 # selected_essay.guest.add(send_me_message_new)
+#                 ## end v2
+
+#                 selected_essay.guest.add(send_me_message) # 3.26.00
+                
+#                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
+        
+#         if user_agent.is_pc:        
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_pc_tablet.html', 
+#                 {
+#                     'essay_found': True,
+#                     'essay_all': selected_essay,
+#                     'form': user_feedback,
+#                     'post_tags': selected_essay.tags.all(), #s9:128 6:00
+#                     'comment_form': CommentForm()
+#                 })
+
+#         if user_agent.is_mobile:        
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_mobile.html', 
+#                 {
+#                     'essay_found': True,
+#                     'essay_all': selected_essay,
+#                     'form': user_feedback,
+#                     'post_tags': selected_essay.tags.all(), #s9:128 6:00
+#                     'comment_form': CommentForm()
+#                 })
+        
+#         if user_agent.is_tablet:        
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_pc_tablet.html', 
+#                 {
+#                     'essay_found': True,
+#                     'essay_all': selected_essay,
+#                     'form': user_feedback,
+#                     'post_tags': selected_essay.tags.all(), #s9:128 6:00
+#                     'comment_form': CommentForm()
+#                 })
+
+#     except Exception as exc:
+#         print('Exception error message:', exc) # Test
+
+#         if user_agent.is_pc:
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_pc_tablet.html', 
+#                 {
+#                     'essay_found': False
+#                 })
+#                 # 'essay_title': selected_essay.title,
+#                 # 'essay_description': selected_essay.description,
+#                 # 'essay_prog_language': selected_essay.language
+
+#         elif user_agent.is_mobile:
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_mobile.html', 
+#                 {
+#                     'essay_found': False
+#                 })
+
+#         elif user_agent.is_tablet:
+#             return render(
+#                 request,
+#                 'pawel_pedryc_developer/article-content_pc_tablet.html', 
+#                 {
+#                     'essay_found': False
+#                 })
+

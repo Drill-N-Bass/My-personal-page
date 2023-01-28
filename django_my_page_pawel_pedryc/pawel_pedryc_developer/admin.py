@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import EssayCls, ProgLang, SendMeMessage, VideoObject, Tag
+from .models import EssayCls, ProgLang, SendMeMessage, VideoObject, Tag, Comment
 from embed_video.admin import AdminVideoMixin
 
 ## Tweak title of the objects in admin page:
@@ -12,6 +12,7 @@ class EssayAdmin(admin.ModelAdmin):
 admin.site.register(EssayCls, EssayAdmin)
 admin.site.register(ProgLang)
 admin.site.register(SendMeMessage)
+admin.site.register(Comment)
 
 # class TagFilter(admin.ModelAdmin):
 #     list_filter = ()
