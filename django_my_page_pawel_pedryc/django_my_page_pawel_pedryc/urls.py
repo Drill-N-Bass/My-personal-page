@@ -20,7 +20,7 @@ from django.urls import path, include
 from hangman_game.views import easter_egg_hangman_game
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.staticfiles.storage import staticfiles_storage # for `favicon` -> https://simpleit.rocks/python/django/django-favicon-adding/
+
 from pawel_pedryc_developer.views import home_view_pawel # for pictures
 
 from pawel_pedryc_developer.views import MyEssaysView
@@ -44,7 +44,6 @@ I need to enable this static serving
 urlpatterns = ([
     path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
     path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('pawel_pedryc\logos\media\favicon.ico'))),
     path('', include('pawel_pedryc_developer.urls')),
     path('', include('hangman_game.urls')),
     path('admin/', admin.site.urls),
