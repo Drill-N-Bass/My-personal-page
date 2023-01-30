@@ -108,12 +108,15 @@
 </article>
 
 {% else %}
-<h2></h2>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<h2 style="text-align: center; font-size: 90px;">
-    No essay found for this slug, sorry! 
-    <br /><br /><br /><br />
+
+<h2 style="text-align: center; font-size: 50px;">
+    No essay found (for this slug), sorry! 
+    <br /><br />
 </h2>
+
+<div>
+    {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
+</div>
 {% endif %}
 
 {% endblock%}

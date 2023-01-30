@@ -82,71 +82,60 @@ def home_view_pawel(request):
 
 class MyEssaysView(View):
     def get(self, request, home_view_pawel_slug):
-        print("home_view_pawel_slug:", home_view_pawel_slug)
+        print("GET: home_view_pawel_slug:", home_view_pawel_slug) # test
         user_agent = get_user_agent(request)
         selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug)
         user_feedback = UserFeedback() # handling form submission 3.18.20
         
-        if user_agent.is_pc:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
-
-        if user_agent.is_mobile:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_mobile.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
-        
-        if user_agent.is_tablet:        
-            return render(
-                request,
-                'pawel_pedryc_developer/article-content_pc_tablet.html', 
-                {
-                    'essay_found': True,
-                    'essay_all': selected_essay,
-                    'form': user_feedback,
-                    'post_tags': selected_essay.tags.all(), #s9:128 6:00
-                    'comment_form': CommentForm()
-                })
-
-
-        elif request.method == 'GET': # handling form submission 3.18.20
-
-            context = {
+        context = {
                 'essay_found': True,
                 'essay_all': selected_essay,
-                'post_tags': selected_essay.tags.all(),
+                'post_tags': selected_essay.tags.all(),  #s9:128 6:00
                 'form': user_feedback,
-                "comment_form": CommentForm(),
-                # "user_feedback": UserFeedback() # jeśli mail nie działa to spróbuj to odhaszować
+                "comment_form": CommentForm()
+                # "user_feedback": UserFeedback()
             }
-            return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
+            
+        if request.method == 'GET': # handling form submission 3.18.20
+            
+            if user_agent.is_pc:        
+                return render(
+                    request,
+                    'pawel_pedryc_developer/article-content_pc_tablet.html', context)
+
+            elif user_agent.is_mobile:        
+                return render(
+                    request,
+                    'pawel_pedryc_developer/article-content_mobile.html', context)
+            
+            if user_agent.is_tablet:        
+                return render(
+                    request,
+                    'pawel_pedryc_developer/article-content_pc_tablet.html', context)
+
+
 
     def post(self, request, home_view_pawel_slug):
-        
-        comment_form = CommentForm(request.POST)
-        post = EssayCls.objects.get(slug=home_view_pawel_slug)
         
         """
         The incoming request from Django will have
         a POST property which contains any submitted data
         that might be attached to incoming POST request. # 3:22:00
         """
+        print("POST: home_view_pawel_slug:", home_view_pawel_slug) # test
+        
+        comment_form = CommentForm(request.POST)
         user_feedback = UserFeedback(request.POST) 
+        user_agent = get_user_agent(request)
+
+        post = EssayCls.objects.get(slug=home_view_pawel_slug)
+        
+        context = {
+          "post": post,
+          "post_tags": post.tags.all(),
+          "comment_form": comment_form
+        }
+        
         if user_feedback.is_valid(): 
             user_email = user_feedback.cleaned_data['email']
             send_me_message, was_created = SendMeMessage.objects.get_or_create(email=user_email) # 3.44.00
@@ -176,18 +165,17 @@ class MyEssaysView(View):
             return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
 
         elif comment_form.is_valid():
-          comment = comment_form.save(commit=False)
+          comment = comment_form.save(commit=False) # s14:193 10:00
           comment.post = post
           comment.save()
 
-          return HttpResponseRedirect(reverse("essay-path", args=[slug]))  # jak nie działa to albo wpisz slug albo home_view_pawel_slug 
+          return HttpResponseRedirect(reverse("essay-path", args=[home_view_pawel_slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:193 6:10
 
-        context = {
-          "post": post,
-          "post_tags": post.tags.all(),
-          "comment_form": comment_form
-        }
-        return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
+        elif user_agent.is_pc:
+            return render(request, "pawel_pedryc_developer/article-content_pc_tablet.html", context)
+
+        elif user_agent.is_mobile:
+            return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
 
 
 
