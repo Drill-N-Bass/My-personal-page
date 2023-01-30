@@ -46,39 +46,38 @@ def home_view_pawel(request):
     essay = EssayCls.objects.all().order_by('-date')[:3]
     video_obj = VideoObject.objects.all()
     user_agent = get_user_agent(request)
+    context = {
+            'text_content': essay,
+            'show_text_content': True,
+            'video_content': video_obj,
+            'hangman_icon': True
+            }
     # return HttpResponse('Test')
+
     if user_agent.is_pc:
         # my_template='mobile_template.html'
         return render(
-        request,
-        'pawel_pedryc_developer/pawel_pedryc-pc.html',
-        {
-        'text_content': essay,
-        'show_text_content': True,
-        'video_content': video_obj
+                    request,
+                    'pawel_pedryc_developer/pawel_pedryc-pc.html',
+                    context
+                    )
 
-        })
     elif user_agent.is_mobile:
         # my_template='tablet_template.html'
         return render(
-        request,
-        'pawel_pedryc_developer/pawel_pedryc_mobile.html',
-        {
-        'text_content': essay,
-        'show_text_content': True,
-        'video_content': video_obj
-
-        })
+                    request,
+                    'pawel_pedryc_developer/pawel_pedryc_mobile.html',
+                    {
+                    'text_content': essay,
+                    'show_text_content': True,
+                    'video_content': video_obj,
+                    'hangman_icon': False
+                    })
     elif user_agent.is_tablet:
         return render(
-            request,
-            'pawel_pedryc_developer/pawel_pedryc_tablet.html',
-            {
-            'text_content': essay,
-            'show_text_content': True,
-            'video_content': video_obj
-
-            })
+                    request,
+                    'pawel_pedryc_developer/pawel_pedryc_tablet.html',
+                    context)
 
 class MyEssaysView(View):
     def get(self, request, home_view_pawel_slug):
@@ -92,26 +91,39 @@ class MyEssaysView(View):
                 'essay_all': selected_essay,
                 'post_tags': selected_essay.tags.all(),  #s9:128 6:00
                 'form': user_feedback,
-                "comment_form": CommentForm()
+                'comment_form': CommentForm(),
+                'hangman_icon': True
                 # "user_feedback": UserFeedback()
             }
-            
+
         if request.method == 'GET': # handling form submission 3.18.20
             
             if user_agent.is_pc:        
                 return render(
-                    request,
-                    'pawel_pedryc_developer/article-content_pc_tablet.html', context)
+                            request,
+                            'pawel_pedryc_developer/article-content_pc_tablet.html',
+                            context
+                            )
 
             elif user_agent.is_mobile:        
                 return render(
-                    request,
-                    'pawel_pedryc_developer/article-content_mobile.html', context)
+                            request,
+                            'pawel_pedryc_developer/article-content_mobile.html', {
+                            'essay_found': True,
+                            'essay_all': selected_essay,
+                            'post_tags': selected_essay.tags.all(),  #s9:128 6:00
+                            'form': user_feedback,
+                            'comment_form': CommentForm(),
+                            'hangman_icon': False
+                            # "user_feedback": UserFeedback()
+                        })
             
             if user_agent.is_tablet:        
                 return render(
-                    request,
-                    'pawel_pedryc_developer/article-content_pc_tablet.html', context)
+                            request,
+                            'pawel_pedryc_developer/article-content_pc_tablet.html',
+                            context
+                            )
 
 
 
