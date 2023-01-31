@@ -26,6 +26,14 @@
 
 {% if essay_found %}
 
+{% if comment_form.errors %}
+  <div id="alert">
+    <h2>Saving the comment failed!</h2>
+    <p>Please check the comment form below the post and fix your erros.</p>
+    <a href="#comment-form">Fix!</a>
+  </div>
+{% endif %}
+
 <article>
     
     <div id="main-image_box">
@@ -58,6 +66,19 @@
         
     </section>
 
+    <section id="comments">
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <h2>{{ comment.user_name }}</h2>
+                    {% comment %} <h3>{{ comment.post_date }}</h3> {% endcomment %}
+                    <p>{{ comment.text|linebreaks }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+
     <section id="comment-form">
         <div>
             <h2 id="form-comment-tittle">Your Comment</h2>
@@ -80,7 +101,8 @@
     </section>
     
     <section id="registration">
-        <div class="newsletter_box">
+        {% comment %} about {% if form_field.errors %}invalid{% endif %} s14:193 2:30 {% endcomment %}
+        <div class="newsletter_box" {% if form_field.errors %}invalid{% endif %}>
             <h4>Sign up to the newsletter here:</h4>
             <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
                 {% csrf_token %}

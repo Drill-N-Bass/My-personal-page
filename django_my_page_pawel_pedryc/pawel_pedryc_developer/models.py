@@ -63,6 +63,9 @@ class EssayCls(models.Model):
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     tags = models.ManyToManyField(Tag)
     
+    def __str__(self):
+        return f"{self.title}" # I set title for each row in admin panel so I can see all titles of my essays in comment table s14:e196 2:30
+
     class Meta:
         """
         Because I want to configure behaviour about my model 
@@ -84,7 +87,8 @@ class EssayCls(models.Model):
 class Comment(models.Model):
     user_name = models.CharField(max_length=120)
     user_email = models.EmailField() 
-    text = models.TextField(max_length=2300)
+    text = models.TextField(max_length=23000)
+    # post_date = models.DateTimeField()
     post = models.ForeignKey(
                             EssayCls, 
                             on_delete=models.CASCADE, 

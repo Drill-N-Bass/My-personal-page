@@ -92,7 +92,8 @@ class MyEssaysView(View):
                 'post_tags': selected_essay.tags.all(),  #s9:128 6:00
                 'form': user_feedback,
                 'comment_form': CommentForm(),
-                'hangman_icon': True
+                'hangman_icon': True,
+                'comments': selected_essay.comments.all().order_by("-id") # s14:194 1:00
                 # "user_feedback": UserFeedback()
             }
 
@@ -145,7 +146,8 @@ class MyEssaysView(View):
         context = {
           "post": post,
           "post_tags": post.tags.all(),
-          "comment_form": comment_form
+          "comment_form": comment_form,
+          'comments': post.comments.all().order_by("-id") # s14:194 1:00
         }
         
         if user_feedback.is_valid(): 
@@ -177,11 +179,11 @@ class MyEssaysView(View):
             return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
 
         elif comment_form.is_valid():
-          comment = comment_form.save(commit=False) # s14:193 10:00
+          comment = comment_form.save(commit=False) # s14:192 10:00
           comment.post = post
           comment.save()
 
-          return HttpResponseRedirect(reverse("essay-path", args=[home_view_pawel_slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:193 6:10
+          return HttpResponseRedirect(reverse("essay-path", args=[home_view_pawel_slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:192 6:10
 
         elif user_agent.is_pc:
             return render(request, "pawel_pedryc_developer/article-content_pc_tablet.html", context)
@@ -240,6 +242,8 @@ def confirm_registration(request, home_view_pawel_slug):
 #         'video_obj': video_obj
 #     })
 
+
+# terminal shell for SQL: s14:192 12:10
 
 ###   An old version of essay article - now as `MyEssaysView`   ###
 

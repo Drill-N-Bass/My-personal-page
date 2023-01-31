@@ -8,11 +8,15 @@ class EssayAdmin(admin.ModelAdmin):
     list_filter          = ('language', 'date', 'tags',) # Keep in mind it's tuple
     prepopulated_fields  = {'slug': ('title',)} #2:41:00
 
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ("user_name", "post")
+
     
 admin.site.register(EssayCls, EssayAdmin)
 admin.site.register(ProgLang)
 admin.site.register(SendMeMessage)
-admin.site.register(Comment)
+admin.site.register(Comment, CommentAdmin)
 
 # class TagFilter(admin.ModelAdmin):
 #     list_filter = ()
