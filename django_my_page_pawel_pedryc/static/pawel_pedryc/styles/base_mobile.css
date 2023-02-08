@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bonbon&family=League+Script&family=Molle&family=Monsieur+La+Doulaise&family=Mr+De+Haviland&family=Swanky+and+Moo+Moo&display=swap');
 /* OOCSS first:*/
 
 * {
@@ -181,7 +182,10 @@ button:hover,
 #main-logo {
   font-size: 40px;
   letter-spacing: .0625rem;
-  font-family: 'Roboto Slab', sans-serif;
+  /* font-family in js file: "random_change_logo.js" */
+  /* font-family: 'Black And White Picture', sans-serif; */
+  /* font-family: 'Swanky and Moo Moo', cursive; */
+  /* font-family: 'Monsieur La Doulaise', cursive; */
   text-decoration: none;
   color: #350490;
   font-weight: bold;
@@ -583,7 +587,6 @@ button:hover,
   border: .1875rem solid #007bff;
   border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
-	
 }
 
 /* Horizontal screen: */
