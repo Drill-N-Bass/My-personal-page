@@ -1,5 +1,5 @@
 :root{
-  --main-bg-color: #FDFDFD;
+  --main-bg-color: #6c91a763;
   --main-txt-color: #f9f9fed6;
   --article-item-bg-color: #3F7DA4;
   --main-txt-color-h3: #19191adf;
@@ -42,6 +42,25 @@
 
   --comment-label-color: rgb(126, 126, 126);
   --comment-text-field-color: rgba(201, 200, 200, 0.518);
+}
+
+#read-later {
+  margin: 2rem 0;
+}
+
+#read-later button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+#read-later button:hover,
+#read-later button:active {
+  background-color: white;
+  color: #390281;
 }
 
 article {

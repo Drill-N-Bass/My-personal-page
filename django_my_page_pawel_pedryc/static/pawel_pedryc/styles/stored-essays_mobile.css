@@ -1,0 +1,40 @@
+#main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #stored-essays {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    width: 90%;
+    height: 1000rem;
+    max-width: 30rem;
+  }
+  
+  #stored-essays ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #stored-essays li {
+    margin: 1rem 0;
+  }
+  
+  #stored-essays a {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    color: #1b1b1b;
+    font-weight: bold;
+  }
+  
+  #stored-essays a:hover,
+  #stored-essays a:active {
+    background-color: #ccc;
+  }

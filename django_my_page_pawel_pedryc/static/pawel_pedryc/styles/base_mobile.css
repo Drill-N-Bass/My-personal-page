@@ -11,7 +11,7 @@
 } */
 
 :root{
-  --main-bg-color: #bbc8d6;
+  --main-bg-color: #6c91a763;
   --main-txt-color: #fef9f9d6;
   --article-item-bg-color: #3F7DA4;
   --main-txt-color-h3: #19191adf;
@@ -60,6 +60,8 @@ body {
   width: 100%;
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
+  height: 100%;
+  min-height: 100%;
 }
 /* Horizontal screen: */
 @media screen and (min-width: 320px) {
@@ -328,6 +330,52 @@ button:hover,
   transition-timing-function:  1s ease-out;
   transition-duration:         1s ease-out;
 }
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+#read-later_all-essays_div_nav {
+  float: right;
+}
+
+.read-later_all-essays_div {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  white-space: nowrap;
+  object-position: right bottom;
+  margin-right: 10px;
+  width: 180px; 
+  height: 60px;
+  margin-top: -40px;
+  margin-bottom: -100px;
+}
+
+.main-header-essays-btn{
+  background-color: var(--dark-btn-background);
+  color: var(--dark-btn-color-text);
+  height: 30px;
+  width: 170px;
+  font-size: small;
+  text-align: center;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border);
+  margin-right: 5px;
+  
+}
+
+.main-header-essays-btn:hover{
+  background-color: var(--dark-btn-background-hoover);
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  color: var(--dark-btn-color-text-hoover);
+  -webkit-transition:    color, border 0.2s line;
+  -moz-transition:       color, border 0.2s ease-out;
+  -ms-transition:        color, border 0.2s ease-out;
+  -o-transition:         color, border 0.2s ease-out;
+  transition:            color, border 2s ease-out;
+  transition-timing-function:  1s ease-out;
+  transition-duration:         1s ease-out;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 #main-header h1 {
     font-size: 14.4px;
@@ -526,6 +574,11 @@ button:hover,
   background-color: #ffea2e;
   float: right;
   }
+}
+
+#footer-position{
+  bottom: 0;
+  position: absolute;
 }
 
 #footer-bg

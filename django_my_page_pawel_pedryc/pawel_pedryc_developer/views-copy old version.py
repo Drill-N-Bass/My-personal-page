@@ -78,12 +78,12 @@ def home_view_pawel(request):
             })
 
 
-def my_essays(request, home_view_pawel_slug):
-    # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
+def my_essays(request, slug):
+    # print("print('slug'):", slug)
     user_agent = get_user_agent(request)
     
     try: # first exception model at 2:13:20 # first exception model at 2:13:20
-        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class # 2.11.50 Method `get()` gives you one object from class
+        selected_essay = EssayCls.objects.get(slug=slug) # 2.11.50 Method `get()` gives you one object from class # 2.11.50 Method `get()` gives you one object from class
         if request.method == 'GET': # handling form submission 3.18.20
             user_feedback = UserFeedback() # handling form submission 3.18.20
             
@@ -120,7 +120,7 @@ def my_essays(request, home_view_pawel_slug):
 
                 selected_essay.guest.add(send_me_message) # 3.26.00
                 
-                return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
+                return redirect('confirm-registration', slug=slug) # 3.52.00
         
         if user_agent.is_pc:        
             return render(
@@ -189,8 +189,8 @@ def my_essays(request, home_view_pawel_slug):
                 })
 
 
-def confirm_registration(request, home_view_pawel_slug):
-    contact = EssayCls.objects.get(slug=home_view_pawel_slug)
+def confirm_registration(request, slug):
+    contact = EssayCls.objects.get(slug=slug)
     user_agent = get_user_agent(request)
     # return render(request, 'pawel_pedryc_developer/registration-success_pc_tablet.html')
 

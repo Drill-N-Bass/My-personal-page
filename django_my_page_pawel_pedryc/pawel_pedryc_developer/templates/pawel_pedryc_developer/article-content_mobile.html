@@ -59,7 +59,21 @@
             </div>
         </div>
 
-       
+        <div id="read-later">
+            <form action="{% url 'read-later' %}" method="POST">
+              {% csrf_token %}
+              {% comment %} s14e197 4:00 {% endcomment %}
+              <input type="hidden" value="{{ essay_all.id }}" name="post_id">
+              <button>
+                {% if saved_for_later %}
+                  Remove from "Read Later" List
+                {% else %}
+                  Read Later
+                {% endif %}
+              </button>
+            </form>
+          </div>
+
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %} 
@@ -124,7 +138,7 @@
         
         <footer>
             <br /><br />
-            <p>Need more details? <a href="mailto:{{ essay_all.organizer_email }}">Please contact me</a> (but don't spam ;))</p>
+            <p>Need more details? <a href="mailto:{{ my_email }}">Please contact me</a> (but don't spam ;))</p>
         </footer>
     </section>
 

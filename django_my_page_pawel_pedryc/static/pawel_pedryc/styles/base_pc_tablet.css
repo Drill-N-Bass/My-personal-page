@@ -11,7 +11,7 @@
 } */
 
 :root{
-  --main-bg-color: #FDFDFD;
+  --main-bg-color: #6c91a763;
   --main-txt-color: #f9f9fed6;
   --article-item-bg-color: #3F7DA4;
   --main-txt-color-h3: #19191adf;
@@ -61,6 +61,8 @@ body {
   border: 0;
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
+  height: 100%;
+  min-height: 100%;
 }
 
 h1,
@@ -220,6 +222,58 @@ button:hover,
   transition-duration:         1s ease-out;
 }
 
+.read-later_all-essays_div {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  object-position: right bottom;
+  margin-left: 1rem;
+  width: 300px; 
+  height: 3.75rem;
+  margin-left: 0px;
+  margin-top: 130px;
+  margin-bottom: -6.25rem;
+}
+
+.main-header-essays-btn{
+  background-color: var(--dark-btn-background);
+  float: right;
+  height: 40px;
+  width: 150px;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border);
+  margin-right: 1px;
+  color: var(--dark-btn-color-text);
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-essays-btn{
+    background-color: var(--dark-btn-background);
+    float: left;
+    height: 40px;
+    width: 150px;
+    border-radius: 8px;
+    border: 3px solid var(--dark-btn-border);
+    margin-right: 1px;
+    color: var(--dark-btn-color-text);
+    margin-top: 110px;
+  }
+}
+
+.main-header-essays-btn:hover{
+  background-color: var(--dark-btn-background-hoover);
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  color: var(--dark-btn-color-text-hoover);
+  -webkit-transition:    color, border 0.2s line;
+  -moz-transition:       color, border 0.2s ease-out;
+  -ms-transition:        color, border 0.2s ease-out;
+  -o-transition:         color, border 0.2s ease-out;
+  transition:            color, border 2s ease-out;
+  transition-timing-function:  1s ease-out;
+  transition-duration:         1s ease-out;
+}
+
 #main-header h1 {
     font-size: .9rem;
     opacity: 0.8;
@@ -273,8 +327,9 @@ button:hover,
   
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1700px){
   .square {
+  object-position: bottom;
   padding: 10px;
   height: 190px;
   width: 16.2496px;
@@ -302,7 +357,7 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .hg {
   margin-top: 2.5008px;
   margin-right: -8px;
@@ -329,7 +384,7 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .li {
   margin-top: 2.5008px;
   margin-right: -8px;
@@ -356,7 +411,7 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .gh {
   margin-top: 2.5008px;
   margin-right: -8px;
@@ -383,7 +438,7 @@ button:hover,
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .so {
   margin-top: 2.5008px;
   margin-right: -8px;
@@ -409,7 +464,7 @@ button:hover,
 	background-color: #3fc600;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .pypi {
   margin-top: 2.5008px;
   margin-right: -8px;
@@ -420,10 +475,15 @@ button:hover,
   }
 }
 
+#footer-position{
+  bottom: 0;
+  position: absolute;
+}
+
 #footer-bg
 {
   background-color: #000027;
-
+  
 }
 
 .contact_envelop

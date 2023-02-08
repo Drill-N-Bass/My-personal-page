@@ -1,8 +1,73 @@
+:root{
+  --main-bg-color: #6c91a763;
+  --main-txt-color: #f9f9fed6;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #19191adf;
+
+  --dark-btn-background:#010d2e6e;
+  --dark-btn-border: #35049080;
+  --dark-btn-color-text: #cfc234d2;
+  --dark-btn-background-hoover: #010511;
+  --dark-btn-border-hoover: #fff71bca;
+  --dark-btn-color-text-hoover: #ffffff;
+
+  --knowledge-set-text: #161617d6;
+  --contact-small-box-bg: #ccc3db92;
+  --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+  --animation-slider: url(../logos/media/python_mushroom.jpeg);
+  --dark-btn-arrow: url(../logos/media/click_me_arrow.png);
+  /* --dark-btn-arrow-big-resolution: url(../../../static/pawel_pedryc/logos/media/click_me_arrow_left.png); */
+  --comment-label-color: rgb(211, 211, 211);
+  --comment-text-field-color: rgb(211, 211, 211);
+
+}
+
+.darkmode {
+  --main-bg-color: #000027;
+  --main-txt-color: #daffda;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #ddddeddf;
+  
+  --dark-btn-background:#010d2ed9;
+  --dark-btn-border: #350490bd;
+  --dark-btn-color-text: #21fe16bb;
+  --dark-btn-background-hoover: #460465;
+  --dark-btn-border-hoover: #fff71be6;
+  --dark-btn-color-text-hoover: #c5bfbf;
+
+  --knowledge-set-text: #499f10;
+  --contact-small-box-bg: #314030ae;
+
+  --animation-test: url(https://i.ibb.co/WfyzLpJ/charging.png);
+
+  --comment-label-color: rgb(126, 126, 126);
+  --comment-text-field-color: rgba(201, 200, 200, 0.518);
+}
+
+#read-later {
+  margin: 2rem 0;
+}
+
+#read-later button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+#read-later button:hover,
+#read-later button:active {
+  background-color: white;
+  color: #390281;
+}
+
 article {
   max-width: 960px;
   margin: 80px auto;
   border-radius: .375rem;
-  background-color: #456e9a;
+  background-color: #6c91a763;
   border: .25rem solid #350490;
   box-shadow: .0625rem .125rem .5rem rgba(0, 0, 0, 0.25);
   position: relative;

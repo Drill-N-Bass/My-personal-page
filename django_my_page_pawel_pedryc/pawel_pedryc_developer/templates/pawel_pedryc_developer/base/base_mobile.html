@@ -44,6 +44,7 @@
 
         <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
          
+        <p> {% block header_content_bf_main_headiong %}{% endblock %}</p>
         <h1>{% block main_heading %}{% endblock %}</h1>
         <p> {% block header_content %}{% endblock %}</p>
 
@@ -51,7 +52,18 @@
     </header>
      
     <main>
+        
+        <nav id="read-later_all-essays_div_nav">
+            
+            <div class="read-later_all-essays_div">
+                <a class="main-header-essays-btn" href="{% url 'all-essays' %}">All Essays</a>
+                <a class="main-header-essays-btn" href="{% url 'read-later' %}">Stored Essays</a>
+            </div>
+
+        </nav>
+
         <div class="main-header-dark">
+            
             {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
             {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
             <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
@@ -62,6 +74,9 @@
             <div id="main-header-dark-img">
                 <img class="click_me_arrow_left-mobile" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left-mobile.png" alt="dark mode">
             </div>
+            <div style="clear:both;"></div>
+            
+
         </div>
         <br/>
         
@@ -73,15 +88,17 @@
 
     
     <footer>
-        <div id="footer-bg">
-            <div class="contact_envelop">
-                <div class="contact_envelop_text">
-                    <p style="font-size: 0.9rem;">2022 © Pawel Pedryc - Portfolio. Full stack developer</p>
-                    <i class="icon-mail-alt"></i> 
-                    
-                    <a href="mailto:{{ organizer_email }}" class="contact_envelop_email_text" style="font-size: 1.5rem;">pawel.pedryc@gmail.com</a>
-                </div> 
-            </div>   
+        <div id="footer-position">
+            <div id="footer-bg">
+                <div class="contact_envelop">
+                    <div class="contact_envelop_text">
+                        <p style="font-size: 0.9rem;">2022 © Pawel Pedryc - Portfolio. Full stack developer</p>
+                        <i class="icon-mail-alt"></i> 
+                        
+                        <a href="mailto:{{ my_email }}" class="contact_envelop_email_text" style="font-size: 1.5rem;">pawel.pedryc@gmail.com</a>
+                    </div> 
+                </div>   
+            </div>
         </div>
     </footer>
 

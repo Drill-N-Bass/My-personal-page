@@ -31,6 +31,20 @@ class SendMeMessage(models.Model):
     def __str__(self):
         return self.email
 
+    class Meta:
+        verbose_name = "ppl newsletter commit"
+    
+class MyEmail(models.Model):
+    
+    email = models.EmailField(unique=True)
+    date = models.DateField(null=True)
+    
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name_plural = "My Email"
+
 
 class VideoObject(models.Model):
     """
@@ -64,7 +78,7 @@ class EssayCls(models.Model):
     tags = models.ManyToManyField(Tag)
     
     def __str__(self):
-        return f"{self.title}" # I set title for each row in admin panel so I can see all titles of my essays in comment table s14:e196 2:30
+        return f"{self.title}" # I set the title for each row in the admin panel so I can see all titles of my essays in the comment table  s14:e196 2:30
 
     class Meta:
         """

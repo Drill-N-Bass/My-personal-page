@@ -65,23 +65,23 @@
 @media screen and (max-width: 600px) {
   .icon-mail-alt:before {content: '\f0e0'; font-size: 26px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (min-width: 601px) and (max-width: 1100px) {
+@media screen and (min-width: 601px) and (max-width: 1700px) {
   .icon-mail-alt:before {content: '\f0e0'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .icon-github-circled-1:before {content: '\e800'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .icon-stackoverflow:before {content: '\e801'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .icon-emo-tongue:before {content: '\e807'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .icon-linkedin:before {content: '\f0e1'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1700px) {
   .icon-database:before {content: '\f1c0'; font-size: 16px; margin-top: 5px; margin-left: 0px;} /* '' */
 }

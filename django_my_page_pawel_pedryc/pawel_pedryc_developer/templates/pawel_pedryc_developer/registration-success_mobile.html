@@ -9,8 +9,11 @@
 
 {% block main_heading%}
 
-<div id="thx-submission">
+{% comment %} <div id="thx-submission">
     <p id="thx-submission-text">Thank you for your subission.</p>
+</div> {% endcomment %}
+<div>
+    <p></p><br/><p></p><br/><br/><br/>
 </div>
 
 {% endblock%}
@@ -19,7 +22,7 @@
 <section id="confirmation">
     <h2>You submit successfully!</h2>
     <p>Thank you for your effort</p>
-    <p>If you have any questions please <a href="mailto:{{ organizer_email }}">contact me</a></p>
+    <p>If you have any questions please <a href="mailto:{{ my_email }}">contact me</a></p>
 </section>
 
 <section id="continue">

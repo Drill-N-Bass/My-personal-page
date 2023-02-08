@@ -36,17 +36,25 @@
             {% comment %} to ma fundamentalny związek https://www.youtube.com/watch?v=wodWDIdV9BY {% endcomment %}
             {% comment %} <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode"> 
             <a href="" class=""><i class="main-header-dark-btn"></i></a> {% endcomment %}
-            <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
             
-            <div style="clear:both;"></div> 
-            <img id="main-header-dark-img" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left.png" alt="dark mode">
+            <nav>
+                <input type="button" value="Dark/Light Mode" class="main-header-dark-btn">
+                <div style="clear:both;"></div> 
+                <img id="main-header-dark-img" src="../../../static/pawel_pedryc/logos/media/click_me_arrow_left.png" alt="dark mode">
+            
+                <div class="read-later_all-essays_div">
+                    <a class="main-header-essays-btn" href="{% url 'all-essays' %}">All Essays</a>
+                    <a class="main-header-essays-btn" href="{% url 'read-later' %}">Stored Essays</a>
+                </div>
 
+            </nav>
             
         </div>
         <div style="clear:both;"></div> 
 
-        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav>   
-         
+        <nav><a href="{% url 'developer-home' %}" id="main-logo">Mushroom Python</a></nav> 
+        
+        <p> {% block header_content_bf_main_headiong %}{% endblock %}</p>
         <h1>{% block main_heading %}{% endblock %}</h1>
         <p> {% block header_content %}{% endblock %}</p>
 
@@ -59,14 +67,16 @@
     </main>
 
     <footer>
-        <div id="footer-bg">
-            <div class="contact_envelop">
-                <div class="contact_envelop_text">
-                    <p>2022 © Pawel Pedryc - Portfolio. Full stack developer 
-                    <i class="icon-mail-alt"></i> 
-                    <a href="mailto:{{ organizer_email }}" class="contact_envelop_email_text">pawel.pedryc@gmail.com</a>
-                </div> 
-            </div>   
+        <div id="footer-position">
+            <div id="footer-bg">
+                <div class="contact_envelop">
+                    <div class="contact_envelop_text">
+                        <p>2022 © Pawel Pedryc - Portfolio. Full stack developer 
+                        <i class="icon-mail-alt"></i> 
+                        <a href="mailto:{{ my_email }}" class="contact_envelop_email_text">pawel.pedryc@gmail.com</a>
+                    </div> 
+                </div>   
+            </div>
         </div>
     </footer>
 

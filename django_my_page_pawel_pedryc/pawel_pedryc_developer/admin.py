@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import EssayCls, ProgLang, SendMeMessage, VideoObject, Tag, Comment
+from .models import EssayCls, ProgLang, SendMeMessage, VideoObject, Tag, Comment, MyEmail
 from embed_video.admin import AdminVideoMixin
 
 ## Tweak title of the objects in admin page:
@@ -12,11 +12,15 @@ class EssayAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ("user_name", "post")
 
+class MyEmailAdmin(admin.ModelAdmin):
+    list_display = ("email", "date")
+
     
 admin.site.register(EssayCls, EssayAdmin)
 admin.site.register(ProgLang)
 admin.site.register(SendMeMessage)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(MyEmail, MyEmailAdmin)
 
 # class TagFilter(admin.ModelAdmin):
 #     list_filter = ()
@@ -26,4 +30,4 @@ admin.site.register(Tag)
 class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
     pass
 
-admin.site.register(VideoObject, MyModelAdmin)
+admin.site.register(VideoObject, MyModelAdmin) # błąd w nazwie raczej

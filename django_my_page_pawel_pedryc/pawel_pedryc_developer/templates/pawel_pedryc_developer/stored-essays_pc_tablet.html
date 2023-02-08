@@ -1,0 +1,35 @@
+{% extends 'pawel_pedryc_developer/base/base_pc_tablet.html' %}
+{% load static %}
+
+{% block title %} 
+My Stored Essays
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/stored-essays_pc_tablet.css' %}">
+{% endblock %}
+
+{% block header_content_bf_main_headiong %}
+<br/><p></p><br/><p></p><br/><p></p><br/>
+{% endblock %}
+
+{% block body %}
+
+  <section id="stored-essays">
+    <div id="stored-essays-main-div">
+      {% if not has_essays %}
+        <p>You didn't save any essays for later.</p>
+      {% endif %}
+
+      <ul>
+        {% for essay in essays %}
+          <li><a href="{% url 'essay-path' essay.slug %}">{{ essay.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <div>
+    {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
+  </div>
+
+{% endblock %}

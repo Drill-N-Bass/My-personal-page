@@ -8,7 +8,7 @@ My views responsible for rendering all
 templates related to pawel_pedryc_developer folder
 """
 
-from django.shortcuts import render, redirect # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00  # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
+from django.shortcuts import render, redirect, get_object_or_404 # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00  # `redirect` shortcut for `my_essays`` -> `confirm_registration` 3:33:00 
 # from django.http import HttpResponse
 """
 Detect mobile, tablet or Desktop on Django:
@@ -20,7 +20,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .models import EssayCls, SendMeMessage, VideoObject # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
+from .models import EssayCls, SendMeMessage, VideoObject, MyEmail # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
 from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
 
@@ -46,14 +46,20 @@ def home_view_pawel(request):
     essay = EssayCls.objects.all().order_by('-date')[:3]
     video_obj = VideoObject.objects.all()
     user_agent = get_user_agent(request)
-    context = {
-            'text_content': essay,
-            'show_text_content': True,
-            'video_content': video_obj,
-            'hangman_icon': True
-            }
     # return HttpResponse('Test')
 
+    try: # https://stackoverflow.com/a/3090342/15372196
+        my_email = MyEmail.objects.latest('date')
+    except MyEmail.DoesNotExist:
+        my_email = str("email not available, sorry")
+
+    context = {
+                'text_content': essay,
+                'show_text_content': True,
+                'video_content': video_obj,
+                'hangman_icon': True,
+                'my_email': my_email
+                }
     if user_agent.is_pc:
         # my_template='mobile_template.html'
         return render(
@@ -71,7 +77,58 @@ def home_view_pawel(request):
                     'text_content': essay,
                     'show_text_content': True,
                     'video_content': video_obj,
-                    'hangman_icon': False
+                    'hangman_icon': False,
+                    'my_email': my_email
+                    })
+    elif user_agent.is_tablet:
+        return render(
+                    request,
+                    'pawel_pedryc_developer/pawel_pedryc_tablet.html',
+                    context)
+
+
+def all_essays(request):
+
+    """
+    I can add `.order_by` after all(). Method `all()` gives you all objects from class.
+    """
+    essay = EssayCls.objects.all().order_by('-date')
+    video_obj = VideoObject.objects.all()
+    user_agent = get_user_agent(request)
+
+    try: # https://stackoverflow.com/a/3090342/15372196
+        my_email = MyEmail.objects.latest('date')
+    except MyEmail.DoesNotExist:
+        my_email = str("email not available, sorry")
+
+    context = {
+            'all_text_content': essay,
+            'show_text_content': True,
+            'video_content': video_obj,
+            'hangman_icon': True,
+            'my_email': my_email
+            }
+    # return HttpResponse('Test')
+
+    if user_agent.is_pc:
+        # my_template='mobile_template.html'
+        return render(
+                    request,
+                    'pawel_pedryc_developer/all-essays.html',
+                    context
+                    )
+
+    elif user_agent.is_mobile:
+        # my_template='tablet_template.html'
+        return render(
+                    request,
+                    'pawel_pedryc_developer/pawel_pedryc_mobile.html',
+                    {
+                    'text_content': essay,
+                    'show_text_content': True,
+                    'video_content': video_obj,
+                    'hangman_icon': False,
+                    'my_email': my_email
                     })
     elif user_agent.is_tablet:
         return render(
@@ -80,11 +137,26 @@ def home_view_pawel(request):
                     context)
 
 class MyEssaysView(View):
-    def get(self, request, home_view_pawel_slug):
-        print("GET: home_view_pawel_slug:", home_view_pawel_slug) # test
+    
+    def is_stored_essay(self, request, post_id):
+        stored_essays = request.session.get("stored_essays")
+        if stored_essays is not None:
+          is_saved_for_later = post_id in stored_essays
+        else:
+          is_saved_for_later = False
+
+        return is_saved_for_later
+
+    def get(self, request, slug):
+        # print("GET: slug:", slug) # test
         user_agent = get_user_agent(request)
-        selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug)
+        selected_essay = EssayCls.objects.get(slug=slug)
         user_feedback = UserFeedback() # handling form submission 3.18.20
+
+        try: # https://stackoverflow.com/a/3090342/15372196
+            my_email = MyEmail.objects.latest('date')
+        except MyEmail.DoesNotExist:
+            my_email = str("email not available, sorry")
         
         context = {
                 'essay_found': True,
@@ -93,7 +165,9 @@ class MyEssaysView(View):
                 'form': user_feedback,
                 'comment_form': CommentForm(),
                 'hangman_icon': True,
-                'comments': selected_essay.comments.all().order_by("-id") # s14:194 1:00
+                'comments': selected_essay.comments.all().order_by("-id"), # s14:194 1:00
+                'my_email': my_email
+                # 'saved_for_later': self.is_stored_essay(request, selected_essay.id)
                 # "user_feedback": UserFeedback()
             }
 
@@ -115,11 +189,12 @@ class MyEssaysView(View):
                             'post_tags': selected_essay.tags.all(),  #s9:128 6:00
                             'form': user_feedback,
                             'comment_form': CommentForm(),
-                            'hangman_icon': False
+                            'hangman_icon': False,
+                            'my_email': my_email
                             # "user_feedback": UserFeedback()
                         })
             
-            if user_agent.is_tablet:        
+            elif user_agent.is_tablet:        
                 return render(
                             request,
                             'pawel_pedryc_developer/article-content_pc_tablet.html',
@@ -128,26 +203,27 @@ class MyEssaysView(View):
 
 
 
-    def post(self, request, home_view_pawel_slug):
+    def post(self, request, slug):
         
         """
         The incoming request from Django will have
         a POST property which contains any submitted data
         that might be attached to incoming POST request. # 3:22:00
         """
-        print("POST: home_view_pawel_slug:", home_view_pawel_slug) # test
+        # print("POST: slug:", slug) # test
         
         comment_form = CommentForm(request.POST)
         user_feedback = UserFeedback(request.POST) 
         user_agent = get_user_agent(request)
 
-        post = EssayCls.objects.get(slug=home_view_pawel_slug)
+        post = EssayCls.objects.get(slug=slug)
         
         context = {
           "post": post,
           "post_tags": post.tags.all(),
           "comment_form": comment_form,
           'comments': post.comments.all().order_by("-id") # s14:194 1:00
+        #   'saved_for_later': self.is_stored_essay(request, post.id)
         }
         
         if user_feedback.is_valid(): 
@@ -176,37 +252,42 @@ class MyEssaysView(View):
 
             post.guest.add(send_me_message) # 3.26.00
             
-            return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
+            return redirect('confirm-registration', slug=slug) # 3.52.00
 
-        elif comment_form.is_valid():
+        if comment_form.is_valid():
           comment = comment_form.save(commit=False) # s14:192 10:00
           comment.post = post
           comment.save()
 
-          return HttpResponseRedirect(reverse("essay-path", args=[home_view_pawel_slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:192 6:10
+          return HttpResponseRedirect(reverse("essay-path", args=[slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:192 6:10
 
-        elif user_agent.is_pc:
-            return render(request, "pawel_pedryc_developer/article-content_pc_tablet.html", context)
+        # if user_agent.is_pc:
+        #     return render(request, "pawel_pedryc_developer/article-content_pc_tablet.html", context)
 
-        elif user_agent.is_mobile:
-            return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
-
-
+        # elif user_agent.is_mobile:
+        #     return render(request, "pawel_pedryc_developer/article-content_mobile.html", context)
 
 
 
 
-def confirm_registration(request, home_view_pawel_slug):
-    contact = EssayCls.objects.get(slug=home_view_pawel_slug)
+
+
+def confirm_registration(request, slug):
+    # contact = EssayCls.objects.get(slug=slug)
     user_agent = get_user_agent(request)
     # return render(request, 'pawel_pedryc_developer/registration-success_pc_tablet.html')
+
+    try: # https://stackoverflow.com/a/3090342/15372196
+        my_email = MyEmail.objects.latest('date')
+    except MyEmail.DoesNotExist:
+        my_email = str("email not available, sorry")
 
     if user_agent.is_pc:
         return render(
             request,
             'pawel_pedryc_developer/registration-success_pc_tablet.html',
         {
-            'organizer_email': contact.organizer_email
+            'my_email': my_email
         })
 
     elif user_agent.is_mobile:
@@ -214,7 +295,7 @@ def confirm_registration(request, home_view_pawel_slug):
             request,
             'pawel_pedryc_developer/registration-success_mobile.html',
         {
-            'organizer_email': contact.organizer_email
+            'my_email': my_email
         })
 
     elif user_agent.is_tablet:
@@ -222,8 +303,90 @@ def confirm_registration(request, home_view_pawel_slug):
             request,
             'pawel_pedryc_developer/registration-success_pc_tablet.html',
         {
-            'organizer_email': contact.organizer_email
+            'my_email': my_email
         })
+
+class ReadLaterView(View):
+
+    """
+    About `get` - I want to dive into the session, get the stored essays and send
+    those essays to the template, however not just the ids,
+    which is the data sotred in this session,
+    but the hole stored objects. I need to, first of all, get my stored essays.
+    It might be none, or a list I'm looking for. Then I want to check is it none. 
+    if list extist but it has no items then this will find it: `len(stored_essays) == 0`
+    With no essays in list, I want to rederict user to information about that `context["has_essays"] = False`.
+    If there are essays in the list, then I want to  reach a database and fetch data for there. 
+    Having a EssayCls model I want to get objects, but not all. 
+    I want to filter objects for the ids stored in sored essays.
+    It can be done with a special modifier `id__in=stored_essays` #s14e198 6:00
+    """
+    
+    def get(self, request):
+        stored_essays = request.session.get("stored_essays")
+        user_agent = get_user_agent(request)
+        print('stored_essaysline 305:', stored_essays) # test
+
+        try: # https://stackoverflow.com/a/3090342/15372196
+            my_email = MyEmail.objects.latest('date')
+        except MyEmail.DoesNotExist:
+            my_email = str("email not available, sorry")
+
+        context = {}
+
+        if stored_essays is None or len(stored_essays) == 0:
+            context["essays"] = []
+            context["has_essays"] = False
+            context["my_email"] = my_email
+            context["hangman_icon"] = True
+            
+            
+            if user_agent.is_pc:
+                return render(request, "pawel_pedryc_developer/stored-essays_pc_tablet.html", context)
+
+            elif user_agent.is_mobile:
+                context["hangman_icon"] = False
+
+                return render(request, "pawel_pedryc_developer/stored-essays_mobile.html", context)
+        else:
+            essays_read_later = EssayCls.objects.filter(id__in=stored_essays)
+            context["essays"] = essays_read_later
+            context["has_essays"] = True
+            context["my_email"] = my_email
+            context["hangman_icon"] = True
+          
+        if user_agent.is_pc:
+            return render(request, "pawel_pedryc_developer/stored-essays_pc_tablet.html", context)
+            
+        elif user_agent.is_mobile:
+            context["hangman_icon"] = False
+
+            return render(request, "pawel_pedryc_developer/stored-essays_mobile.html", context)
+
+
+    def post(self, request):
+        stored_essays = request.session.get("stored_essays")
+        # print('stored_essays line 333:', stored_essays) # Test
+        if stored_essays is None:
+            stored_essays = []
+
+        post_id = int(request.POST["post_id"])
+        # print('stored_essays line 338:', stored_essays)  # Test
+
+        if post_id not in stored_essays:
+            stored_essays.append(post_id)
+            # print('stored_essays line 341:', stored_essays)  # Test
+        else:
+            stored_essays.remove(post_id)
+            # print('stored_essays line 344:', stored_essays)  # Test
+
+        request.session["stored_essays"] = stored_essays #s14e198 11:30
+        # print('stored_essays line 348:', stored_essays)  # Test
+        
+        return HttpResponseRedirect("/")
+
+
+        
 
 
 ###     For videos - in progress   ###
@@ -248,12 +411,12 @@ def confirm_registration(request, home_view_pawel_slug):
 ###   An old version of essay article - now as `MyEssaysView`   ###
 
 
-# def my_essays(request, home_view_pawel_slug):
-#     # print("print('home_view_pawel_slug'):", home_view_pawel_slug)
+# def my_essays(request, slug):
+#     # print("print('slug'):", slug)
 #     user_agent = get_user_agent(request)
     
 #     try: # first exception model at 2:13:20 # first exception model at 2:13:20
-#         selected_essay = EssayCls.objects.get(slug=home_view_pawel_slug) # 2.11.50 Method `get()` gives you one object from class
+#         selected_essay = EssayCls.objects.get(slug=slug) # 2.11.50 Method `get()` gives you one object from class
 #         if request.method == 'GET': # handling form submission 3.18.20
 #             user_feedback = UserFeedback() # handling form submission 3.18.20
             
@@ -290,7 +453,7 @@ def confirm_registration(request, home_view_pawel_slug):
 
 #                 selected_essay.guest.add(send_me_message) # 3.26.00
                 
-#                 return redirect('confirm-registration', home_view_pawel_slug=home_view_pawel_slug) # 3.52.00
+#                 return redirect('confirm-registration', slug=slug) # 3.52.00
         
 #         if user_agent.is_pc:        
 #             return render(

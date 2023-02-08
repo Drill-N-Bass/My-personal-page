@@ -1,0 +1,13 @@
+Git 08.02.2023 log
+
+Last few days I was updating a lot of stuff on my page.
+
+I finally finished the main mechanism of my comment form. 
+I also added a feature to save essays for later (maybe it was partially made in the past)
+I also almost finished all things mentioned above for all platforms: pc, tablet, and smartphone.
+
+I did a lot of changes in css related to the topics mentioned above. 
+
+Some views were updated too from function-view to class-based views.
+
+I added my email as a new model and use it in the footer. 
