@@ -148,3 +148,4 @@ GitHub.sublime-settings
 # Django Template base files #
 src/pawel_pedryc_developer/templates/pawel_pedryc_developer/base/base_pc_tablet.html
 django_my_page_pawel_pedryc/static/pawel_pedryc/js/node_modules/.bin/mime
+.vscode/launch.json
