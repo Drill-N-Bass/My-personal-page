@@ -576,16 +576,6 @@ button:hover,
   }
 }
 
-#footer-position{
-  bottom: 0;
-  position: absolute;
-}
-
-#footer-bg
-{
-  background-color: #000027;
-}
-
 .contact_envelop
 {
   padding-top: 1.25rem;
@@ -593,7 +583,7 @@ button:hover,
   border: .1875rem solid #007bff;
   border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
-	float: left;
+	
 }
 
 /* Horizontal screen: */
@@ -607,7 +597,7 @@ button:hover,
   border: .1875rem solid #007bff;
   border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
-	float: left;
+	
   }
 }
 
@@ -621,7 +611,7 @@ button:hover,
   border: .1875rem solid #007bff;
   border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
-	float: left;
+	
   }
 }
 
@@ -641,6 +631,14 @@ button:hover,
   background-color: var(--main-bg-color);
 }
 
+#footer-position{
+  bottom: 0;
+}
+
+#footer-bg
+{
+  background-color: #000027;
+}
 
 #animation 
 { 
