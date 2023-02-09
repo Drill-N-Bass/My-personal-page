@@ -3,7 +3,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   }
   
-  #stored-essays {
+  #stored-essays-page {
     margin: 8rem auto 3rem auto;
     padding: 2rem;
     border-radius: 12px;
@@ -14,17 +14,17 @@
     max-width: 30rem;
   }
   
-  #stored-essays ul {
+  #stored-essays-page ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  #stored-essays li {
+  #stored-essays-page li {
     margin: 1rem 0;
   }
   
-  #stored-essays a {
+  #stored-essays-page a {
     display: block;
     padding: 1rem;
     width: 100%;
@@ -34,7 +34,7 @@
     font-weight: bold;
   }
   
-  #stored-essays a:hover,
-  #stored-essays a:active {
+  #stored-essays-page a:hover,
+  #stored-essays-page a:active {
     background-color: #ccc;
   }

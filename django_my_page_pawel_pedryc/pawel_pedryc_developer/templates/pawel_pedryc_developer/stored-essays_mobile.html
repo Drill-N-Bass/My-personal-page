@@ -5,7 +5,7 @@
 My Stored Essays
 {% endblock %} 
 
-{% block css_files %}
+{% block site_css %}
 <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/stored-essays_mobile.css' %}">
 {% endblock %}
 
@@ -15,7 +15,7 @@ My Stored Essays
 
 {% block body %}
 
-  <section id="stored-essays">
+  <section id="stored-essays-page">
 
     {% if not has_essays %}
       <p>You didn't save any essays for later.</p>

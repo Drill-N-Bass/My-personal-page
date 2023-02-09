@@ -5,8 +5,8 @@
 My Stored Essays
 {% endblock %} 
 
-{% block css_files %}
-<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/stored-essays_pc_tablet.css' %}">
+{% block site_css %}
+  <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/stored-essays_pc_tablet.css' %}">
 {% endblock %}
 
 {% block header_content_bf_main_headiong %}
@@ -15,8 +15,8 @@ My Stored Essays
 
 {% block body %}  
 
-  <section id="stored-essays">
-    <div id="stored-essays-main-div">
+  <section id="stored-essays-page">
+    <div id="stored-essays-page-main-div">
       {% if not has_essays %}
         <p>You didn't save any essays for later.</p>
       {% endif %}
