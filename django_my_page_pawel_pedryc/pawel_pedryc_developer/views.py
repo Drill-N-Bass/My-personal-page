@@ -288,7 +288,8 @@ def confirm_registration(request, slug):
             request,
             'pawel_pedryc_developer/registration-success_pc_tablet.html',
         {
-            'my_email': my_email
+            'my_email': my_email,
+            'different_base_css': True
         })
 
     elif user_agent.is_mobile:
@@ -296,7 +297,8 @@ def confirm_registration(request, slug):
             request,
             'pawel_pedryc_developer/registration-success_mobile.html',
         {
-            'my_email': my_email
+            'my_email': my_email,
+            'different_base_css': True
         })
 
     elif user_agent.is_tablet:
@@ -304,7 +306,8 @@ def confirm_registration(request, slug):
             request,
             'pawel_pedryc_developer/registration-success_pc_tablet.html',
         {
-            'my_email': my_email
+            'my_email': my_email,
+            'different_base_css': True
         })
 
 class ReadLaterView(View):
@@ -326,7 +329,7 @@ class ReadLaterView(View):
     def get(self, request):
         stored_essays = request.session.get("stored_essays")
         user_agent = get_user_agent(request)
-        print('stored_essaysline 305:', stored_essays) # test
+        # print('stored_essaysline 305:', stored_essays) # test
 
         try: # https://stackoverflow.com/a/3090342/15372196
             my_email = MyEmail.objects.latest('date')
@@ -340,6 +343,7 @@ class ReadLaterView(View):
             context["has_essays"] = False
             context["my_email"] = my_email
             context["hangman_icon"] = True
+            context["different_base_css"] = True
             
             
             if user_agent.is_pc:
@@ -355,6 +359,7 @@ class ReadLaterView(View):
             context["has_essays"] = True
             context["my_email"] = my_email
             context["hangman_icon"] = True
+            context["different_base_css"] = True
           
         if user_agent.is_pc:
             return render(request, "pawel_pedryc_developer/stored-essays_pc_tablet.html", context)

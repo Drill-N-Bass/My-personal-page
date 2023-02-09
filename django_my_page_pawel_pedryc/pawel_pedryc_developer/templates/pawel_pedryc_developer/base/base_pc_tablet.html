@@ -14,8 +14,13 @@
     <!--Fontello fonts for buttons:-->
     <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/fontello/css/fontello.css' %}">
     <link rel="icon"href="{% static 'pawel_pedryc/logos/media/favicon.ico' %}">
-
-    <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base_pc_tablet.css' %}">
+    
+    {% if different_base_css %}
+        <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/different_base_pc_tablet.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'pawel_pedryc/styles/base_pc_tablet.css' %}">
+    {% endif %}
+    
     
     <script
     src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -66,19 +71,7 @@
     
     </main>
 
-    <footer>
-        <div id="footer-position">
-            <div id="footer-bg">
-                <div class="contact_envelop">
-                    <div class="contact_envelop_text">
-                        <p>2022 © Pawel Pedryc - Portfolio. Full stack developer 
-                        <i class="icon-mail-alt"></i> 
-                        <a href="mailto:{{ my_email }}" class="contact_envelop_email_text">pawel.pedryc@gmail.com</a>
-                    </div> 
-                </div>   
-            </div>
-        </div>
-    </footer>
+    {% include 'pawel_pedryc_developer/includes/footer_base.html' %}
 
     <div style="clear:both;"></div>
         
