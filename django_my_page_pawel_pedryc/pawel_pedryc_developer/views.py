@@ -388,7 +388,7 @@ class ReadLaterView(View):
             stored_essays.remove(post_id) # s14e200 5:00
             # print('stored_essays line 344:', stored_essays)  # Test
             request.session["stored_essays"] = stored_essays #s14e198 11:30
-            return redirect(request.META['HTTP_REFERER'])
+            return redirect(request.META['HTTP_REFERER']) # redirect to the same page: https://stackoverflow.com/a/26798686/15372196
 
         request.session["stored_essays"] = stored_essays #s14e198 11:30
         # print('stored_essays line 348:', stored_essays)  # Test
