@@ -108,6 +108,14 @@ h3,
 p {
   font-family: 'Roboto Slab', sans-serif;
   color: var(--main-txt-color-h3);
+  font-size: small;
+}
+
+h3,
+a {
+  font-family: 'Roboto Slab', sans-serif;
+  color: var(--main-txt-color-h3);
+  font-size: x-large;
 }
 
 .h3.main_head {
@@ -581,6 +589,15 @@ button:hover,
   }
 }
 
+#footer-position{
+  bottom: 0;
+}
+
+#footer-bg
+{
+  background-color: #000027;
+}
+
 .contact_envelop
 {
   padding-top: 1.25rem;
@@ -612,7 +629,7 @@ button:hover,
   box-sizing: border-box;
   width: 368px;
   height: 128px;
-  border: .1875rem solid #007bff;
+  border: .1875rem solid #007bff2d;
   border-radius: .9375rem;
 	background-color: var(--article-item-bg-color);
 	
@@ -621,27 +638,22 @@ button:hover,
 
 .contact_envelop_text
 {
-  font-size: 35.2px;
+  font-size: 12.2px;
   color: var(--main-txt-color);
   text-align: center;
 }
 
+.contact_envelop_email_text_box{
+  margin-top: 1rem;
+}
+
 .contact_envelop_email_text
 {
-
   padding: .1875rem;
   border: .1875rem solid #b2bcff;
   border-radius: 1.0625rem;
   background-color: var(--main-bg-color);
-}
-
-#footer-position{
-  bottom: 0;
-}
-
-#footer-bg
-{
-  background-color: #000027;
+  color: #00aeff;
 }
 
 #animation 

@@ -143,6 +143,7 @@ class MyEssaysView(View):
         Removing saved essays in session s14e200:
         """
         stored_essays = request.session.get("stored_essays")
+        print("post_id: ", post_id) # Test
         if stored_essays is not None:
             is_saved_for_later = post_id in stored_essays
         else:
@@ -153,7 +154,12 @@ class MyEssaysView(View):
         # print("GET: slug:", slug) # test
         user_agent = get_user_agent(request)
         selected_essay = EssayCls.objects.get(slug=slug)
-        user_feedback = UserFeedback() # handling form submission 3.18.20   
+        user_feedback = UserFeedback() # handling form submission 3.18.20 
+
+        # # Check the session content test:
+        # stored_essays = request.session.get("stored_essays")
+        # print("stored_essays: ", stored_essays)  
+        
 
         try: # https://stackoverflow.com/a/3090342/15372196
             my_email = MyEmail.objects.latest('date')

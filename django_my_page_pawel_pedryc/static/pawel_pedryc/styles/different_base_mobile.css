@@ -581,6 +581,16 @@ button:hover,
   }
 }
 
+#footer-position{
+  bottom: 0px;
+  position: absolute;
+}
+
+#footer-bg
+{
+  background-color: #000027;
+}
+
 .contact_envelop
 {
   padding-top: 1.25rem;
@@ -624,26 +634,20 @@ button:hover,
   font-size: 35.2px;
   color: var(--main-txt-color);
   text-align: center;
+  margin-top: -1.6rem;
 }
 
 .contact_envelop_email_text
 {
 
-  padding: .1875rem;
+  padding: 4.5px;
   border: .1875rem solid #b2bcff;
   border-radius: 1.0625rem;
   background-color: var(--main-bg-color);
+  color: #00aeff;
 }
 
-#footer-position{
-  bottom: 0px;
-  position: absolute;
-}
 
-#footer-bg
-{
-  background-color: #000027;
-}
 
 #animation 
 { 
