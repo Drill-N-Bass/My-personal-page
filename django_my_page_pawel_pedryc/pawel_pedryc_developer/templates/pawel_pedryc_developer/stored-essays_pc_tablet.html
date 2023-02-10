@@ -26,7 +26,31 @@ My Stored Essays
         <ul>
           {% for essay in essays %}
             <li><a href="{% url 'essay-path' essay.slug %}">{{ essay.title }}</a></li>
+            
+            {% comment %} 
+            Below there is a button for deleting stored essays that users can read later.
+            It's based on the idea from 'article-content_pc_tablet.html' lines 58-71 (most likely).
+            There, the button was for storing/deleting essay from the session, so the user has a way to 
+            save and remove essays that he/she want to read later.
+            The only difference between this and that is another value DTL tag. Here I refer to 
+            views.py `class ReadLaterView`.
+            {% endcomment %}
+            <div>
+              <form id="read-later-form" action="{% url 'read-later' %}" method="POST">
+                {% csrf_token %}
+                {% comment %} s14e197 4:00 {% endcomment %}
+
+                <input type="hidden" value="{{ essay.id }}" name="post_id">
+                <button class="read-later-cancel"><img class="read-later-cancel-image" src="{% static 'pawel_pedryc\logos\media\remove.png'%}" alt="">
+                  {% if saved_for_later %}
+                    Remove from "Read Later" List
+                  {% endif %}
+                </button>
+              </form>
+            </div>
+
           {% endfor %}
+
         </ul>
       </div>
     </div>
