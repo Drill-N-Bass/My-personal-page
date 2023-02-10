@@ -10,14 +10,31 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     background-color: var(--article-item-bg-color);
     width: 90%;
-    max-width: 30rem;
+    /* max-width: 30rem; */
+    margin-top: 50px;
+  }
+
+  #flex-for-stored-essays{
+    display: flex;
+    flex-wrap: wrap;
+    /* This aligns items to the end line on main-axis */
+    justify-content: center; 
+    /* width: 200px; */
   }
 
   #stored-essays-page-main-div{
-    height: 100px;
+    display: flex;
+    /* flex-shrink: 3; */
+    /* max-height: 500px; */
+    /* height: content; */
+    /* width: 800px; */
   } 
   
   #stored-essays-page ul {
+    display: flex;
+    
+    gap: 10px 20px;
+    flex-basis: auto;
     list-style: none;
     margin: 0;
     padding: 0;
