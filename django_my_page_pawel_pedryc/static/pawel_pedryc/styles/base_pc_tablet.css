@@ -236,6 +236,19 @@ button:hover,
   margin-bottom: -6.25rem;
 }
 
+.read-later_all-essays_div_article {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  object-position: right bottom;
+  margin-left: 1rem;
+  width: 300px; 
+  height: 3.75rem;
+  margin-left: 0px;
+  margin-top: 115px;
+  margin-bottom: -6.25rem;
+}
+
 .main-header-essays-btn{
   background-color: var(--dark-btn-background);
   float: right;
