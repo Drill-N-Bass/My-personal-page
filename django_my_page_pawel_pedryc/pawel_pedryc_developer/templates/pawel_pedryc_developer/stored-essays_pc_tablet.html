@@ -16,17 +16,19 @@ My Stored Essays
 {% block body %}  
 
   <section id="stored-essays-page">
-    <div id="stored-essays-page-main-div">
-      {% if not has_essays %}
-      <br/>
-      <p style="text-align: center;">You didn't save any essays for later.</p>
-      {% endif %}
+    <div id="flex-for-stored-essays">
+      <div id="stored-essays-page-main-div">
+        {% if not has_essays %}
+        <br/>
+        <p style="text-align: center;">You didn't save any essays for later.</p>
+        {% endif %}
 
-      <ul>
-        {% for essay in essays %}
-          <li><a href="{% url 'essay-path' essay.slug %}">{{ essay.title }}</a></li>
-        {% endfor %}
-      </ul>
+        <ul>
+          {% for essay in essays %}
+            <li><a href="{% url 'essay-path' essay.slug %}">{{ essay.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </section>
   <div>
