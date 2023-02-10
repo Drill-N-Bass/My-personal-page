@@ -139,19 +139,21 @@ def all_essays(request):
 class MyEssaysView(View):
     
     def is_stored_essay(self, request, post_id):
+        """
+        Removing saved essays in session s14e200:
+        """
         stored_essays = request.session.get("stored_essays")
         if stored_essays is not None:
-          is_saved_for_later = post_id in stored_essays
+            is_saved_for_later = post_id in stored_essays
         else:
-          is_saved_for_later = False
-
+            is_saved_for_later = False
         return is_saved_for_later
 
     def get(self, request, slug):
         # print("GET: slug:", slug) # test
         user_agent = get_user_agent(request)
         selected_essay = EssayCls.objects.get(slug=slug)
-        user_feedback = UserFeedback() # handling form submission 3.18.20
+        user_feedback = UserFeedback() # handling form submission 3.18.20   
 
         try: # https://stackoverflow.com/a/3090342/15372196
             my_email = MyEmail.objects.latest('date')
@@ -166,8 +168,8 @@ class MyEssaysView(View):
                 'comment_form': CommentForm(),
                 'hangman_icon': True,
                 'comments': selected_essay.comments.all().order_by("-id"), # s14:194 1:00
-                'my_email': my_email
-                # 'saved_for_later': self.is_stored_essay(request, selected_essay.id)
+                'my_email': my_email,
+                'saved_for_later': self.is_stored_essay(request, selected_essay.id)
                 # "user_feedback": UserFeedback()
             }
 
@@ -223,8 +225,8 @@ class MyEssaysView(View):
           "post": post,
           "post_tags": post.tags.all(),
           "comment_form": comment_form,
-          'comments': post.comments.all().order_by("-id") # s14:194 1:00
-        #   'saved_for_later': self.is_stored_essay(request, post.id)
+          'comments': post.comments.all().order_by("-id"), # s14:194 1:00
+          'saved_for_later': self.is_stored_essay(request, post.id)
         }
         
         if user_feedback.is_valid(): 
@@ -383,7 +385,7 @@ class ReadLaterView(View):
             stored_essays.append(post_id)
             # print('stored_essays line 341:', stored_essays)  # Test
         else:
-            stored_essays.remove(post_id)
+            stored_essays.remove(post_id) # s14e200 5:00
             # print('stored_essays line 344:', stored_essays)  # Test
 
         request.session["stored_essays"] = stored_essays #s14e198 11:30

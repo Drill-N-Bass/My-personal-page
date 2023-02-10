@@ -45,12 +45,27 @@
 }
 
 #read-later {
-  margin: 2rem 0;
+  margin-left: -190px;
+  margin-top: -400px;
+  position: fixed;
+  border-radius: .775rem;
+}
+
+@media screen and (max-width: 1200px){
+  #read-later {
+    margin-left: -10px;
+    margin-top: -340px;
+    position: fixed;
+    font-size: xx-small;
+    background-color: rgba(128, 128, 128, 0.505);
+    border-radius: .775rem;
+  }
 }
 
 #read-later button {
   background-color: transparent;
   border: 1px solid white;
+  border-radius: .775rem;
   padding: 0.5rem 2rem;
   font: inherit;
   color: white;
