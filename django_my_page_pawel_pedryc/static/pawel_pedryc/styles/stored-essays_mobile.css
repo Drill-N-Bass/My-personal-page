@@ -10,7 +10,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     background-color: white;
     width: 90%;
-    height: 1000rem;
+    height: content;
     max-width: 30rem;
   }
   
