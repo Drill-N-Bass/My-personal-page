@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+/* OOCSS first:*/
+
 /* Fonts for random logo tittle below: */
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bonbon&family=League+Script&family=Molle&family=Monsieur+La+Doulaise&family=Mr+De+Haviland&family=Swanky+and+Moo+Moo&display=swap');
-/* OOCSS first:*/
+
 
 * {
   box-sizing: border-box;
@@ -195,6 +197,7 @@ button:hover,
   /* font-family: 'Black And White Picture', sans-serif; */
   /* font-family: 'Swanky and Moo Moo', cursive; */
   /* font-family: 'Monsieur La Doulaise', cursive; */
+  /* font-family: 'Roboto Slab', sans-serif; */
   text-decoration: none;
   color: #350490;
   font-weight: bold;
