@@ -27,7 +27,7 @@ admin.site.register(MyEmail, MyEmailAdmin)
 
 admin.site.register(Tag)
 
-class MyModelAdmin(AdminVideoMixin, admin.ModelAdmin):
+class VideoObjectAdmin(AdminVideoMixin, admin.ModelAdmin):
     pass
 
-admin.site.register(VideoObject, MyModelAdmin) # błąd w nazwie raczej
+admin.site.register(VideoObject, VideoObjectAdmin) # błąd w nazwie raczej

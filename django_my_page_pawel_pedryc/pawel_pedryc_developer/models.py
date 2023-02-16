@@ -33,7 +33,7 @@ class SendMeMessage(models.Model):
 
     class Meta:
         verbose_name = "ppl newsletter commit"
-    
+ 
 class MyEmail(models.Model):
     
     email = models.EmailField(unique=True)
@@ -45,22 +45,27 @@ class MyEmail(models.Model):
     class Meta:
         verbose_name_plural = "My Email"
 
-
+# Inspired by # https://www.youtube.com/watch?v=dGF1x14QNGA:
 class VideoObject(models.Model):
     """
     Embed videos (youtube, vimeo).
     Documentation: https://django-embed-video.readthedocs.io/en/latest/examples.html
     Tutorial: https://www.youtube.com/watch?v=-AOPAqxAFJk
     """
-    video_item_url = EmbedVideoField()  # same like models.URLField()
-    # added_date = models.DateTimeField(auto_now_add=True, null=True)
-    # title_video = models.CharField(max_length=200)
+    video_intro_item_url = EmbedVideoField(blank=True)  # same like models.URLField()
+    video_item_url = EmbedVideoField(blank=True)  # same like models.URLField()
+    added_date = models.DateTimeField(auto_now_add=True, null=True)
+    title_video = models.CharField(blank=True, max_length=400)
+    title_video_intro = models.CharField(blank=True, max_length=400)
 
     # def __str__(self):
     #     return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
 
-    # class Meta:
-    #     ordering = ['-added_date']
+    def __str__(self):
+        return f"{self.title_video}" # I set the title for each row in the admin panel so I can see all titles of my essays in the comment table  s14:e196 2:30
+
+    class Meta:
+        ordering = ['-added_date']
 
 
 class EssayCls(models.Model):
@@ -72,7 +77,8 @@ class EssayCls(models.Model):
     details = models.TextField()
     image = models.ImageField(upload_to='images')
     # language = models.CharField(max_length=200)
-    video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.SET_NULL, related_name="video_obj") # One-to-many relationship
+    # video = models.ForeignKey(VideoObject, blank=True, null=True, on_delete=models.SET_NULL, related_name="video_obj") # One-to-many relationship
+    video = models.ManyToManyField(VideoObject, blank=True, related_name="video_obj") # Many-to-many relationship
     language = models.ForeignKey(ProgLang, null=True, on_delete=models.SET_NULL) # One-to-many relationship
     guest = models.ManyToManyField(SendMeMessage, blank=True) # null=True not needed -> 2.57.20
     tags = models.ManyToManyField(Tag)

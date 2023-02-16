@@ -26,6 +26,8 @@ from .forms import UserFeedback # for instantiate our form for rendered template
 
 from .forms import CommentForm # for comments in each article
 
+from django.template.loader import get_template # used in part: # Show videos for essay on the index page # https://www.fullstackpython.com/django-template-loader-get-template-examples.html
+
 # Needed for display log with the error exeption function:
 # https://realpython.com/the-most-diabolical-python-antipattern/
 import logging
@@ -53,12 +55,26 @@ def home_view_pawel(request):
     except MyEmail.DoesNotExist:
         my_email = str("email not available, sorry")
 
+    """
+    # Show videos for essay on the index page
+    Below I want to get all related videos for particular essay
+    that will be display in main/index page.
+    Because I would end up with two `context` objects that 
+    would be needed to define in my template's `for loop`
+    instead of that I will zip both objects: `essay` and `video_essay`.
+    Inspired by: https://stackoverflow.com/a/12684697/15372196
+    """
+    video_essay = [vid.video.all() for vid in essay]
+    # load_essay_video = loader.get_template('django_my_page_pawel_pedryc\pawel_pedryc_developer\templates\pawel_pedryc_developer\pawel_pedryc-pc.html')
+
     context = {
                 'text_content': essay,
                 'show_text_content': True,
-                'video_content': video_obj,
                 'hangman_icon': True,
-                'my_email': my_email
+                'my_email': my_email,
+                # 'video_essay': video_essay
+                # 'zipped_videos_essay': zip(essay, list(video_essay))
+                # 'essay_videos': video_obj.video_item_url
                 }
     if user_agent.is_pc:
         # my_template='mobile_template.html'
@@ -76,9 +92,9 @@ def home_view_pawel(request):
                     {
                     'text_content': essay,
                     'show_text_content': True,
-                    'video_content': video_obj,
                     'hangman_icon': False,
-                    'my_email': my_email
+                    'my_email': my_email,
+                    'video_obj': video_obj
                     })
     elif user_agent.is_tablet:
         return render(
@@ -114,7 +130,7 @@ def all_essays(request):
         # my_template='mobile_template.html'
         return render(
                     request,
-                    'pawel_pedryc_developer/all-essays.html',
+                    'pawel_pedryc_developer/pawel_pedryc-pc.html',
                     context
                     )
 
@@ -175,7 +191,8 @@ class MyEssaysView(View):
                 'hangman_icon': True,
                 'comments': selected_essay.comments.all().order_by("-id"), # s14:194 1:00
                 'my_email': my_email,
-                'saved_for_later': self.is_stored_essay(request, selected_essay.id)
+                'saved_for_later': self.is_stored_essay(request, selected_essay.id),
+                'essay_videos': selected_essay.video.all()
                 # "user_feedback": UserFeedback()
             }
 
@@ -406,20 +423,21 @@ class ReadLaterView(View):
 
 
 ###     For videos - in progress   ###
+# https://www.youtube.com/watch?v=dGF1x14QNGA
 
-# def video_main(request):
-#     video_obj = VideoObject.object.all()
-#     return render(request, 'pawel_pedryc_developer/pawel_pedryc-pc.html', 
-#     {
-#         'video_obj': video_obj
-#     })
+def video_main(request):
+    video_obj = VideoObject.object.all()
+    return render(request, 'pawel_pedryc_developer/pawel_pedryc-pc.html', 
+    {
+        'video_obj': video_obj
+    })
 
-# def video_article(request, pk):
-#     video_obj = VideoObject.object.get(pk=pk)
-#     return render(request, 'pawel_pedryc_developer/article-content_pc_tablet.html', 
-#     {
-#         'video_obj': video_obj
-#     })
+def video_article(request, pk):
+    video_obj = VideoObject.object.get(pk=pk)
+    return render(request, 'pawel_pedryc_developer/article-content_pc_tablet.html', 
+    {
+        'video_obj': video_obj
+    })
 
 
 # terminal shell for SQL: s14:192 12:10

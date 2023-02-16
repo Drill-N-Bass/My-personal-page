@@ -301,7 +301,7 @@ button:hover,
     }
 
 #main-logo {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     letter-spacing: 1px;
     /* font-family in js file: "random_change_logo.js" */
     /* font-family: 'Black And White Picture', sans-serif; */

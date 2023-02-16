@@ -73,6 +73,17 @@
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %} 
+        <p>Poniżej powinny być filmy</p>
+          
+        <ul>
+            {% for vid in essay_videos %}
+            
+                <li>{% video vid.video_item_url %} </li>
+            
+            {% endfor %}
+        </ul>
+        {% comment %} <p>{% video essay_video.title_video %}</p> {% endcomment %}
+        
         
     </section>
 

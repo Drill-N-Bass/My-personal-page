@@ -7,7 +7,15 @@
       "'Swanky and Moo Moo', cursive",
       "'Monsieur La Doulaise', cursive",
       "'Roboto Slab', sans-serif"
-      ];  
+      ];
+    var size = [
+      "5rem",
+      "4.6rem",
+      "4.6rem",
+      "5.2rem",
+      "3rem"
+    ];  
     var rand = Math.floor(Math.random()*fonts.length); 
     $('#main-logo').css("font-family", fonts[rand]);
+    $('#main-logo').css("font-size", size[rand]);
   });

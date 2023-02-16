@@ -17,11 +17,50 @@
             </div>
             
             <div class="contact-details">
-                <h3><a href="{% url 'essay-path' slug %}" style="text-decoration: none; color: #35049080;">{{ title}}</a></h3>
+                <h3><a href="{% url 'essay-path' slug %}" style="text-decoration: none; color: #35049080;">{{ title }}</a></h3>
                 <p>{{ description|convert_markdown|safe }}</p>
                 <br /><br />
-                <p>poniżej masz video</p>
-                <p>{% video video_essay_url %}</p>
+                <p>Video trailers for this essay:</p>
+                <ul>
+                    {% for vid in video_essay_url%}
+                        
+                        <li>{% video vid.video_item_url %} </li> 
+                    
+                    {% endfor %}
+                </ul>
+
+                {% comment %} To działa {{ video_essay_url }} {% endcomment %}
+
+                {% comment %} <ul>
+                    {% for vid in essay_videos %}
+                    
+                        <li>{% video vid.video_item_url %} </li>
+                    
+                    {% endfor %}
+                </ul> {% endcomment %}
+
+                {% comment %} {% if text_content.video %}
+                    {% if text_content.video.video_item_url %}
+                        {% video %}
+                            {{ text_content.video.video_item_url[:] }}
+                        {% endvideo %}
+                    {% else %}
+                        <p>No video</p>
+                    {% endif %}
+                {% else %}
+                    <p>No video</p>
+                {% endif %} {% endcomment %}
+
+
+                {% comment %} {% for vid in video_obj %}
+                    <p>{% video vid.video_item_url %}</p>
+                {% endfor %} {% endcomment %}
+                
+                {% comment %} {% if essay_item.video %}
+                    {% video %}
+                        {{ essay_item.video.video_item_url }}
+                    {% endvideo%}
+                {% endif %} {% endcomment %}
             </div>
         </div>
         {% comment %} <div class="contact-small-box">
