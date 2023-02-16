@@ -77,7 +77,7 @@
           
         <ul>
             {% for vid in essay_videos %}
-            
+                <li><p>{{ vid.title_video }}</p></li>
                 <li>{% video vid.video_item_url %} </li>
             
             {% endfor %}

@@ -23,8 +23,8 @@
                 <p>Video trailers for this essay:</p>
                 <ul>
                     {% for vid in video_essay_url%}
-                        
-                        <li>{% video vid.video_item_url %} </li> 
+                        <li><p>{{ vid.title_video_intro }}</p></li>
+                        <li>{% video vid.video_intro_item_url %} </li> 
                     
                     {% endfor %}
                 </ul>

@@ -9,11 +9,11 @@ var lengthPass = pass.length;
 var errorCount = 0;
 var pass1 = "";
 
-var yes = new Audio("http://127.0.0.1:8000/static/hangman_game/yes.wav");
-var no = new Audio("http://127.0.0.1:8000/static/hangman_game/no.wav");
+var yes = new Audio("/static/hangman_game/yes.wav");
+var no = new Audio("/static/hangman_game/no.wav");
 
 
-var myAudio = new Audio('http://127.0.0.1:8000/static/hangman_game/John Jacob Niles - The Maid Freed From The Gallows (1940).mp3');
+var myAudio = new Audio('/static/hangman_game/John Jacob Niles - The Maid Freed From The Gallows (1940).mp3');
 var mediaPlayer = document.getElementById('media-video');
 var isPlaying = false;
 
@@ -151,7 +151,7 @@ function checkIt(num)
 		errorCount++;
 		// var picture = "{% static 'hangman_game/img/s" + errorCount + ".jpg' %}"
 		
-		var picture = "http://127.0.0.1:8000/static/hangman_game/img/s" + errorCount + ".jpg"
+		var picture = "/static/hangman_game/img/s" + errorCount + ".jpg"
 		document.getElementById("gallows").innerHTML = '<img src="'+picture+'"alt="" />';
 	}
 	//when win:
