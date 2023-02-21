@@ -20,7 +20,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .models import EssayCls, SendMeMessage, VideoObject, MyEmail # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
+from .models import EssayCls, SendMeMessage, VideoObject, MyEmail, Comment # `EssayCls, SendMeMessage`: query our db 2:07:00, VideoItem # `EssayCls, SendMeMessage`: query our db 2:07:00
 
 from .forms import UserFeedback # for instantiate our form for rendered templates 3:14:00
 
@@ -32,7 +32,10 @@ from django.template.loader import get_template # used in part: # Show videos fo
 # https://realpython.com/the-most-diabolical-python-antipattern/
 import logging
 
-# Create your views here.
+# Libraries needed for the Skype API:
+from bs4 import BeautifulSoup
+import requests 
+from skpy import Skype
 
 def home_view_pawel(request):
 
@@ -238,6 +241,7 @@ class MyEssaysView(View):
         """
         # print("POST: slug:", slug) # test
         
+        comment_model = Comment.objects.all()
         comment_form = CommentForm(request.POST)
         user_feedback = UserFeedback(request.POST) 
         user_agent = get_user_agent(request)
@@ -281,11 +285,38 @@ class MyEssaysView(View):
             return redirect('confirm-registration', slug=slug) # 3.52.00
 
         if comment_form.is_valid():
-          comment = comment_form.save(commit=False) # s14:192 10:00
-          comment.post = post
-          comment.save()
+            comment = comment_form.save(commit=False) # s14:192 10:00
+            comment.post = post # `post` is a tittle of post/essay
+            comment.save()
+            # comment output: Comment object (id)
+            # str(type(comment) output: <class 'pawel_pedryc_developer.models.Comment'>
+        
+            # Skype Api:
+            sk = Skype("+48607132572", "Skype1919") # connect to Skypesk.user
+            ch = sk.contacts["live:.cid.50398699ab2d0b0b"].chat
+            
+            # This part works but shows only column names for comment form:
+            # msg = ch.sendMsg(
+            #     " ".join(str(comment_form).split()), # https://stackoverflow.com/a/1546251/15372196
+            #     rich=True) # skype needs html line breaks: "rich=True"
+            
+            user_name = comment_model[comment.id - 1].user_name
+            user_email = comment_model[comment.id - 1].user_email
+            user_text = comment_model[comment.id - 1].text
 
-          return HttpResponseRedirect(reverse("essay-path", args=[slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:192 6:10
+            comment_list = [user_name, user_email, user_text]
+            skype_comment = '\n'.join(comment_list) # https://bobbyhadz.com/blog/python-list-join-with-newline
+
+            msg = ch.sendMsg(
+                skype_comment,
+                rich=True # skype needs html line breaks: "rich=True"
+                ) 
+
+            msg
+
+            
+
+            return HttpResponseRedirect(reverse("essay-path", args=[slug]))  # I use `reverse` to not violate the DRY (Don't Repeat Yourself) principle s14:192 6:10
 
         # if user_agent.is_pc:
         #     return render(request, "pawel_pedryc_developer/article-content_pc_tablet.html", context)
