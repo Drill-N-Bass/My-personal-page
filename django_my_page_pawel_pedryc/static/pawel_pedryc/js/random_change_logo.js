@@ -10,8 +10,8 @@
       ];
     var size = [
       "5rem",
-      "4.6rem",
-      "4.6rem",
+      "5rem",
+      "5rem",
       "5.2rem",
       "3rem"
     ];  
