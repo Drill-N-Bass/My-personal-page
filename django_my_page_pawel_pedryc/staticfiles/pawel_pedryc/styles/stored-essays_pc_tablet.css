@@ -1,0 +1,80 @@
+#stored-essays-page {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: var(--article-item-bg-color);
+    width: 90%;
+    /* max-width: 30rem; */
+    margin-top: 50px;
+  }
+
+#flex-for-stored-essays{
+  display: flex;
+  flex-wrap: wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: center; 
+  /* width: 200px; */
+}
+
+#stored-essays-page-main-div{
+  display: flex;
+  /* flex-shrink: 3; */
+  /* max-height: 500px; */
+  /* height: content; */
+  /* width: 800px; */
+} 
+
+#stored-essays-page ul {
+  display: flex;
+  
+  gap: 10px 40px;
+  flex-basis: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#stored-essays-page li {
+  margin: 1rem 0;
+}
+
+#stored-essays-page a {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  color: var(--main-txt-color-h3);
+  font-weight: bold;
+}
+
+#stored-essays-page a:hover,
+#stored-essays-page a:active {
+  background-color: #5A477E;
+}
+
+#read-later-form{
+  box-sizing: content-box;
+}
+
+.read-later-cancel{
+  position: absolute;
+  margin-left: -55px;
+  margin-top: -15px;
+  height: 40px;
+  width: 40px;
+  background-color: inherit;
+  /* background-image:url(../logos/media/remove.png); */
+}
+
+.read-later-cancel-image{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: inherit;
+  margin-left: -20px;
+  margin-top: -18px;
+}
+
+/* image from: https://www.flaticon.com/free-icons/quit Quit icons created by Pixel perfect - Flaticon */

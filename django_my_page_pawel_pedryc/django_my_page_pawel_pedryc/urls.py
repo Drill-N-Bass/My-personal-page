@@ -41,14 +41,21 @@ not in app's urls.py. Bcause it's main entry point for all requests where
 I need to enable this static serving
 """
 
-urlpatterns = ([
+urlpatterns = [
     path('pawel_pedryc_developer/', include('pawel_pedryc_developer.urls')),
     path('', RedirectView.as_view(url='pawel_pedryc_developer/')), # 3.58.00
     path('', include('pawel_pedryc_developer.urls')),
     path('', include('hangman_game.urls')),
-    path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)) # for pictures and files `settings.MEDIA_URL` part. Second for js
+    path('admin/', admin.site.urls)]
+
+
+"""
+part below hashed because static files will be served 
+by Nginx now with django_my_page_pawel_pedryc\.ebextensions\static-files.config
+Previously those lines of code was needed for development
+"""
+#  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # for pictures and files `settings.MEDIA_URL` part. Second for js
+#   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # The simplest way to serve static files (low performance) s15e210 00:00 
 
 # at this point it doesn't work:
 urlpatterns += staticfiles_urlpatterns() # for pictures 

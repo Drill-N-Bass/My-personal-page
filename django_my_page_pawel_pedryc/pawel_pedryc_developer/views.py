@@ -70,6 +70,15 @@ def home_view_pawel(request):
     video_essay = [vid.video.all() for vid in essay]
     # load_essay_video = loader.get_template('django_my_page_pawel_pedryc\pawel_pedryc_developer\templates\pawel_pedryc_developer\pawel_pedryc-pc.html')
 
+    """
+    If someone wonders how I set video preview in my index/home page, 
+    I've redirected my video objects from VideoObject class(models.py) 
+    directly in my template: "essay_items".
+
+    Another way to do it is to use `select_related()` or `prefetch_related()`
+    A good discussion about usage here: https://stackoverflow.com/questions/31237042/whats-the-difference-between-select-related-and-prefetch-related-in-django-orm
+    """
+
     context = {
                 'text_content': essay,
                 'show_text_content': True,
@@ -157,6 +166,10 @@ def all_essays(request):
 
 class MyEssaysView(View):
     
+    
+
+
+
     def is_stored_essay(self, request, post_id):
         """
         Removing saved essays in session s14e200:
@@ -247,7 +260,7 @@ class MyEssaysView(View):
         user_agent = get_user_agent(request)
 
         post = EssayCls.objects.get(slug=slug)
-        
+
         context = {
           "post": post,
           "post_tags": post.tags.all(),
@@ -291,8 +304,16 @@ class MyEssaysView(View):
             # comment output: Comment object (id)
             # str(type(comment) output: <class 'pawel_pedryc_developer.models.Comment'>
         
-            # Skype Api:
-            sk = Skype("+48607132572", "Skype1919") # connect to Skypesk.user
+           # Skype Api:
+            sk = Skype("pawel.pedryc@gmail.com", "Skype1919") # connect to Skypesk.user
+
+            # Important doc about authentication: https://skpy.t.allofti.me/background/authentication.html
+            # about this authentication (bottom of a page): https://github.com/Terrance/SkPy.docs/blob/master/guides/login.rst
+            sk.conn.liveLogin("pawel.pedryc@gmail.com", "Skype1919")
+
+            sk.conn
+
+            
             ch = sk.contacts["live:.cid.50398699ab2d0b0b"].chat
             
             # This part works but shows only column names for comment form:

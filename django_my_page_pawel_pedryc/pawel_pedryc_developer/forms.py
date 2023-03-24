@@ -1,4 +1,4 @@
-from socket import fromshare
+# from socket import fromshare # I need to hash it because AWS Elastic Beanstalk throws an error. More about error here: https://stackoverflow.com/questions/70964967/python-django-heroku-importerror-cannot-import-name-fromshare-from-so
 from django import forms
 
 from .models import Comment

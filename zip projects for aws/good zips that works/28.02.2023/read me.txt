@@ -1,0 +1,3 @@
+Nginx for static files - working
+
+problem: skpy client for skype is not working (problem with authentication).

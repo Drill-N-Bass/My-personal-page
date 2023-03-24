@@ -146,3 +146,8 @@ GitHub.sublime-settings
 
 # Django Template base files #
 src/pawel_pedryc_developer/templates/pawel_pedryc_developer/base/base_pc_tablet.html
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

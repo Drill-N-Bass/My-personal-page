@@ -1,0 +1,1 @@
+This one is configured to serve staticfiles by Django. So not very performance-optimized. All requests are funnel via Django in this verison. 

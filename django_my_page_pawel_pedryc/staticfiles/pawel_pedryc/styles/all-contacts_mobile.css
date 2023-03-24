@@ -1,0 +1,128 @@
+section {
+  max-width: 640px;
+  margin: 48px auto;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-item {
+  margin: 16px 0;
+  /* background-color: #456e9a; */
+  background-color: var(--article-item-bg-color);
+  padding: 32px;
+  color: white;
+  border-radius: .25rem;
+}
+
+.contact-small-box {
+
+  font-size: small;
+  margin: 1rem 0;
+  background-color: #ccc3db;
+  padding: 0.6rem; 
+  border-radius: 30px ;
+  float: left;
+  color: white;
+  padding-top: 25px;
+
+}
+
+
+/* Horizontal screen: */
+@media screen and (min-width: 31.25rem) {
+  .contact-small-box {
+    object-position: bottom;
+    font-size: 40%;
+    text-align: center;
+    margin: 10px 10px;
+    width: 80%;
+    height: 40%;
+    background-color: var(--contact-small-box-bg);
+    padding: 1.6px; 
+    border-radius: 1.875rem ;
+    color: white;
+    padding-top: 17px;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .contact-small-box {
+    object-position: bottom;
+    font-size: 40%;
+    text-align: center;
+    margin: 10px 10px;
+    width: 80%;
+    height: 40%;
+    background-color: var(--contact-small-box-bg);
+    padding: 1.6px; 
+    border-radius: 1.875rem ;
+    color: white;
+    padding-top: 17px;
+    }
+}
+
+.contact-summary {
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-image {
+  margin-right: 32px;
+}
+
+/* .contact-image-size {
+  width: 7.5rem;
+  height: 7.5rem;
+} */
+
+.contact-image-zoomer-base{
+  width: 128px;
+  height: 128px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 1s;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+}
+
+.contact-image img:hover{
+  transform: scale(1.1);
+}
+
+.contact-details h3 {
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.contact-details address {
+  font-style: italic;
+}
+
+.contact-actions {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.contact-actions .btn {
+  background-color: #a06bdc;
+  border-color: #cb82fb;
+  color: #350490;
+  padding: 12px 32px;
+  border-radius: .875rem ;
+}
+
+.contact-actions .btn:hover {
+  background-color: #8869c2;
+  border-color: #a46fe1;
+}
