@@ -37,6 +37,8 @@ from bs4 import BeautifulSoup
 import requests 
 from skpy import Skype
 
+from os import getenv # s15e214 00:30
+
 def home_view_pawel(request):
 
     """
@@ -309,7 +311,7 @@ class MyEssaysView(View):
 
             # Important doc about authentication: https://skpy.t.allofti.me/background/authentication.html
             # about this authentication (bottom of a page): https://github.com/Terrance/SkPy.docs/blob/master/guides/login.rst
-            sk.conn.liveLogin("pawel.pedryc@gmail.com", "Skype1919")
+            sk.conn.liveLogin(getenv("SKYPE_LOGIN"), getenv("SKYPE_PASS"))
 
             sk.conn
 
