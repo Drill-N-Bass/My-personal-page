@@ -307,7 +307,7 @@ class MyEssaysView(View):
             # str(type(comment) output: <class 'pawel_pedryc_developer.models.Comment'>
         
            # Skype Api:
-            sk = Skype("pawel.pedryc@gmail.com", "Skype1919") # connect to Skypesk.user
+            sk = Skype(getenv("SKYPE_LOGIN"), getenv("SKYPE_PASS")) # connect to Skypesk.user
 
             # Important doc about authentication: https://skpy.t.allofti.me/background/authentication.html
             # about this authentication (bottom of a page): https://github.com/Terrance/SkPy.docs/blob/master/guides/login.rst
