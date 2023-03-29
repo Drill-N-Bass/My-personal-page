@@ -1,7 +1,0 @@
-I added a video feature for each essay and for the index/main/home page.
-For that, I updated my model `VideoObject` and changed the relation between
-it and `EssaCls` from one-to-many to many-to-many.
-
-
-At this point, I'm testing how things are going. 
-There will be further updates related to this video feature.
