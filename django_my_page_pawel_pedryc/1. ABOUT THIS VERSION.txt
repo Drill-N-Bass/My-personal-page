@@ -1,0 +1,4 @@
+
+
+
+28.03.2023 added environment variables for login and pass for `Skpy` library (skype client).
