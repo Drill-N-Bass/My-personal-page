@@ -1,0 +1,33 @@
+{% extends 'pawel_pedryc_developer/base/base_pc_tablet.html' %}
+{% load static %}
+
+{% block title %}You submit email with success!{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/registration-confirmation_pc_tablet.css' %}">
+{% endblock %}
+
+{% block main_heading%}
+<p><br/><br/></p>
+<p><br/><br/></p>
+<h2>Thank you for your subission.</h2>
+
+<p><br/><br/></p>
+{% endblock%}
+    
+{% block body %}
+
+<section id="confirmation">
+    <h2>You submit successfully!</h2>
+    <p>Thank you for your effort</p>
+    <p>If you have any questions please <a href="mailto:{{ my_email }}">contact me</a></p>
+</section>
+
+<section id="continue">
+    <p>Of course you can send your essays for more than one place.</p>
+    <p><a href="/pawel_pedryc_developer/" style="margin-top: -27.5px !important" class="btn">Explore more essays!</a></p>
+    
+
+</section>
+
+{% endblock%}

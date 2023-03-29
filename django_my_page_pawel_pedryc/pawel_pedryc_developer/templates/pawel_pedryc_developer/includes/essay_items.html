@@ -1,0 +1,74 @@
+{% comment %} https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
+{% load blog_extras %}
+{% load embed_video_tags %}
+
+<li class="contact-item">
+    <article>
+        <div class="contact-summary">
+            <div class="contact-image">
+                <div class="contact-image-zoomer-base">
+                    <img src="{{ image }}" alt="{{ title }}">
+                </div>
+
+                <div class="contact-small-box">
+                    <p id="knowledge-set-text"><b>Knowledge set </b>{{ language }}</p>
+                </div>
+
+            </div>
+            
+            <div class="contact-details">
+                <h3><a href="{% url 'essay-path' slug %}" style="text-decoration: none; color: #35049080;">{{ title }}</a></h3>
+                <p>{{ description|convert_markdown|safe }}</p>
+                <br /><br />
+                <p>Video trailers for this essay:</p>
+                <ul>
+                    {% for vid in video_essay_url%}
+                        <li><p>{{ vid.title_video_intro }}</p></li>
+                        <li>{% video vid.video_intro_item_url %} </li> 
+                    
+                    {% endfor %}
+                </ul>
+
+                {% comment %} To działa {{ video_essay_url }} {% endcomment %}
+
+                {% comment %} <ul>
+                    {% for vid in essay_videos %}
+                    
+                        <li>{% video vid.video_item_url %} </li>
+                    
+                    {% endfor %}
+                </ul> {% endcomment %}
+
+                {% comment %} {% if text_content.video %}
+                    {% if text_content.video.video_item_url %}
+                        {% video %}
+                            {{ text_content.video.video_item_url[:] }}
+                        {% endvideo %}
+                    {% else %}
+                        <p>No video</p>
+                    {% endif %}
+                {% else %}
+                    <p>No video</p>
+                {% endif %} {% endcomment %}
+
+
+                {% comment %} {% for vid in video_obj %}
+                    <p>{% video vid.video_item_url %}</p>
+                {% endfor %} {% endcomment %}
+                
+                {% comment %} {% if essay_item.video %}
+                    {% video %}
+                        {{ essay_item.video.video_item_url }}
+                    {% endvideo%}
+                {% endif %} {% endcomment %}
+            </div>
+        </div>
+        {% comment %} <div class="contact-small-box">
+            <p id="knowledge-set-text"><b>Knowledge set </b>{{ language }}</p>
+        </div> {% endcomment %}
+        <div class="contact-actions">
+            {% comment %} <a href="/pawel_pedryc_developer/{{ essay_item.slug }}" class="btn">More details</a> {% endcomment %}
+            <a href="{% url 'essay-path' slug %}" class="btn">More details</a>
+        </div>
+    </article>
+</li>

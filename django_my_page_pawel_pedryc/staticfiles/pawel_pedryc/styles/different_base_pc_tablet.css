@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+/* OOCSS first:*/
+
+/* Fonts for random logo tittle below: */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bonbon&family=League+Script&family=Molle&family=Monsieur+La+Doulaise&family=Mr+De+Haviland&family=Swanky+and+Moo+Moo&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* :root{
+  --main-bg-color: #01012e;
+  --main-txt-color: #11111e;
+} */
+
+:root{
+  --main-bg-color: #6c91a763;
+  --main-txt-color: #f9f9fed6;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #19191adf;
+
+  --dark-btn-background:#010d2e6e;
+  --dark-btn-border: #35049080;
+  --dark-btn-color-text: #cfc234d2;
+  --dark-btn-background-hoover: #010511;
+  --dark-btn-border-hoover: #fff71bca;
+  --dark-btn-color-text-hoover: #ffffff;
+
+  --knowledge-set-text: #161617d6;
+  --contact-small-box-bg: #ccc3db92;
+  --animation-test: url(https://jumpingfishes.com/dancingpurpleunicorns/charging.png);
+  --animation-slider: url(../logos/media/python_mushroom.jpeg);
+  --dark-btn-arrow: url(../logos/media/click_me_arrow.png);
+  /* --dark-btn-arrow-big-resolution: url(../../../static/pawel_pedryc/logos/media/click_me_arrow_left.png); */
+
+}
+
+.darkmode {
+  --main-bg-color: #000027;
+  --main-txt-color: #daffda;
+  --article-item-bg-color: #3F7DA4;
+  --main-txt-color-h3: #ddddeddf;
+  
+  --dark-btn-background:#010d2ed9;
+  --dark-btn-border: #350490bd;
+  --dark-btn-color-text: #21fe16bb;
+  --dark-btn-background-hoover: #460465;
+  --dark-btn-border-hoover: #fff71be6;
+  --dark-btn-color-text-hoover: #c5bfbf;
+
+  --knowledge-set-text: #499f10;
+  --contact-small-box-bg: #314030ae;
+
+  --animation-test: url(https://i.ibb.co/WfyzLpJ/charging.png);
+}
+
+/* zero-all-out https://www.thoughtco.com/css-zero-out-margins-3464247  */
+html, 
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
+  height: 100%;
+  min-height: 100%;
+}
+
+h1,
+h2 {
+  font-family: 'Roboto Slab', sans-serif;
+  color: var(--main-txt-color);
+}
+
+#h3-article-main-div{
+  height: 7em;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+#h3-article-div-tittle{
+  margin-top: 100px;
+  text-align: center;
+  margin: auto;
+  width: 20rem;
+  border: 5px solid #2d4661;
+  border-radius: 80% 70% / 10% 30%;
+	background-color: var(--article-item-bg-color);
+  font-size: small;
+}
+
+h3,
+p {
+  font-family: 'Roboto Slab', sans-serif;
+  color: var(--main-txt-color-h3);
+  font-size: medium;
+}
+
+.h3.main_head {
+  font-family: 'Roboto Slab', sans-serif;
+  color: var(--main-txt-color-h3);
+  opacity: 0.6;
+}
+
+#knowledge-set-text {
+  color: var(--knowledge-set-text);
+}
+
+button,
+.btn {
+  cursor: pointer;
+  font: inherit;
+  padding: .5rem 1.5rem;
+  background-color: #350490;
+  border: 1px solid #350490;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #5a477e;
+  border-color: #230161;
+}
+
+
+#main-header {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+  /* background-image:url(../logos/media/python_mushroom.jpeg); */
+  background-image:url(../logos/media/animated.png);
+  max-width: 100%;
+  background-position: center;
+  border-bottom: 3px solid #b2bcff;
+  background-repeat: no-repeat;
+	transition: background-image 1.2s;
+}
+
+
+#main-header:hover {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+  background-image: url(../logos/media/python_mushroom.jpeg);
+  /* background-image:url(../logos/media/animated.png); */
+  max-width: 100%;
+  background-position: center;
+  border-bottom: 3px solid #b2bcff;  
+}
+
+.main-header-dark{
+  object-position: right top;
+  width: 300px; 
+  height: 150px;
+  float: right;
+  margin-top: -45px;
+  margin-bottom: -100px;
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-dark{
+    object-position: right top;
+    width: 300px; 
+    height: 150px;
+    float: left;
+    margin-top: -45px;
+    margin-bottom: -100px;
+  }
+}
+
+#main-header-dark-img{
+  width: 50%;
+  max-width: 50%;
+  margin-right: -150px;
+  /* background-image: url(--dark-btn-arrow);   NOT WORKING IDK why */
+}
+
+@media screen and (max-width: 1400px) {
+  #main-header-dark-img{
+    float: left;
+    width: 50%;
+    max-width: 50%;
+    margin-left: 50px;
+    /* background-image: url(--dark-btn-arrow-big-resolution);  NOT WORKING IDK why */
+  }
+}
+
+.main-header-dark-btn{
+  background-color: var(--dark-btn-background);
+  float: right;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border);
+  margin-right: 75px;
+  color: var(--dark-btn-color-text);
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-dark-btn{
+    background-color: var(--dark-btn-background);
+    float: left;
+    border-radius: 8px;
+    border: 3px solid var(--dark-btn-border);
+    margin-right: 75px;
+    color: var(--dark-btn-color-text);
+  }
+}
+
+.main-header-dark-btn:hover{
+  background-color: var(--dark-btn-background-hoover);
+  /* float: right; */
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  margin-right: 75px;
+  color: var(--dark-btn-color-text-hoover);
+  -webkit-transition:    color, border 0.2s line;
+  -moz-transition:       color, border 0.2s ease-out;
+  -ms-transition:        color, border 0.2s ease-out;
+  -o-transition:         color, border 0.2s ease-out;
+  transition:            color, border 2s ease-out;
+  transition-timing-function:  1s ease-out;
+  transition-duration:         1s ease-out;
+}
+
+.read-later_all-essays_div {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  object-position: right bottom;
+  margin-left: 1rem;
+  width: 300px; 
+  height: 3.75rem;
+  margin-left: 0px;
+  margin-top: 110px;
+ 
+}
+
+.main-header-essays-btn{
+  background-color: var(--dark-btn-background);
+  float: right;
+  height: 40px;
+  width: 150px;
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border);
+  margin-right: 1px;
+  color: var(--dark-btn-color-text);
+}
+
+@media screen and (max-width: 1400px) {
+  .main-header-essays-btn{
+    background-color: var(--dark-btn-background);
+    float: left;
+    height: 40px;
+    width: 150px;
+    border-radius: 8px;
+    border: 3px solid var(--dark-btn-border);
+    margin-right: 1px;
+    color: var(--dark-btn-color-text);
+    margin-top: 110px;
+  }
+}
+
+.main-header-essays-btn:hover{
+  background-color: var(--dark-btn-background-hoover);
+  border-radius: 8px;
+  border: 3px solid var(--dark-btn-border-hoover);
+  color: var(--dark-btn-color-text-hoover);
+  -webkit-transition:    color, border 0.2s line;
+  -moz-transition:       color, border 0.2s ease-out;
+  -ms-transition:        color, border 0.2s ease-out;
+  -o-transition:         color, border 0.2s ease-out;
+  transition:            color, border 2s ease-out;
+  transition-timing-function:  1s ease-out;
+  transition-duration:         1s ease-out;
+}
+
+#main-header h1 {
+    font-size: .9rem;
+    opacity: 0.8;
+    line-height: 0.05;
+    }
+
+#main-logo {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    /* font-family in js file: "random_change_logo.js" */
+    /* font-family: 'Black And White Picture', sans-serif; */
+    /* font-family: 'Swanky and Moo Moo', cursive; */
+    /* font-family: 'Monsieur La Doulaise', cursive; */
+    /* font-family: 'Roboto Slab', sans-serif; */
+    text-decoration: none;
+    color: #350490;
+    font-weight: bold;
+}
+
+
+.main_div_0 {
+  max-height: fit-content;
+}
+
+.main_div_1 {
+  float: left;
+}
+
+.main_div_2 {
+  float: left;
+  position: fixed;
+  right: 0px; bottom: 0px;
+}
+
+/* This snippet will change behaviour of maind_div_2 when screen is less that 1100px */
+/* @media screen and (max-width: 1100px) {
+  .main_div_2 {
+    display: none;
+  }
+} */
+
+.ol_section {
+  height: 100%;
+  width: 50rem;
+}
+
+.square {
+  padding: 10px;
+  height: 380px;
+  width: 65px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
+  /* background-color: #3F7DA4; */
+  background-color: #3f7da433;
+  
+}
+
+@media screen and (max-width: 1700px){
+  .square {
+  object-position: bottom;
+  padding: 10px;
+  height: 190px;
+  width: 16.2496px;
+  border: 3px solid #b2bcff;
+  border-radius: 15px;
+  /* background-color: #3F7DA4; */
+  background-color: #3f7da433;
+  }
+}
+
+
+.hg
+{
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
+	background-color: #b50000;
+	float: right;
+}
+
+.hg:hover
+{
+	background-color: #690307;
+}
+
+
+@media screen and (max-width: 1700px) {
+  .hg {
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
+  background-color: #b50000;
+  float: right;
+  }
+}
+
+.li
+{
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
+	background-color: #0a4c6b;
+	float: right;
+}
+
+.li:hover
+{
+	background-color: #c83237;
+}
+
+
+@media screen and (max-width: 1700px) {
+  .li {
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
+  background-color: #0a4c6b;
+	float: right;
+  }
+}
+
+.gh
+{
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
+	background-color: #e38fff;
+	float: right;
+}
+
+.gh:hover
+{
+	background-color: #9c07c9;
+}
+
+
+@media screen and (max-width: 1700px) {
+  .gh {
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
+  background-color: #e38fff;
+  float: right;
+  }
+}
+
+.so
+{
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
+	background-color: #71b0f4;
+	float: right;
+}
+
+.so:hover
+{
+	background-color: #c84222;
+}
+
+
+@media screen and (max-width: 1700px) {
+  .so {
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
+  background-color: #71b0f4;
+  float: right;
+  }
+}
+
+.pypi
+{
+  margin-top: 5px;
+  margin-right: 2px;
+	width: 35px;
+	height: 53px;
+	background-color: #ffea2e;
+	float: right;
+}
+
+.pypi:hover
+{
+	background-color: #3fc600;
+}
+
+@media screen and (max-width: 1700px) {
+  .pypi {
+  margin-top: 2.5008px;
+  margin-right: -8px;
+  width: 15px;
+  height: 26.5008px;
+  background-color: #ffea2e;
+  float: right;
+  }
+}
+
+#footer-position{
+  bottom: 0px;
+  position: absolute;
+  margin-left: 91px;
+}
+
+#footer-bg
+{
+  background-color: #000027;
+  
+}
+
+.contact_envelop
+{
+  padding-top: 20px;
+  width: 1380px;
+  border: 3px solid #2d4661;
+  border-radius: 15px;
+	background-color: var(--article-item-bg-color);
+	float: left;
+}
+
+@media screen and (max-width: 1450px){
+  .contact_envelop
+  {
+    padding-top: 14px;
+    width: 1200px;
+    border: 3px solid #2d4661;
+    border-radius: 15px;
+    background-color: var(--article-item-bg-color);
+    float: left;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .contact_envelop
+  {
+    padding-top: 12px;
+    width: 950px;
+    border: 3px solid #2d4661;
+    border-radius: 15px;
+    background-color: var(--article-item-bg-color);
+    float: left;
+  }
+}
+
+.contact_envelop_text
+{
+  font-size: 35.2px;
+  text: var(--main-txt-color);
+  text-align: center;
+}
+
+@media screen and (max-width: 1450px){
+  .contact_envelop_text
+  {
+    font-size: 24.85px;
+    text: var(--main-txt-color);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .contact_envelop_text
+  {
+    font-size: 21.5px;
+    text: var(--main-txt-color);
+    text-align: center;
+  }
+}
+
+.contact_envelop_email_text_box{
+  margin-top: -1.6rem;
+}
+
+.contact_envelop_email_text
+{
+  font-size: large;
+  padding: 5px 10px 5px 10px;
+  border: 3px solid #b2bcff;
+  border-radius: 17px;
+  background-color: var(--main-bg-color);
+  color: #00aeff;
+}
+
+@media screen and (max-width: 1450px){
+  .contact_envelop_email_text
+  {
+    font-size: medium;
+    padding: 2px 10px 2px 10px;
+    border: 2.5px solid #b2bcff;
+    border-radius: 17px;
+    background-color: var(--main-bg-color);
+    color: #00aeff;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .contact_envelop_email_text
+  {
+    font-size: small;
+    padding: 1px 10px 1px 10px;
+    border: 2px solid #b2bcff;
+    border-radius: 17px;
+    background-color: var(--main-bg-color);
+    color: #00aeff;
+  }
+}
+
+#animation 
+{ 
+    background-image: var(--animation-test);
+    background-repeat: no-repeat; 
+    height: 102px; 
+    width: 140px; 
+}
+
+#animation-slider img ~ img {
+  display: none;
+}

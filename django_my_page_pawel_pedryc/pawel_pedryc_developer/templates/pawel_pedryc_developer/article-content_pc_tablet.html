@@ -1,0 +1,169 @@
+{% extends 'pawel_pedryc_developer/base/base-article_pc_tablet.html' %}
+{% load static %}
+{% load embed_video_tags %}
+
+{% comment %} Markdown feature: https://www.youtube.com/watch?v=t61nTi0lIlk {% endcomment %}
+{% load blog_extras %}
+
+{% block title %}{{ essay_all.title }}{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'pawel_pedryc/styles/article_pc_tablet.css' %}">
+{% endblock %}
+
+{% block main_heading %}
+{{ essay_all.title }}
+{% endblock%}
+
+{% block header_content%}
+<br /><br /><br />
+{% endblock%}
+
+
+
+
+{% block body %}
+
+{% if essay_found %}
+
+{% if comment_form.errors %}
+  <div id="alert">
+    <h2>Saving the comment failed!</h2>
+    <p>Please check the comment form below the post and fix your erros.</p>
+    <a href="#comment-form">Fix!</a>
+  </div>
+{% endif %}
+
+<article>
+
+    <div class="contact-image-zoomer-base-article">
+        <img class="main-image" src="{{ essay_all.image.url }}" alt="{{ essay_all.title }}">
+    </div>
+
+    <section id="art_prev_box">
+        <div id="content_type">
+            <h3>This content is related to:</h3>
+            <ul>
+                <li><span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span></li>
+            </ul>
+            
+            <h3 id="content_type_h3">Tags:</h3>
+                <div>
+                    {% for tag in post_tags %}
+                        <span id="h4_post_tags">{{ tag.caption }} </span>
+                    {% endfor %}
+                </div> 
+        </div>
+
+        <div id="read-later">
+            <form action="{% url 'read-later' %}" method="POST">
+              {% csrf_token %}
+              {% comment %} s14e197 4:00 {% endcomment %}
+              <input type="hidden" value="{{ essay_all.id }}" name="post_id">
+              <button>
+                {% if saved_for_later %}
+                  Remove <br/>from <br/>"Read Later" <br/>List
+                {% else %}
+                  Read Later
+                {% endif %}
+              </button>
+            </form>
+          </div>
+       
+        {% autoescape off %}
+        <p>{{ essay_all.details|convert_markdown|safe }}</p>
+        {% endautoescape %} 
+        <p>Poniżej powinny być filmy</p>
+          
+        <ul>
+            {% for vid in essay_videos %}
+                <li><p>{{ vid.title_video }}</p></li>
+                <li>{% video vid.video_item_url %} </li>
+            
+            {% endfor %}
+        </ul>
+        {% comment %} <p>{% video essay_video.title_video %}</p> {% endcomment %}
+        
+        
+    </section>
+
+    <section id="comments">
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <h2>{{ comment.user_name }}</h2>
+                    {% comment %} <h3>{{ comment.post_date }}</h3> {% endcomment %}
+                    <p>{{ comment.text|linebreaks }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+
+    <section id="comment-form">
+        <div>
+            <h2 id="form-comment-tittle">Your Comment</h2>
+
+            <form action="{% url 'essay-path' essay_all.slug %}" method="POST">
+                {% csrf_token %}
+                {% for form_field in comment_form %}
+
+                <div class="form-control">
+                    {{ form_field.label_tag }}
+                    {{ form_field }}
+                    {{ form_field.errors }}
+                {% comment %} {{ comment_form }} {% endcomment %}
+                </div>
+
+                {% endfor %}
+                <button>Save Comment</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="registration">
+        {% comment %} about {% if form_field.errors %}invalid{% endif %} s14:193 2:30 {% endcomment %}
+        <div class="newsletter_box" {% if form_field.errors %}invalid{% endif %}>
+            <h4>Sign up to the newsletter here:</h4>
+            <form class="id_email_form" action="{% url 'essay-path' essay_all.slug %}" method="POST">
+                {% csrf_token %}
+                {% comment %} #alternative we can write: <ul>
+                    {{ form.as_ul }}
+                </ul> {% endcomment %}
+                <p>
+                    {{ form.as_p }}
+                </p>
+                <div id="registration-actions">
+                    <button>Join me</button>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+    
+    <section id="details">
+        
+        <footer>
+            <br /><br />
+            <p>Need more details? <a href="mailto:{{ my_email }}">Please contact me</a> (but don't spam ;))</p>
+        </footer>
+    </section>
+
+    <div>
+    {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
+    </div>
+</article>
+
+{% else %}
+
+<h2 style="text-align: center; font-size: 50px;">
+    No essay found (for this slug), sorry! 
+    <br /><br />
+</h2>
+
+<div>
+    {% include 'pawel_pedryc_developer/includes/contact_hoover.html' %}
+</div>
+{% endif %}
+
+{% endblock%}

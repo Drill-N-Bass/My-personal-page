@@ -1,0 +1,37 @@
+main {
+  text-align: center;
+}
+
+#confirmation {
+  max-width: 800px;
+  margin: 48px auto;
+  box-shadow: 0 .125rem .375rem rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  background-color: #6633c4;
+  border-radius: .375rem;
+  color: white
+}
+
+#confirmation h2 {
+  color: inherit;
+  font-size: 32px;
+}
+
+#confirmation p {
+  font-size: 20px;
+}
+
+#confirmation p a {
+  color: #cf74df;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#continue p {
+  margin: 32px 0;
+}
+
+#continue .btn {
+  font-size: 24px;
+  padding: 16px 32px;
+}
