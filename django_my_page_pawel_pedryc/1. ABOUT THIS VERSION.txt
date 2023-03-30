@@ -1,4 +1,4 @@
 
-
+30.03.2023 added `decouple` lib for env variables https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
 
 28.03.2023 added environment variables for login and pass for `Skpy` library (skype client).
