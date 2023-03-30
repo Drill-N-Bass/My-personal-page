@@ -33,15 +33,15 @@ Python, Django, Docker, AWS, Tkinter, Pandas, mySQL and more...
                             {% if show_text_content %}
                                 {% for essay_item in text_content %}
                                     
-                                    {% comment %} settings.py line 143-147 allows to break the code as below
+                                    {% comment %} settings.py line 143-147 allows breaking the code as below
                                     More info about this:
-                                    # django template tag on multiple line (Zach Snow answer):
+                                    # django template tag on multiple lines (Zach Snow answer):
                                     # https://stackoverflow.com/questions/49110044/django-template-tag-on-multiple-line
 
-                                    # about include used below: I will inject some html and dynamic data from another
-                                    # file, so the code will looks cleaner. Also I will define shorter object names
-                                    # for dynamic part used for interpolation. 1:43:00
-                                    # this code for includes folder I can use in others html files - if I would need that. 
+                                    # about include used below: I will inject some HTML and dynamic data from another
+                                    # file, so the code will look cleaner. Also, I will define shorter object names
+                                    # for the dynamic part used for interpolation.
+                                    # this code includes a folder I can use in others HTML files - if I would need that. 
                                     {% endcomment %}
                                     {% include 'pawel_pedryc_developer/includes/essay_items.html'
                                     with

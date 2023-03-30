@@ -85,7 +85,7 @@ def home_view_pawel(request):
                 'text_content': essay,
                 'show_text_content': True,
                 'hangman_icon': True,
-                'my_email': my_email,
+                'my_email': my_email
                 # 'video_essay': video_essay
                 # 'zipped_videos_essay': zip(essay, list(video_essay))
                 # 'essay_videos': video_obj.video_item_url
@@ -107,8 +107,8 @@ def home_view_pawel(request):
                     'text_content': essay,
                     'show_text_content': True,
                     'hangman_icon': False,
-                    'my_email': my_email,
-                    'video_obj': video_obj
+                    'my_email': my_email
+                    # 'video_obj': video_obj
                     })
     elif user_agent.is_tablet:
         return render(
