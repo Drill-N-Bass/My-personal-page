@@ -44,7 +44,7 @@
         <div id="content_type">
             <h3>This content is related to:</h3>
             <ul>
-                <li><span>{{ essay_all.language.prog_lang_category }} {{ essay_all.language.prog_lang_name }}</span>.</span></li>
+                <li><span>{{ essay_all.language.prog_lang_category }}: {{ essay_all.language.prog_lang_name }}</span>.</span></li>
             </ul>
             
             <h3 id="content_type_h3">Tags:</h3>
@@ -73,7 +73,7 @@
         {% autoescape off %}
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %} 
-        <p>Poniżej powinny być filmy</p>
+        <p>Videos:</p>
           
         <ul>
             {% for vid in essay_videos %}

@@ -20,12 +20,12 @@
                 <h3><a href="{% url 'essay-path' slug %}" style="text-decoration: none; color: #35049080;">{{ title }}</a></h3>
                 <p>{{ description|convert_markdown|safe }}</p>
                 <br /><br />
-                <p>Video trailers for this essay:</p>
+                <p>Video trailer for this essay:</p>
                 <ul>
                     {% for vid in video_essay_url%}
-                        <li><p>{{ vid.title_video_intro }}</p></li>
-                        <li>{% video vid.video_intro_item_url %} </li> 
-                    
+                        <p style="margin-left: -13.5rem;">{{ vid.title_video_intro }}:</p>
+                        <li><div style="margin-left: -14.5rem;">{% video vid.video_intro_item_url 'tiny'%} </div></li> 
+                        {% comment %}Css shrink video:`transform: scale(0.3);` {% endcomment %}
                     {% endfor %}
                 </ul>
 

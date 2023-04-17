@@ -160,3 +160,6 @@ django_my_page_pawel_pedryc/1. ABOUT THIS VERSION.txt
 /zip projects for aws
 
 /.vscode/launch.json
+/django_my_page_pawel_pedryc/S3 policies.txt
+/django_my_page_pawel_pedryc/.gitignore
+/django_my_page_pawel_pedryc/S3_policies.txt

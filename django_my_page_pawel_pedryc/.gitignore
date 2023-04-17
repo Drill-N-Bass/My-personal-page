@@ -14,6 +14,8 @@ __pycache__
 db.sqlite3
 media
 settings.py
+S3_policies.txt
+
 
 # Backup files # 
 *.bak 

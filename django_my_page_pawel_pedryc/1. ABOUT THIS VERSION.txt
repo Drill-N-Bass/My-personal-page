@@ -1,3 +1,4 @@
+03.04.2023 added Debugging mechanism that detects the state: IS_PRODUCTION and IS_DEVELOPMENT - and will set a proper `DEBUG = debug_var()` in settings.py 
 
 30.03.2023 added `decouple` lib for env variables https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
 

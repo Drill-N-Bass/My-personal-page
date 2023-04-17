@@ -78,6 +78,17 @@
         <p>{{ essay_all.details|convert_markdown|safe }}</p>
         {% endautoescape %} 
         
+        <p>Videos:</p>
+          
+        <ul>
+            {% for vid in essay_videos %}
+                <p style="margin-left: -21rem;">{{ vid.title_video }}: </p>
+                <p><div style="margin-left: -3rem;">{% video vid.video_item_url 'tiny'%}</div></p>
+                {% comment %}Css shrink video:`transform: scale(0.3);` {% endcomment %}
+            {% endfor %}
+        </ul>
+        {% comment %} <p>{% video essay_video.title_video %}</p> {% endcomment %}
+
     </section>
 
     <section id="comments">

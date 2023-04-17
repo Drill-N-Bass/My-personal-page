@@ -234,7 +234,9 @@ class MyEssaysView(View):
                             'comment_form': CommentForm(),
                             'hangman_icon': False,
                             'comments': selected_essay.comments.all().order_by("-id"), # s14:194 1:00
-                            'my_email': my_email
+                            'my_email': my_email,
+                            'saved_for_later': self.is_stored_essay(request, selected_essay.id),
+                            'essay_videos': selected_essay.video.all()
                             # "user_feedback": UserFeedback()
                         })
             
