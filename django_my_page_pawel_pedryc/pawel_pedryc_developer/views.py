@@ -31,13 +31,15 @@ from django.template.loader import get_template # used in part: # Show videos fo
 # Needed for display log with the error exeption function:
 # https://realpython.com/the-most-diabolical-python-antipattern/
 import logging
+from os import getenv # s15e214 00:30
 
 # Libraries needed for the Skype API:
 from bs4 import BeautifulSoup
 import requests 
 from skpy import Skype
 
-from os import getenv # s15e214 00:30
+from decouple import config # library for local environment variables https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
+
 
 def home_view_pawel(request):
 
@@ -168,16 +170,12 @@ def all_essays(request):
 
 class MyEssaysView(View):
     
-    
-
-
-
     def is_stored_essay(self, request, post_id):
         """
         Removing saved essays in session s14e200:
         """
         stored_essays = request.session.get("stored_essays")
-        print("post_id: ", post_id) # Test
+        # print("post_id: ", post_id) # Test
         if stored_essays is not None:
             is_saved_for_later = post_id in stored_essays
         else:
@@ -247,8 +245,6 @@ class MyEssaysView(View):
                             context
                             )
 
-
-
     def post(self, request, slug):
         
         """
@@ -257,7 +253,6 @@ class MyEssaysView(View):
         that might be attached to incoming POST request. # 3:22:00
         """
         # print("POST: slug:", slug) # test
-        
         comment_model = Comment.objects.all()
         comment_form = CommentForm(request.POST)
         user_feedback = UserFeedback(request.POST) 
@@ -272,6 +267,42 @@ class MyEssaysView(View):
           'comments': post.comments.all().order_by("-id"), # s14:194 1:00
           'saved_for_later': self.is_stored_essay(request, post.id)
         }
+
+        def env_var_local_or_remote():
+            """
+            Function needed for secure Skpy login mechanism. 
+            When production, it takes environment variables from AWS.
+            When development, it takes environment variables from local .env file.
+            In development `getenv("var_name")` is always `None` - because env var
+            is not reachable from AWS. 
+            In development, it will check the local env var from config("var_name").
+            Keep in mind that `config("var_name")` and `getenv("var_name")` returns strings!
+
+            About boolean and none:
+            https://stackoverflow.com/a/47366574/15372196
+
+            https://stackoverflow.com/a/22783169/15372196
+            """
+            skype_production_login = getenv("SKYPE_LOGIN_AWS")
+            skype_development_login = config("SKYPE_LOGIN_LOCAL")
+            skype_production_pass = getenv("SKYPE_PASS_AWS")
+            skype_development_pass = config("SKYPE_PASS_LOCAL")
+            
+            if skype_production_login: # i.e is not None
+                login = skype_production_login
+            elif skype_development_login:
+                login = skype_development_login
+            else:
+                login = None
+
+            if skype_production_pass:
+                password = skype_production_pass # i.e is not None
+            elif skype_development_pass:
+                password = skype_development_pass
+            else:
+                password = None
+
+            return login, password
         
         if user_feedback.is_valid(): 
             user_email = user_feedback.cleaned_data['email']
@@ -302,18 +333,27 @@ class MyEssaysView(View):
             return redirect('confirm-registration', slug=slug) # 3.52.00
 
         if comment_form.is_valid():
+            
+            
             comment = comment_form.save(commit=False) # s14:192 10:00
             comment.post = post # `post` is a tittle of post/essay
             comment.save()
+
+            # Because the indexes in db for comments may be different (some can be deleted and there won't be inconstancy)
+            # I will filter db to just get the comment that is posted at this moment. 
+            comment_model_skpy = Comment.objects.filter(id=comment.id)
             # comment output: Comment object (id)
             # str(type(comment) output: <class 'pawel_pedryc_developer.models.Comment'>
         
-           # Skype Api:
-            sk = Skype(getenv("SKYPE_LOGIN"), getenv("SKYPE_PASS")) # connect to Skypesk.user
+            # environment variables (local, and remote(AWS)):
+            login, password = env_var_local_or_remote()
+
+            # Skype Api:
+            sk = Skype(login, password) # connect to Skypesk.user
 
             # Important doc about authentication: https://skpy.t.allofti.me/background/authentication.html
             # about this authentication (bottom of a page): https://github.com/Terrance/SkPy.docs/blob/master/guides/login.rst
-            sk.conn.liveLogin(getenv("SKYPE_LOGIN"), getenv("SKYPE_PASS"))
+            sk.conn.liveLogin(login, password)
 
             sk.conn
 
@@ -325,11 +365,21 @@ class MyEssaysView(View):
             #     " ".join(str(comment_form).split()), # https://stackoverflow.com/a/1546251/15372196
             #     rich=True) # skype needs html line breaks: "rich=True"
             
-            user_name = comment_model[comment.id - 1].user_name
-            user_email = comment_model[comment.id - 1].user_email
-            user_text = comment_model[comment.id - 1].text
+            
+            user_name = comment_model_skpy.first().user_name
+            user_email = comment_model_skpy.first().user_email
+            user_text = comment_model_skpy.first().text
 
-            comment_list = [user_name, user_email, user_text]
+            # Test:
+            # print('comment :', comment.id)
+            # print('comment_model[1] :', comment_model_skpy.first().text)
+            
+
+            comment_list = [
+                'User name:', '-> ' + user_name,
+                'user email:', '-> ' + user_email, '\n',
+                'user feedback on Mushroom Python:', '\n', user_text
+                ]
             skype_comment = '\n'.join(comment_list) # https://bobbyhadz.com/blog/python-list-join-with-newline
 
             msg = ch.sendMsg(
