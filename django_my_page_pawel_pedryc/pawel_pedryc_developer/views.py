@@ -274,7 +274,7 @@ class MyEssaysView(View):
             When production, it takes environment variables from AWS.
             When development, it takes environment variables from local .env file.
             In development `getenv("var_name")` is always `None` - because env var
-            is not reachable from AWS. 
+            is not reachable from AWS. That's why I need this function for development.
             In development, it will check the local env var from config("var_name").
             Keep in mind that `config("var_name")` and `getenv("var_name")` returns strings!
 
